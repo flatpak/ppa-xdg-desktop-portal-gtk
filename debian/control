@@ -1,0 +1,37 @@
+Source: xdg-desktop-portal-gtk
+Section: gnome
+Priority: optional
+Maintainer: Utopia Maintenance Team <pkg-utopia-maintainers@lists.alioth.debian.org>
+Uploaders:
+ Simon McVittie <smcv@debian.org>,
+Build-Depends:
+ dbus,
+ debhelper (>= 9),
+ dh-autoreconf,
+ libdbus-1-dev,
+ libflatpak-dev,
+ libglib2.0-dev,
+ libgtk-3-dev,
+ xdg-desktop-portal-dev,
+ xmlto,
+Standards-Version: 3.9.8
+Homepage: http://flatpak.org/
+Vcs-Git: https://anonscm.debian.org/git/collab-maint/xdg-desktop-portal-gtk.git
+Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/xdg-desktop-portal-gtk.git
+
+Package: xdg-desktop-portal-gtk
+Architecture: linux-any
+Multi-arch: foreign
+Depends:
+ dbus-user-session | dbus-x11,
+ xdg-desktop-portal,
+ ${misc:Depends},
+ ${shlibs:Depends},
+Provides:
+ xdg-desktop-portal-backend,
+Description: GTK/GNOME portal backend for xdg-desktop-portal
+ xdg-desktop-portal-gtk provides a GTK/GNOME implementation for the
+ desktop-agnostic xdg-desktop-portal service. This allows sandboxed
+ applications to request services from outside the sandbox using
+ GTK GUIs (app chooser, file chooser, print dialog) or using GNOME
+ services (session manager, screenshot provider).

@@ -1,0 +1,2 @@
+version=4
+https://github.com/flatpak/xdg-desktop-portal-gtk/releases .*/xdg-desktop-portal-gtk-(\d\S*)\.tar\.xz
