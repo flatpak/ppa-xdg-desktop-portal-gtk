@@ -1,66 +1,64 @@
-# German translation for xdg-desktop-portal-gtk.
-# Copyright (C) 2016 xdg-desktop-portal-gtk's COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Copyright � 2016 Red Hat
 # This file is distributed under the same license as the xdg-desktop-portal-gtk package.
-# Christian Kirbach <Christian.Kirbach@gmail.com>, 2016.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: xdg-desktop-portal-gtk master\n"
+"Project-Id-Version: xdg-desktop-portal-gtk 0.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-28 21:38-0400\n"
-"PO-Revision-Date: 2016-07-15 23:39+0200\n"
-"Last-Translator: Christian Kirbach <christian.kirbach@gmail.com>\n"
-"Language-Team: German <gnome-de@gnome.org>\n"
-"Language: de\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.7.1\n"
 
 #: src/appchooser.c:166
 msgid "_Select"
-msgstr "A_uswählen"
+msgstr ""
 
 #: src/appchooser.c:168 src/appchooserdialog.ui:10
 msgid "Open With"
-msgstr "Öffnen mit"
+msgstr ""
 
 #: src/appchooser.c:170
 msgid "Select application"
-msgstr "Anwendung auswählen"
+msgstr ""
 
 #: src/appchooser.c:176 src/appchooserdialog.ui:14 src/filechooser.c:343
 #: src/screenshotdialog.ui:14
 msgid "_Cancel"
-msgstr "Abbre_chen"
+msgstr ""
 
 #: src/appchooserdialog.ui:26 src/filechooser.c:341
 msgid "_Open"
-msgstr "_Öffnen"
+msgstr ""
 
 #: src/screenshotdialog.c:93
 #, c-format
 msgid "Share this screenshot with %s?"
-msgstr "Soll dieses Bildschirmfoto mit %s geteilt werden?"
+msgstr ""
 
 #: src/screenshotdialog.c:96
 msgid "Share this screenshot with the requesting application?"
 msgstr ""
-"Soll dieses Bildschirmfoto mit der anfragenden Anwendung geteilt werden?"
 
 #: src/screenshotdialog.ui:10
 msgid "Screenshot"
-msgstr "Bildschirmfoto"
+msgstr ""
 
 #: src/screenshotdialog.ui:25
 msgid "_Share"
-msgstr "_Freigeben"
+msgstr ""
 
 #: src/access.c:269
 msgid "Deny Access"
-msgstr "Zugriff verweigern"
+msgstr ""
 
 #: src/access.c:272
 msgid "Grant Access"
-msgstr "Zugriff gewähren"
+msgstr ""
