@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-28 21:38-0400\n"
+"POT-Creation-Date: 2016-09-01 22:26-0400\n"
 "PO-Revision-Date: 2016-07-22 01:55+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
@@ -33,12 +33,12 @@ msgstr "Otwarcie za pomocą"
 msgid "Select application"
 msgstr "Wybór programu"
 
-#: src/appchooser.c:176 src/appchooserdialog.ui:14 src/filechooser.c:343
+#: src/appchooser.c:176 src/appchooserdialog.ui:14 src/filechooser.c:341
 #: src/screenshotdialog.ui:14
 msgid "_Cancel"
 msgstr "_Anuluj"
 
-#: src/appchooserdialog.ui:26 src/filechooser.c:341
+#: src/appchooserdialog.ui:26 src/filechooser.c:339
 msgid "_Open"
 msgstr "_Otwórz"
 
