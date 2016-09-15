@@ -25,6 +25,12 @@
 /* Define if the GNU gettext() function is already present or preinstalled. */
 #undef HAVE_GETTEXT
 
+/* define if we we have gtk+-wayland */
+#undef HAVE_GTK_WAYLAND
+
+/* define if we we have gtk+-x11 */
+#undef HAVE_GTK_X11
+
 /* Define if you have the iconv() function and it works. */
 #undef HAVE_ICONV
 
