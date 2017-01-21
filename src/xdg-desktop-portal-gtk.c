@@ -40,10 +40,6 @@
 
 #include "xdg-desktop-portal-dbus.h"
 
-#ifdef GDK_WINDOWING_X11
-#include <gdk/gdkx.h>
-#endif
-
 #include "request.h"
 #include "filechooser.h"
 #include "appchooser.h"
@@ -52,6 +48,7 @@
 #include "notification.h"
 #include "inhibit.h"
 #include "access.h"
+#include "account.h"
 
 
 static GMainLoop *loop = NULL;
@@ -123,6 +120,12 @@ on_bus_acquired (GDBusConnection *connection,
     }
 
   if (!access_init (connection, &error))
+    {
+      g_warning ("error: %s\n", error->message);
+      g_clear_error (&error);
+    }
+
+  if (!account_init (connection, &error))
     {
       g_warning ("error: %s\n", error->message);
       g_clear_error (&error);

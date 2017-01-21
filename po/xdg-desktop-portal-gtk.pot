@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: xdg-desktop-portal-gtk 0.3\n"
+"Project-Id-Version: xdg-desktop-portal-gtk 0.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-01 22:26-0400\n"
+"POT-Creation-Date: 2017-01-18 11:49-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,24 +17,73 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/appchooser.c:166
-msgid "_Select"
+#: src/access.c:271
+msgid "Deny Access"
 msgstr ""
 
-#: src/appchooser.c:168 src/appchooserdialog.ui:10
-msgid "Open With"
+#: src/access.c:274
+msgid "Grant Access"
 msgstr ""
 
-#: src/appchooser.c:170
-msgid "Select application"
+#: src/accountdialog.c:166
+msgid "Select an Image"
 msgstr ""
 
-#: src/appchooser.c:176 src/appchooserdialog.ui:14 src/filechooser.c:341
-#: src/screenshotdialog.ui:14
+#: src/accountdialog.c:169
+msgid "Cancel"
+msgstr ""
+
+#: src/accountdialog.c:170
+msgid "Select"
+msgstr ""
+
+#: src/accountdialog.c:171
+msgid "Clear"
+msgstr ""
+
+#: src/accountdialog.c:185
+msgid "Images"
+msgstr ""
+
+#: src/accountdialog.c:260
+#, c-format
+msgid "Share your personal information with %s?"
+msgstr ""
+
+#: src/accountdialog.c:263
+msgid "Share your personal information with the requesting application?"
+msgstr ""
+
+#: src/accountdialog.ui:10
+msgid "Share Details"
+msgstr ""
+
+#: src/accountdialog.ui:14 src/appchooser.c:179 src/appchooserdialog.ui:14
+#: src/filechooser.c:364 src/screenshotdialog.ui:14
 msgid "_Cancel"
 msgstr ""
 
-#: src/appchooserdialog.ui:26 src/filechooser.c:339
+#: src/accountdialog.ui:22 src/screenshotdialog.ui:25
+msgid "_Share"
+msgstr ""
+
+#: src/accountdialog.ui:148
+msgid "Make changes before sharing the information"
+msgstr ""
+
+#: src/appchooser.c:169
+msgid "_Select"
+msgstr ""
+
+#: src/appchooser.c:171 src/appchooserdialog.ui:10
+msgid "Open With"
+msgstr ""
+
+#: src/appchooser.c:173
+msgid "Select application"
+msgstr ""
+
+#: src/appchooserdialog.ui:26 src/filechooser.c:362
 msgid "_Open"
 msgstr ""
 
@@ -49,16 +98,4 @@ msgstr ""
 
 #: src/screenshotdialog.ui:10
 msgid "Screenshot"
-msgstr ""
-
-#: src/screenshotdialog.ui:25
-msgid "_Share"
-msgstr ""
-
-#: src/access.c:269
-msgid "Deny Access"
-msgstr ""
-
-#: src/access.c:272
-msgid "Grant Access"
 msgstr ""

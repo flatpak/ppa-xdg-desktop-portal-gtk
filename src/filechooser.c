@@ -115,7 +115,7 @@ send_response (FileDialogHandle *handle)
     g_variant_builder_add (&uri_builder, "s", l->data);
 
   g_variant_builder_add (&opt_builder, "{sv}", "uris", g_variant_builder_end (&uri_builder));
-  g_variant_builder_add (&opt_builder, "{sv}", "writable", g_variant_new_variant (g_variant_new_boolean (handle->allow_write)));
+  g_variant_builder_add (&opt_builder, "{sv}", "writable", g_variant_new_boolean (handle->allow_write));
 
   add_choices (handle, &opt_builder);
 
@@ -287,6 +287,28 @@ handle_close (XdpImplRequest *object,
   return TRUE;
 }
 
+static void
+update_preview_cb (GtkFileChooser *file_chooser, gpointer data)
+{
+  GtkWidget *preview;
+  char *filename;
+  GdkPixbuf *pixbuf;
+  gboolean have_preview;
+
+  preview = GTK_WIDGET (data);
+  filename = gtk_file_chooser_get_preview_filename (file_chooser);
+
+  pixbuf = gdk_pixbuf_new_from_file_at_size (filename, 128, 128, NULL);
+  have_preview = (pixbuf != NULL);
+  g_free (filename);
+
+  gtk_image_set_from_pixbuf (GTK_IMAGE (preview), pixbuf);
+  if (pixbuf)
+    g_object_unref (pixbuf);
+
+  gtk_file_chooser_set_preview_widget_active (file_chooser, have_preview);
+}
+
 static gboolean
 handle_open (XdpImplFileChooser *object,
              GDBusMethodInvocation *invocation,
@@ -314,6 +336,7 @@ handle_open (XdpImplFileChooser *object,
   const char *current_name;
   const char *path;
   g_autoptr (GVariant) choices = NULL;
+  GtkWidget *preview;
 
   method_name = g_dbus_method_invocation_get_method_name (invocation);
   sender = g_dbus_method_invocation_get_sender (invocation);
@@ -369,6 +392,13 @@ handle_open (XdpImplFileChooser *object,
   gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
   gtk_file_chooser_set_select_multiple (GTK_FILE_CHOOSER (dialog), multiple);
 
+  preview = gtk_image_new ();
+  g_object_set (preview, "margin", 10, NULL);
+  gtk_widget_show (preview);
+  gtk_file_chooser_set_preview_widget (GTK_FILE_CHOOSER (dialog), preview);
+  gtk_file_chooser_set_use_preview_label (GTK_FILE_CHOOSER (dialog), FALSE);
+  g_signal_connect (dialog, "update-preview", G_CALLBACK (update_preview_cb), preview);
+
   handle = g_new0 (FileDialogHandle, 1);
   handle->impl = object;
   handle->invocation = invocation;
@@ -378,6 +408,7 @@ handle_open (XdpImplFileChooser *object,
   handle->multiple = multiple;
   handle->choices = g_hash_table_new (g_str_hash, g_str_equal);
   handle->external_parent = external_parent;
+  handle->allow_write = TRUE;
 
   g_signal_connect (request, "handle-close", G_CALLBACK (handle_close), handle);
 
@@ -435,6 +466,9 @@ handle_open (XdpImplFileChooser *object,
   if (action == GTK_FILE_CHOOSER_ACTION_OPEN)
     {
       GtkWidget *readonly;
+      GtkWidget *extra;
+
+      extra = gtk_file_chooser_get_extra_widget (GTK_FILE_CHOOSER (dialog));
 
       readonly = gtk_check_button_new_with_label ("Open files read-only");
       gtk_widget_show (readonly);
@@ -442,7 +476,10 @@ handle_open (XdpImplFileChooser *object,
       g_signal_connect (readonly, "toggled",
                         G_CALLBACK (read_only_toggled), handle);
 
-      gtk_file_chooser_set_extra_widget (GTK_FILE_CHOOSER (dialog), readonly);
+      if (GTK_IS_CONTAINER (extra))
+        gtk_container_add (GTK_CONTAINER (extra), readonly);
+      else
+        gtk_file_chooser_set_extra_widget (GTK_FILE_CHOOSER (dialog), readonly);
     }
 
   gtk_widget_show (dialog);
