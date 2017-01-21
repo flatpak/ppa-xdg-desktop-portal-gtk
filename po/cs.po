@@ -1,30 +1,31 @@
-# Hungarian translation for xdg-desktop-portal-gtk.
-# Copyright (C) 2016 Free Software Foundation, Inc.
-# This file is distributed under the same license as the xdg-sesktop-portal-gtk package.
+# Czech translation for xdg-desktop-portal-gtk.
+# Copyright (C) 2016 xdg-desktop-portal-gtk's COPYRIGHT HOLDER
+# This file is distributed under the same license as the xdg-desktop-portal-gtk package.
 #
-# Balázs Úr <urbalazs at gmail dot com>, 2016.
+# Marek Černocký <marek@manet.cz>, 2016.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-18 11:49-0500\n"
-"PO-Revision-Date: 2016-07-15 23:39+0200\n"
-"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
-"Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
-"Language: hu\n"
+"PO-Revision-Date: 2016-11-09 12:02+0100\n"
+"Last-Translator: Marek Černocký <marek@manet.cz>\n"
+"Language-Team: Czech <gnome-cs-list@gnome.org>>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
 #: src/access.c:271
 msgid "Deny Access"
-msgstr "Hozzáférés megtagadása"
+msgstr "Zamítnout přístup"
 
 #: src/access.c:274
 msgid "Grant Access"
-msgstr "Hozzáférés megadása"
+msgstr "Udělit přístup"
 
 #: src/accountdialog.c:166
 msgid "Select an Image"
@@ -33,12 +34,12 @@ msgstr ""
 #: src/accountdialog.c:169
 #, fuzzy
 msgid "Cancel"
-msgstr "_Mégse"
+msgstr "_Zrušit"
 
 #: src/accountdialog.c:170
 #, fuzzy
 msgid "Select"
-msgstr "_Kiválasztás"
+msgstr "_Vybrat"
 
 #: src/accountdialog.c:171
 msgid "Clear"
@@ -56,7 +57,7 @@ msgstr ""
 #: src/accountdialog.c:263
 #, fuzzy
 msgid "Share your personal information with the requesting application?"
-msgstr "Megosztja ezt a képernyőképet a kérő alkalmazással?"
+msgstr "Sdílet tento snímek obrazovky s aplikací, která o to žádá?"
 
 #: src/accountdialog.ui:10
 msgid "Share Details"
@@ -65,11 +66,11 @@ msgstr ""
 #: src/accountdialog.ui:14 src/appchooser.c:179 src/appchooserdialog.ui:14
 #: src/filechooser.c:364 src/screenshotdialog.ui:14
 msgid "_Cancel"
-msgstr "_Mégse"
+msgstr "_Zrušit"
 
 #: src/accountdialog.ui:22 src/screenshotdialog.ui:25
 msgid "_Share"
-msgstr "Meg_osztás"
+msgstr "_Sdílet"
 
 #: src/accountdialog.ui:148
 msgid "Make changes before sharing the information"
@@ -77,29 +78,29 @@ msgstr ""
 
 #: src/appchooser.c:169
 msgid "_Select"
-msgstr "_Kiválasztás"
+msgstr "_Vybrat"
 
 #: src/appchooser.c:171 src/appchooserdialog.ui:10
 msgid "Open With"
-msgstr "Megnyitás ezzel"
+msgstr "Otevření pomocí"
 
 #: src/appchooser.c:173
 msgid "Select application"
-msgstr "Alkalmazás kiválasztása"
+msgstr "Výběr aplikace"
 
 #: src/appchooserdialog.ui:26 src/filechooser.c:362
 msgid "_Open"
-msgstr "Meg_nyitás"
+msgstr "_Otevřít"
 
 #: src/screenshotdialog.c:93
 #, c-format
 msgid "Share this screenshot with %s?"
-msgstr "Megosztja ezt a képernyőképet ezzel: %s?"
+msgstr "Sdílet tento snímek obrazovky s aplikací %s?"
 
 #: src/screenshotdialog.c:96
 msgid "Share this screenshot with the requesting application?"
-msgstr "Megosztja ezt a képernyőképet a kérő alkalmazással?"
+msgstr "Sdílet tento snímek obrazovky s aplikací, která o to žádá?"
 
 #: src/screenshotdialog.ui:10
 msgid "Screenshot"
-msgstr "Képernyőkép"
+msgstr "Snímek obrazovky"

@@ -132,7 +132,8 @@ am__xdg_desktop_portal_gtk_SOURCES_DIST =  \
 	src/appchooserdialog.h src/appchooserdialog.c src/screenshot.h \
 	src/screenshot.c src/screenshotdialog.h src/screenshotdialog.c \
 	src/resources.c src/print.h src/print.c src/access.h \
-	src/access.c src/gtkbackports.h src/gtkbackports.c \
+	src/access.c src/account.h src/account.c src/accountdialog.h \
+	src/accountdialog.c src/gtkbackports.h src/gtkbackports.c \
 	src/externalwindow.h src/externalwindow.c \
 	src/xdg-desktop-portal-dbus.c src/xdg-desktop-portal-dbus.h \
 	src/shell-dbus.c src/shell-dbus.h src/externalwindow-x11.h \
@@ -159,6 +160,8 @@ am_xdg_desktop_portal_gtk_OBJECTS =  \
 	src/xdg_desktop_portal_gtk-resources.$(OBJEXT) \
 	src/xdg_desktop_portal_gtk-print.$(OBJEXT) \
 	src/xdg_desktop_portal_gtk-access.$(OBJEXT) \
+	src/xdg_desktop_portal_gtk-account.$(OBJEXT) \
+	src/xdg_desktop_portal_gtk-accountdialog.$(OBJEXT) \
 	src/xdg_desktop_portal_gtk-gtkbackports.$(OBJEXT) \
 	src/xdg_desktop_portal_gtk-externalwindow.$(OBJEXT) \
 	$(am__objects_1) $(am__objects_2) $(am__objects_3) \
@@ -480,12 +483,15 @@ SUBDIRS = po
 BUILT_SOURCES = $(dbus_built_sources) $(shell_built_sources)
 CLEANFILES = $(dbus_service_DATA)
 EXTRA_DIST = src/xdg-desktop-portal-gtk.gresource.xml \
-	src/appchooserdialog.ui src/appchooserrow.ui \
-	src/screenshotdialog.ui $(NULL) $(dbus_service_in_files) \
+	src/appchooserdialog.ui src/appchooserdialog.css \
+	src/appchooserrow.ui src/screenshotdialog.ui \
+	src/accountdialog.ui $(NULL) $(dbus_service_in_files) \
 	data/org.gtk.Notifications.xml \
 	data/org.gnome.SessionManager.xml \
+	data/org.gnome.Shell.Screenshot.xml \
 	data/org.freedesktop.ScreenSaver.xml \
-	data/org.gnome.Shell.Screenshot.xml $(NULL)
+	data/org.freedesktop.Accounts.xml \
+	data/org.freedesktop.Accounts.User.xml $(NULL)
 dbus_built_sources = src/xdg-desktop-portal-dbus.c src/xdg-desktop-portal-dbus.h
 shell_built_sources = src/shell-dbus.c src/shell-dbus.h
 resource_files = $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(top_srcdir)/src --generate-dependencies $(top_srcdir)/src/xdg-desktop-portal-gtk.gresource.xml)
@@ -498,14 +504,18 @@ xdg_desktop_portal_gtk_SOURCES = src/xdg-desktop-portal-gtk.c \
 	src/appchooserdialog.c src/screenshot.h src/screenshot.c \
 	src/screenshotdialog.h src/screenshotdialog.c src/resources.c \
 	src/print.h src/print.c src/access.h src/access.c \
-	src/gtkbackports.h src/gtkbackports.c src/externalwindow.h \
-	src/externalwindow.c $(dbus_built_sources) \
-	$(shell_built_sources) $(NULL) $(am__append_1) $(am__append_2)
+	src/account.h src/account.c src/accountdialog.h \
+	src/accountdialog.c src/gtkbackports.h src/gtkbackports.c \
+	src/externalwindow.h src/externalwindow.c \
+	$(dbus_built_sources) $(shell_built_sources) $(NULL) \
+	$(am__append_1) $(am__append_2)
 xdg_desktop_portal_gtk_LDADD = $(BASE_LIBS) $(GTK_LIBS) $(GTK_X11_LIBS)
 xdg_desktop_portal_gtk_CFLAGS = $(BASE_CFLAGS) $(GTK_CFLAGS) $(GTK_X11_CFLAGS)
 xdg_desktop_portal_gtk_CPPFLAGS = \
 	-DGETTEXT_PACKAGE=\"$(GETTEXT_PACKAGE)\"        \
 	-DLOCALEDIR=\"$(localedir)\"                    \
+	-I$(top_srcdir)/src				\
+	-I$(top_builddir)/src				\
 	$(NULL)
 
 portaldir = $(datadir)/xdg-desktop-portal/portals
@@ -650,6 +660,10 @@ src/xdg_desktop_portal_gtk-print.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
 src/xdg_desktop_portal_gtk-access.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
+src/xdg_desktop_portal_gtk-account.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
+src/xdg_desktop_portal_gtk-accountdialog.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
 src/xdg_desktop_portal_gtk-gtkbackports.$(OBJEXT):  \
 	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
 src/xdg_desktop_portal_gtk-externalwindow.$(OBJEXT):  \
@@ -675,6 +689,8 @@ distclean-compile:
 	-rm -f *.tab.c
 
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-access.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-account.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-accountdialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-appchooser.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-appchooserdialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-appchooserrow.Po@am__quote@
@@ -914,6 +930,34 @@ src/xdg_desktop_portal_gtk-access.obj: src/access.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/access.c' object='src/xdg_desktop_portal_gtk-access.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-access.obj `if test -f 'src/access.c'; then $(CYGPATH_W) 'src/access.c'; else $(CYGPATH_W) '$(srcdir)/src/access.c'; fi`
+
+src/xdg_desktop_portal_gtk-account.o: src/account.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-account.o -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-account.Tpo -c -o src/xdg_desktop_portal_gtk-account.o `test -f 'src/account.c' || echo '$(srcdir)/'`src/account.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-account.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-account.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/account.c' object='src/xdg_desktop_portal_gtk-account.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-account.o `test -f 'src/account.c' || echo '$(srcdir)/'`src/account.c
+
+src/xdg_desktop_portal_gtk-account.obj: src/account.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-account.obj -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-account.Tpo -c -o src/xdg_desktop_portal_gtk-account.obj `if test -f 'src/account.c'; then $(CYGPATH_W) 'src/account.c'; else $(CYGPATH_W) '$(srcdir)/src/account.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-account.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-account.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/account.c' object='src/xdg_desktop_portal_gtk-account.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-account.obj `if test -f 'src/account.c'; then $(CYGPATH_W) 'src/account.c'; else $(CYGPATH_W) '$(srcdir)/src/account.c'; fi`
+
+src/xdg_desktop_portal_gtk-accountdialog.o: src/accountdialog.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-accountdialog.o -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-accountdialog.Tpo -c -o src/xdg_desktop_portal_gtk-accountdialog.o `test -f 'src/accountdialog.c' || echo '$(srcdir)/'`src/accountdialog.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-accountdialog.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-accountdialog.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/accountdialog.c' object='src/xdg_desktop_portal_gtk-accountdialog.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-accountdialog.o `test -f 'src/accountdialog.c' || echo '$(srcdir)/'`src/accountdialog.c
+
+src/xdg_desktop_portal_gtk-accountdialog.obj: src/accountdialog.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-accountdialog.obj -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-accountdialog.Tpo -c -o src/xdg_desktop_portal_gtk-accountdialog.obj `if test -f 'src/accountdialog.c'; then $(CYGPATH_W) 'src/accountdialog.c'; else $(CYGPATH_W) '$(srcdir)/src/accountdialog.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-accountdialog.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-accountdialog.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/accountdialog.c' object='src/xdg_desktop_portal_gtk-accountdialog.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-accountdialog.obj `if test -f 'src/accountdialog.c'; then $(CYGPATH_W) 'src/accountdialog.c'; else $(CYGPATH_W) '$(srcdir)/src/accountdialog.c'; fi`
 
 src/xdg_desktop_portal_gtk-gtkbackports.o: src/gtkbackports.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-gtkbackports.o -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-gtkbackports.Tpo -c -o src/xdg_desktop_portal_gtk-gtkbackports.o `test -f 'src/gtkbackports.c' || echo '$(srcdir)/'`src/gtkbackports.c
@@ -1502,6 +1546,7 @@ $(dbus_built_sources): src/Makefile.am.inc
 	 $(DESKTOP_PORTAL_INTERFACES_DIR)/org.freedesktop.impl.portal.Notification.xml \
 	 $(DESKTOP_PORTAL_INTERFACES_DIR)/org.freedesktop.impl.portal.Inhibit.xml \
 	 $(DESKTOP_PORTAL_INTERFACES_DIR)/org.freedesktop.impl.portal.Access.xml \
+	 $(DESKTOP_PORTAL_INTERFACES_DIR)/org.freedesktop.impl.portal.Account.xml \
 	$(NULL)
 
 $(shell_built_sources): src/Makefile.am.inc
@@ -1511,13 +1556,11 @@ $(shell_built_sources): src/Makefile.am.inc
 	$(top_srcdir)/data/org.gtk.Notifications.xml			\
 	$(top_srcdir)/data/org.gnome.SessionManager.xml		        \
 	$(top_srcdir)/data/org.freedesktop.ScreenSaver.xml		\
+	$(top_srcdir)/data/org.freedesktop.Accounts.xml		        \
+	$(top_srcdir)/data/org.freedesktop.Accounts.User.xml            \
 	$(NULL)
 
-src/resources.h: src/xdg-desktop-portal-gtk.gresource.xml
-	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) $< \
-		--target=$@ --sourcedir=$(top_srcdir)/src --c-name _xdg_desktop --generate-header
-
-src/resources.c: src/xdg-desktop-portal-gtk.gresource.xml
+src/resources.c: src/xdg-desktop-portal-gtk.gresource.xml $(resource_files)
 	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) $< \
 		--target=$@ --sourcedir=$(top_srcdir)/src --c-name _xdg_desktop --generate-source
 

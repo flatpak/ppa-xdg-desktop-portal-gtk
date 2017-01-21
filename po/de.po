@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-01 22:26-0400\n"
+"POT-Creation-Date: 2017-01-18 11:49-0500\n"
 "PO-Revision-Date: 2016-07-15 23:39+0200\n"
 "Last-Translator: Christian Kirbach <christian.kirbach@gmail.com>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
@@ -18,24 +18,77 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-#: src/appchooser.c:166
-msgid "_Select"
+#: src/access.c:271
+msgid "Deny Access"
+msgstr "Zugriff verweigern"
+
+#: src/access.c:274
+msgid "Grant Access"
+msgstr "Zugriff gewähren"
+
+#: src/accountdialog.c:166
+msgid "Select an Image"
+msgstr ""
+
+#: src/accountdialog.c:169
+#, fuzzy
+msgid "Cancel"
+msgstr "Abbre_chen"
+
+#: src/accountdialog.c:170
+#, fuzzy
+msgid "Select"
 msgstr "A_uswählen"
 
-#: src/appchooser.c:168 src/appchooserdialog.ui:10
-msgid "Open With"
-msgstr "Öffnen mit"
+#: src/accountdialog.c:171
+msgid "Clear"
+msgstr ""
 
-#: src/appchooser.c:170
-msgid "Select application"
-msgstr "Anwendung auswählen"
+#: src/accountdialog.c:185
+msgid "Images"
+msgstr ""
 
-#: src/appchooser.c:176 src/appchooserdialog.ui:14 src/filechooser.c:341
-#: src/screenshotdialog.ui:14
+#: src/accountdialog.c:260
+#, c-format
+msgid "Share your personal information with %s?"
+msgstr ""
+
+#: src/accountdialog.c:263
+#, fuzzy
+msgid "Share your personal information with the requesting application?"
+msgstr ""
+"Soll dieses Bildschirmfoto mit der anfragenden Anwendung geteilt werden?"
+
+#: src/accountdialog.ui:10
+msgid "Share Details"
+msgstr ""
+
+#: src/accountdialog.ui:14 src/appchooser.c:179 src/appchooserdialog.ui:14
+#: src/filechooser.c:364 src/screenshotdialog.ui:14
 msgid "_Cancel"
 msgstr "Abbre_chen"
 
-#: src/appchooserdialog.ui:26 src/filechooser.c:339
+#: src/accountdialog.ui:22 src/screenshotdialog.ui:25
+msgid "_Share"
+msgstr "_Freigeben"
+
+#: src/accountdialog.ui:148
+msgid "Make changes before sharing the information"
+msgstr ""
+
+#: src/appchooser.c:169
+msgid "_Select"
+msgstr "A_uswählen"
+
+#: src/appchooser.c:171 src/appchooserdialog.ui:10
+msgid "Open With"
+msgstr "Öffnen mit"
+
+#: src/appchooser.c:173
+msgid "Select application"
+msgstr "Anwendung auswählen"
+
+#: src/appchooserdialog.ui:26 src/filechooser.c:362
 msgid "_Open"
 msgstr "_Öffnen"
 
@@ -52,15 +105,3 @@ msgstr ""
 #: src/screenshotdialog.ui:10
 msgid "Screenshot"
 msgstr "Bildschirmfoto"
-
-#: src/screenshotdialog.ui:25
-msgid "_Share"
-msgstr "_Freigeben"
-
-#: src/access.c:269
-msgid "Deny Access"
-msgstr "Zugriff verweigern"
-
-#: src/access.c:272
-msgid "Grant Access"
-msgstr "Zugriff gewähren"
