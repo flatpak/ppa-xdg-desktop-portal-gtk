@@ -27,6 +27,8 @@ Depends:
  xdg-desktop-portal,
  ${misc:Depends},
  ${shlibs:Depends},
+Suggests:
+ accountsservice,
 Provides:
  xdg-desktop-portal-backend,
 Description: GTK/GNOME portal backend for xdg-desktop-portal
