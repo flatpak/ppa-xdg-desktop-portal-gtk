@@ -11,8 +11,6 @@ include /usr/share/dpkg/default.mk
 override_dh_auto_configure:
 	dh_auto_configure -- \
 		--disable-silent-rules \
-		--enable-docbook-docs \
-		--enable-installed-tests \
 		--libexecdir=/usr/lib/xdg-desktop-portal \
 		$(NULL)
 
