@@ -8,6 +8,7 @@ inheriting any non-standard execution environment that dbus-daemon
 might have.
 
 Signed-off-by: Simon McVittie <smcv@debian.org>
+Forwarded: https://github.com/flatpak/xdg-desktop-portal-gtk/pull/52
 ---
  configure.ac                                            | 9 +++++++++
  data/Makefile.am.inc                                    | 6 ++++++
