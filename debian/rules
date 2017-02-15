@@ -10,7 +10,6 @@ include /usr/share/dpkg/default.mk
 
 override_dh_auto_configure:
 	dh_auto_configure -- \
-		--disable-silent-rules \
 		--libexecdir=/usr/lib/xdg-desktop-portal \
 		$(NULL)
 
