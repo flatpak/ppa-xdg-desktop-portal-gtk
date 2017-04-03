@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-18 11:49-0500\n"
+"POT-Creation-Date: 2017-03-31 08:58-0400\n"
 "PO-Revision-Date: 2016-09-14 12:56+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: српски <gnome-sr@googlegroups.org>\n"
@@ -62,8 +62,8 @@ msgstr "Да поделим овај снимак екрана са програ
 msgid "Share Details"
 msgstr ""
 
-#: src/accountdialog.ui:14 src/appchooser.c:179 src/appchooserdialog.ui:14
-#: src/filechooser.c:364 src/screenshotdialog.ui:14
+#: src/accountdialog.ui:14 src/appchooser.c:179 src/appchooserdialog.ui:16
+#: src/filechooser.c:365 src/screenshotdialog.ui:14
 msgid "_Cancel"
 msgstr "От_кажи"
 
@@ -79,7 +79,7 @@ msgstr ""
 msgid "_Select"
 msgstr "_Изабери"
 
-#: src/appchooser.c:171 src/appchooserdialog.ui:10
+#: src/appchooser.c:171 src/appchooserdialog.ui:12
 msgid "Open With"
 msgstr "Отвори програмом"
 
@@ -87,7 +87,12 @@ msgstr "Отвори програмом"
 msgid "Select application"
 msgstr "Изаберите програм"
 
-#: src/appchooserdialog.ui:26 src/filechooser.c:362
+#: src/appchooserdialog.ui:77
+#, fuzzy
+msgid "No applications found"
+msgstr "Изаберите програм"
+
+#: src/filechooser.c:363
 msgid "_Open"
 msgstr "От_вори"
 
@@ -103,3 +108,11 @@ msgstr "Да поделим овај снимак екрана са програ
 #: src/screenshotdialog.ui:10
 msgid "Screenshot"
 msgstr "Снимак екрана"
+
+#: data/xdg-desktop-portal-gtk.desktop.in.in:4
+msgid "Portal"
+msgstr ""
+
+#: data/xdg-desktop-portal-gtk.desktop.in.in:5
+msgid "applications-system-symbolic"
+msgstr ""

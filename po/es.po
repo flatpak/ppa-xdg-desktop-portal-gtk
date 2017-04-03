@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-18 11:49-0500\n"
+"POT-Creation-Date: 2017-03-31 08:58-0400\n"
 "PO-Revision-Date: 2016-06-28 01:17+0100\n"
 "Last-Translator: Mario Sanchez Prada <mario@endlessm.com>\n"
 "Language-Team: Spanish; Castilian <>\n"
@@ -63,8 +63,8 @@ msgstr "¿ Compartir esta captura de pantalla con la aplicación de destino ?"
 msgid "Share Details"
 msgstr ""
 
-#: src/accountdialog.ui:14 src/appchooser.c:179 src/appchooserdialog.ui:14
-#: src/filechooser.c:364 src/screenshotdialog.ui:14
+#: src/accountdialog.ui:14 src/appchooser.c:179 src/appchooserdialog.ui:16
+#: src/filechooser.c:365 src/screenshotdialog.ui:14
 msgid "_Cancel"
 msgstr "_Cancelar"
 
@@ -80,7 +80,7 @@ msgstr ""
 msgid "_Select"
 msgstr "_Seleccionar"
 
-#: src/appchooser.c:171 src/appchooserdialog.ui:10
+#: src/appchooser.c:171 src/appchooserdialog.ui:12
 msgid "Open With"
 msgstr "Abrir Con"
 
@@ -88,7 +88,12 @@ msgstr "Abrir Con"
 msgid "Select application"
 msgstr "Seleccionar aplicación"
 
-#: src/appchooserdialog.ui:26 src/filechooser.c:362
+#: src/appchooserdialog.ui:77
+#, fuzzy
+msgid "No applications found"
+msgstr "Seleccionar aplicación"
+
+#: src/filechooser.c:363
 msgid "_Open"
 msgstr "_Abrir"
 
@@ -105,3 +110,11 @@ msgstr "¿ Compartir esta captura de pantalla con la aplicación de destino ?"
 #: src/screenshotdialog.ui:10
 msgid "Screenshot"
 msgstr "Captura de Pantalla"
+
+#: data/xdg-desktop-portal-gtk.desktop.in.in:4
+msgid "Portal"
+msgstr ""
+
+#: data/xdg-desktop-portal-gtk.desktop.in.in:5
+msgid "applications-system-symbolic"
+msgstr ""

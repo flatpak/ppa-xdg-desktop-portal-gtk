@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-18 11:49-0500\n"
+"POT-Creation-Date: 2017-03-31 08:58-0400\n"
 "PO-Revision-Date: 2016-10-28 18:05-0400\n"
 "Last-Translator: Mingye Wang (Arthur2e5) <arthur200126@gmail.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
@@ -61,8 +61,8 @@ msgstr "与正发出请求的应用程序共享此截图吗？"
 msgid "Share Details"
 msgstr ""
 
-#: src/accountdialog.ui:14 src/appchooser.c:179 src/appchooserdialog.ui:14
-#: src/filechooser.c:364 src/screenshotdialog.ui:14
+#: src/accountdialog.ui:14 src/appchooser.c:179 src/appchooserdialog.ui:16
+#: src/filechooser.c:365 src/screenshotdialog.ui:14
 msgid "_Cancel"
 msgstr "取消(_C)"
 
@@ -78,7 +78,7 @@ msgstr ""
 msgid "_Select"
 msgstr "选择(_S)"
 
-#: src/appchooser.c:171 src/appchooserdialog.ui:10
+#: src/appchooser.c:171 src/appchooserdialog.ui:12
 msgid "Open With"
 msgstr "打开方式"
 
@@ -86,7 +86,12 @@ msgstr "打开方式"
 msgid "Select application"
 msgstr "选择应用程序"
 
-#: src/appchooserdialog.ui:26 src/filechooser.c:362
+#: src/appchooserdialog.ui:77
+#, fuzzy
+msgid "No applications found"
+msgstr "选择应用程序"
+
+#: src/filechooser.c:363
 msgid "_Open"
 msgstr "打开(_O)"
 
@@ -102,3 +107,11 @@ msgstr "与正发出请求的应用程序共享此截图吗？"
 #: src/screenshotdialog.ui:10
 msgid "Screenshot"
 msgstr "截屏"
+
+#: data/xdg-desktop-portal-gtk.desktop.in.in:4
+msgid "Portal"
+msgstr ""
+
+#: data/xdg-desktop-portal-gtk.desktop.in.in:5
+msgid "applications-system-symbolic"
+msgstr ""

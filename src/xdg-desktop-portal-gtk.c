@@ -49,6 +49,7 @@
 #include "inhibit.h"
 #include "access.h"
 #include "account.h"
+#include "email.h"
 
 
 static GMainLoop *loop = NULL;
@@ -130,6 +131,12 @@ on_bus_acquired (GDBusConnection *connection,
       g_warning ("error: %s\n", error->message);
       g_clear_error (&error);
     }
+
+  if (!email_init (connection, &error))
+    {
+      g_warning ("error: %s\n", error->message);
+      g_clear_error (&error);
+    }
 }
 
 static void
@@ -177,7 +184,7 @@ main (int argc, char *argv[])
   if (opt_verbose)
     g_log_set_handler (NULL, G_LOG_LEVEL_DEBUG, message_handler, NULL);
 
-  g_set_prgname (argv[0]);
+  g_set_prgname ("xdg-desktop-portal-gtk");
 
   loop = g_main_loop_new (NULL, FALSE);
 
