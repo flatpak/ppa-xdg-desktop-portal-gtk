@@ -1,6 +1,7 @@
 xdg-desktop-portal-gtk (0.6-1) UNRELEASED; urgency=medium
 
   * New upstream release
+    - Apply some post-release bug fixes from upstream
   * Move to debhelper compat level 10
   * Omit unimplemented configure options --enable-docbook-docs,
     --enable-installed-tests
