@@ -30,9 +30,9 @@ Suggests:
  accountsservice,
 Provides:
  xdg-desktop-portal-backend,
-Description: GTK/GNOME portal backend for xdg-desktop-portal
- xdg-desktop-portal-gtk provides a GTK/GNOME implementation for the
+Description: GTK+/GNOME portal backend for xdg-desktop-portal
+ xdg-desktop-portal-gtk provides a GTK+/GNOME implementation for the
  desktop-agnostic xdg-desktop-portal service. This allows sandboxed
  applications to request services from outside the sandbox using
- GTK GUIs (app chooser, file chooser, print dialog) or using GNOME
+ GTK+ GUIs (app chooser, file chooser, print dialog) or using GNOME
  services (session manager, screenshot provider).
