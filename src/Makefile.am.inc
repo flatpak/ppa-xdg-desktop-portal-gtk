@@ -16,6 +16,7 @@ $(dbus_built_sources): src/Makefile.am.inc
 	 $(DESKTOP_PORTAL_INTERFACES_DIR)/org.freedesktop.impl.portal.Inhibit.xml \
 	 $(DESKTOP_PORTAL_INTERFACES_DIR)/org.freedesktop.impl.portal.Access.xml \
 	 $(DESKTOP_PORTAL_INTERFACES_DIR)/org.freedesktop.impl.portal.Account.xml \
+	 $(DESKTOP_PORTAL_INTERFACES_DIR)/org.freedesktop.impl.portal.Email.xml \
 	$(NULL)
 
 shell_built_sources = src/shell-dbus.c src/shell-dbus.h
@@ -82,6 +83,8 @@ xdg_desktop_portal_gtk_SOURCES = \
 	src/account.c				\
 	src/accountdialog.h			\
 	src/accountdialog.c			\
+	src/email.h				\
+	src/email.c				\
         src/gtkbackports.h                      \
         src/gtkbackports.c                      \
 	src/externalwindow.h			\
@@ -112,3 +115,24 @@ xdg_desktop_portal_gtk_CPPFLAGS = \
 	-I$(top_srcdir)/src				\
 	-I$(top_builddir)/src				\
 	$(NULL)
+
+noinst_PROGRAMS = \
+        testappchooser
+
+testappchooser_LDADD = $(GTK_LIBS) $(GTK_X11_LIBS)
+testappchooser_CFLAGS = $(GTK_CFLAGS) $(GTK_X11_CFLAGS)
+testappchooser_CPPFLAGS = \
+	-DGETTEXT_PACKAGE=\"$(GETTEXT_PACKAGE)\"        \
+	-DLOCALEDIR=\"$(localedir)\"                    \
+	-I$(top_srcdir)/src				\
+	-I$(top_builddir)/src				\
+	$(NULL)
+
+testappchooser_SOURCES = \
+        src/testappchooser.c                    \
+	src/appchooserrow.h			\
+	src/appchooserrow.c			\
+	src/appchooserdialog.h		        \
+	src/appchooserdialog.c		        \
+	src/resources.c                         \
+        $(NULL)

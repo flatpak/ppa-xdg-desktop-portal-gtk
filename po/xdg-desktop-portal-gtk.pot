@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Copyright © 2016 Red Hat
+# Copyright (C) YEAR Copyright Â© 2016 Red Hat
 # This file is distributed under the same license as the xdg-desktop-portal-gtk package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: xdg-desktop-portal-gtk 0.5\n"
+"Project-Id-Version: xdg-desktop-portal-gtk 0.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-18 11:49-0500\n"
+"POT-Creation-Date: 2017-03-31 08:58-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,8 +58,8 @@ msgstr ""
 msgid "Share Details"
 msgstr ""
 
-#: src/accountdialog.ui:14 src/appchooser.c:179 src/appchooserdialog.ui:14
-#: src/filechooser.c:364 src/screenshotdialog.ui:14
+#: src/accountdialog.ui:14 src/appchooser.c:179 src/appchooserdialog.ui:16
+#: src/filechooser.c:365 src/screenshotdialog.ui:14
 msgid "_Cancel"
 msgstr ""
 
@@ -75,7 +75,7 @@ msgstr ""
 msgid "_Select"
 msgstr ""
 
-#: src/appchooser.c:171 src/appchooserdialog.ui:10
+#: src/appchooser.c:171 src/appchooserdialog.ui:12
 msgid "Open With"
 msgstr ""
 
@@ -83,7 +83,11 @@ msgstr ""
 msgid "Select application"
 msgstr ""
 
-#: src/appchooserdialog.ui:26 src/filechooser.c:362
+#: src/appchooserdialog.ui:77
+msgid "No applications found"
+msgstr ""
+
+#: src/filechooser.c:363
 msgid "_Open"
 msgstr ""
 
@@ -98,4 +102,12 @@ msgstr ""
 
 #: src/screenshotdialog.ui:10
 msgid "Screenshot"
+msgstr ""
+
+#: data/xdg-desktop-portal-gtk.desktop.in.in:4
+msgid "Portal"
+msgstr ""
+
+#: data/xdg-desktop-portal-gtk.desktop.in.in:5
+msgid "applications-system-symbolic"
 msgstr ""

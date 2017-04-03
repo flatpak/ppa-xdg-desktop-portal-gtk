@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-18 11:49-0500\n"
-"PO-Revision-Date: 2016-08-14 13:53+0800\n"
-"Last-Translator: Sebastian Rasmussen <sebras@gmail.com>\n"
+"POT-Creation-Date: 2017-03-31 08:58-0400\n"
+"PO-Revision-Date: 2017-03-19 20:58+0100\n"
+"Last-Translator: Josef Andersson <l10nl18nsweja@gmail.com>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.9\n"
 
 #: src/access.c:271
 msgid "Deny Access"
@@ -28,42 +28,39 @@ msgstr "Bevilja tillgång"
 
 #: src/accountdialog.c:166
 msgid "Select an Image"
-msgstr ""
+msgstr "Välj en bild"
 
 #: src/accountdialog.c:169
-#, fuzzy
 msgid "Cancel"
-msgstr "_Avbryt"
+msgstr "Avbryt"
 
 #: src/accountdialog.c:170
-#, fuzzy
 msgid "Select"
-msgstr "_Välj"
+msgstr "Välj"
 
 #: src/accountdialog.c:171
 msgid "Clear"
-msgstr ""
+msgstr "Rensa"
 
 #: src/accountdialog.c:185
 msgid "Images"
-msgstr ""
+msgstr "Bilder"
 
 #: src/accountdialog.c:260
 #, c-format
 msgid "Share your personal information with %s?"
-msgstr ""
+msgstr "Dela din personliga information med %s?"
 
 #: src/accountdialog.c:263
-#, fuzzy
 msgid "Share your personal information with the requesting application?"
-msgstr "Dela denna skärmbild med programmet som begär den?"
+msgstr "Dela din personliga information med programmet som begär den?"
 
 #: src/accountdialog.ui:10
 msgid "Share Details"
-msgstr ""
+msgstr "Dela detaljer"
 
-#: src/accountdialog.ui:14 src/appchooser.c:179 src/appchooserdialog.ui:14
-#: src/filechooser.c:364 src/screenshotdialog.ui:14
+#: src/accountdialog.ui:14 src/appchooser.c:179 src/appchooserdialog.ui:16
+#: src/filechooser.c:365 src/screenshotdialog.ui:14
 msgid "_Cancel"
 msgstr "_Avbryt"
 
@@ -73,13 +70,13 @@ msgstr "_Dela"
 
 #: src/accountdialog.ui:148
 msgid "Make changes before sharing the information"
-msgstr ""
+msgstr "Ändra informationen innan den delas"
 
 #: src/appchooser.c:169
 msgid "_Select"
 msgstr "_Välj"
 
-#: src/appchooser.c:171 src/appchooserdialog.ui:10
+#: src/appchooser.c:171 src/appchooserdialog.ui:12
 msgid "Open With"
 msgstr "Öppna med"
 
@@ -87,7 +84,12 @@ msgstr "Öppna med"
 msgid "Select application"
 msgstr "Välj program"
 
-#: src/appchooserdialog.ui:26 src/filechooser.c:362
+#: src/appchooserdialog.ui:77
+#, fuzzy
+msgid "No applications found"
+msgstr "Välj program"
+
+#: src/filechooser.c:363
 msgid "_Open"
 msgstr "_Öppna"
 
@@ -103,3 +105,11 @@ msgstr "Dela denna skärmbild med programmet som begär den?"
 #: src/screenshotdialog.ui:10
 msgid "Screenshot"
 msgstr "Skärmbild"
+
+#: data/xdg-desktop-portal-gtk.desktop.in.in:4
+msgid "Portal"
+msgstr ""
+
+#: data/xdg-desktop-portal-gtk.desktop.in.in:5
+msgid "applications-system-symbolic"
+msgstr ""

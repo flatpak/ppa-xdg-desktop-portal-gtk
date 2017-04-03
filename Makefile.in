@@ -100,6 +100,7 @@ libexec_PROGRAMS = xdg-desktop-portal-gtk$(EXEEXT)
 @HAVE_GTK_WAYLAND_TRUE@	src/externalwindow-wayland.c		\
 @HAVE_GTK_WAYLAND_TRUE@	$(NULL)
 
+noinst_PROGRAMS = testappchooser$(EXEEXT)
 subdir = .
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/gettext.m4 \
@@ -113,7 +114,8 @@ am__aclocal_m4_deps = $(top_srcdir)/m4/gettext.m4 \
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 DIST_COMMON = $(srcdir)/Makefile.am $(top_srcdir)/configure \
-	$(am__configure_deps) $(dist_portal_DATA) $(am__DIST_COMMON)
+	$(am__configure_deps) $(dist_desktop_DATA) $(dist_portal_DATA) \
+	$(am__DIST_COMMON)
 am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno config.status.lineno
 mkinstalldirs = $(install_sh) -d
@@ -121,8 +123,27 @@ CONFIG_HEADER = config.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(libexecdir)" \
-	"$(DESTDIR)$(dbus_servicedir)" "$(DESTDIR)$(portaldir)"
-PROGRAMS = $(libexec_PROGRAMS)
+	"$(DESTDIR)$(dbus_servicedir)" "$(DESTDIR)$(desktopdir)" \
+	"$(DESTDIR)$(portaldir)" "$(DESTDIR)$(systemduserunitdir)"
+PROGRAMS = $(libexec_PROGRAMS) $(noinst_PROGRAMS)
+am__dirstamp = $(am__leading_dot)dirstamp
+am_testappchooser_OBJECTS =  \
+	src/testappchooser-testappchooser.$(OBJEXT) \
+	src/testappchooser-appchooserrow.$(OBJEXT) \
+	src/testappchooser-appchooserdialog.$(OBJEXT) \
+	src/testappchooser-resources.$(OBJEXT)
+testappchooser_OBJECTS = $(am_testappchooser_OBJECTS)
+am__DEPENDENCIES_1 =
+testappchooser_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1)
+AM_V_lt = $(am__v_lt_@AM_V@)
+am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+am__v_lt_0 = --silent
+am__v_lt_1 = 
+testappchooser_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(testappchooser_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o \
+	$@
 am__xdg_desktop_portal_gtk_SOURCES_DIST =  \
 	src/xdg-desktop-portal-gtk.c src/utils.h src/utils.c \
 	src/request.h src/request.c src/filechooser.h \
@@ -133,13 +154,12 @@ am__xdg_desktop_portal_gtk_SOURCES_DIST =  \
 	src/screenshot.c src/screenshotdialog.h src/screenshotdialog.c \
 	src/resources.c src/print.h src/print.c src/access.h \
 	src/access.c src/account.h src/account.c src/accountdialog.h \
-	src/accountdialog.c src/gtkbackports.h src/gtkbackports.c \
-	src/externalwindow.h src/externalwindow.c \
+	src/accountdialog.c src/email.h src/email.c src/gtkbackports.h \
+	src/gtkbackports.c src/externalwindow.h src/externalwindow.c \
 	src/xdg-desktop-portal-dbus.c src/xdg-desktop-portal-dbus.h \
 	src/shell-dbus.c src/shell-dbus.h src/externalwindow-x11.h \
 	src/externalwindow-x11.c src/externalwindow-wayland.h \
 	src/externalwindow-wayland.c
-am__dirstamp = $(am__leading_dot)dirstamp
 am__objects_1 =  \
 	src/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.$(OBJEXT)
 am__objects_2 = src/xdg_desktop_portal_gtk-shell-dbus.$(OBJEXT)
@@ -162,18 +182,14 @@ am_xdg_desktop_portal_gtk_OBJECTS =  \
 	src/xdg_desktop_portal_gtk-access.$(OBJEXT) \
 	src/xdg_desktop_portal_gtk-account.$(OBJEXT) \
 	src/xdg_desktop_portal_gtk-accountdialog.$(OBJEXT) \
+	src/xdg_desktop_portal_gtk-email.$(OBJEXT) \
 	src/xdg_desktop_portal_gtk-gtkbackports.$(OBJEXT) \
 	src/xdg_desktop_portal_gtk-externalwindow.$(OBJEXT) \
 	$(am__objects_1) $(am__objects_2) $(am__objects_3) \
 	$(am__objects_4)
 xdg_desktop_portal_gtk_OBJECTS = $(am_xdg_desktop_portal_gtk_OBJECTS)
-am__DEPENDENCIES_1 =
 xdg_desktop_portal_gtk_DEPENDENCIES = $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-AM_V_lt = $(am__v_lt_@AM_V@)
-am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
-am__v_lt_0 = --silent
-am__v_lt_1 = 
 xdg_desktop_portal_gtk_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
 	$(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
@@ -212,8 +228,9 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(xdg_desktop_portal_gtk_SOURCES)
-DIST_SOURCES = $(am__xdg_desktop_portal_gtk_SOURCES_DIST)
+SOURCES = $(testappchooser_SOURCES) $(xdg_desktop_portal_gtk_SOURCES)
+DIST_SOURCES = $(testappchooser_SOURCES) \
+	$(am__xdg_desktop_portal_gtk_SOURCES_DIST)
 RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
 	ctags-recursive dvi-recursive html-recursive info-recursive \
 	install-data-recursive install-dvi-recursive \
@@ -254,7 +271,8 @@ am__uninstall_files_from_dir = { \
     || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
          $(am__cd) "$$dir" && rm -f $$files; }; \
   }
-DATA = $(dbus_service_DATA) $(dist_portal_DATA)
+DATA = $(dbus_service_DATA) $(dist_desktop_DATA) $(dist_portal_DATA) \
+	$(systemduserunit_DATA)
 RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
   distclean-recursive maintainer-clean-recursive
 am__recursive_targets = \
@@ -475,17 +493,20 @@ sbindir = @sbindir@
 sharedstatedir = @sharedstatedir@
 srcdir = @srcdir@
 sysconfdir = @sysconfdir@
+systemduserunitdir = @systemduserunitdir@
 target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = po
 BUILT_SOURCES = $(dbus_built_sources) $(shell_built_sources)
-CLEANFILES = $(dbus_service_DATA)
+CLEANFILES = $(dbus_service_DATA) $(systemduserunit_DATA) \
+	$(dist_desktop_DATA)
 EXTRA_DIST = src/xdg-desktop-portal-gtk.gresource.xml \
 	src/appchooserdialog.ui src/appchooserdialog.css \
 	src/appchooserrow.ui src/screenshotdialog.ui \
 	src/accountdialog.ui $(NULL) $(dbus_service_in_files) \
+	$(systemduserunit_in_files) $(desktop_in_in_files) \
 	data/org.gtk.Notifications.xml \
 	data/org.gnome.SessionManager.xml \
 	data/org.gnome.Shell.Screenshot.xml \
@@ -505,8 +526,8 @@ xdg_desktop_portal_gtk_SOURCES = src/xdg-desktop-portal-gtk.c \
 	src/screenshotdialog.h src/screenshotdialog.c src/resources.c \
 	src/print.h src/print.c src/access.h src/access.c \
 	src/account.h src/account.c src/accountdialog.h \
-	src/accountdialog.c src/gtkbackports.h src/gtkbackports.c \
-	src/externalwindow.h src/externalwindow.c \
+	src/accountdialog.c src/email.h src/email.c src/gtkbackports.h \
+	src/gtkbackports.c src/externalwindow.h src/externalwindow.c \
 	$(dbus_built_sources) $(shell_built_sources) $(NULL) \
 	$(am__append_1) $(am__append_2)
 xdg_desktop_portal_gtk_LDADD = $(BASE_LIBS) $(GTK_LIBS) $(GTK_X11_LIBS)
@@ -518,11 +539,34 @@ xdg_desktop_portal_gtk_CPPFLAGS = \
 	-I$(top_builddir)/src				\
 	$(NULL)
 
+testappchooser_LDADD = $(GTK_LIBS) $(GTK_X11_LIBS)
+testappchooser_CFLAGS = $(GTK_CFLAGS) $(GTK_X11_CFLAGS)
+testappchooser_CPPFLAGS = \
+	-DGETTEXT_PACKAGE=\"$(GETTEXT_PACKAGE)\"        \
+	-DLOCALEDIR=\"$(localedir)\"                    \
+	-I$(top_srcdir)/src				\
+	-I$(top_builddir)/src				\
+	$(NULL)
+
+testappchooser_SOURCES = \
+        src/testappchooser.c                    \
+	src/appchooserrow.h			\
+	src/appchooserrow.c			\
+	src/appchooserdialog.h		        \
+	src/appchooserdialog.c		        \
+	src/resources.c                         \
+        $(NULL)
+
 portaldir = $(datadir)/xdg-desktop-portal/portals
 dist_portal_DATA = data/gtk.portal
 dbus_servicedir = $(DBUS_SERVICE_DIR)
 dbus_service_in_files = data/org.freedesktop.impl.portal.desktop.gtk.service.in
 dbus_service_DATA = org.freedesktop.impl.portal.desktop.gtk.service
+systemduserunit_in_files = data/xdg-desktop-portal-gtk.service.in
+systemduserunit_DATA = xdg-desktop-portal-gtk.service
+desktopdir = $(datadir)/applications
+desktop_in_in_files = data/xdg-desktop-portal-gtk.desktop.in.in
+dist_desktop_DATA = xdg-desktop-portal-gtk.desktop
 all: $(BUILT_SOURCES) config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
 
@@ -626,12 +670,33 @@ clean-libexecPROGRAMS:
 	list=`for p in $$list; do echo "$$p"; done | sed 's/$(EXEEXT)$$//'`; \
 	echo " rm -f" $$list; \
 	rm -f $$list
+
+clean-noinstPROGRAMS:
+	@list='$(noinst_PROGRAMS)'; test -n "$$list" || exit 0; \
+	echo " rm -f" $$list; \
+	rm -f $$list || exit $$?; \
+	test -n "$(EXEEXT)" || exit 0; \
+	list=`for p in $$list; do echo "$$p"; done | sed 's/$(EXEEXT)$$//'`; \
+	echo " rm -f" $$list; \
+	rm -f $$list
 src/$(am__dirstamp):
 	@$(MKDIR_P) src
 	@: > src/$(am__dirstamp)
 src/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) src/$(DEPDIR)
 	@: > src/$(DEPDIR)/$(am__dirstamp)
+src/testappchooser-testappchooser.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
+src/testappchooser-appchooserrow.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
+src/testappchooser-appchooserdialog.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
+src/testappchooser-resources.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
+
+testappchooser$(EXEEXT): $(testappchooser_OBJECTS) $(testappchooser_DEPENDENCIES) $(EXTRA_testappchooser_DEPENDENCIES) 
+	@rm -f testappchooser$(EXEEXT)
+	$(AM_V_CCLD)$(testappchooser_LINK) $(testappchooser_OBJECTS) $(testappchooser_LDADD) $(LIBS)
 src/xdg_desktop_portal_gtk-xdg-desktop-portal-gtk.$(OBJEXT):  \
 	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
 src/xdg_desktop_portal_gtk-utils.$(OBJEXT): src/$(am__dirstamp) \
@@ -664,6 +729,8 @@ src/xdg_desktop_portal_gtk-account.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
 src/xdg_desktop_portal_gtk-accountdialog.$(OBJEXT):  \
 	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/xdg_desktop_portal_gtk-email.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
 src/xdg_desktop_portal_gtk-gtkbackports.$(OBJEXT):  \
 	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
 src/xdg_desktop_portal_gtk-externalwindow.$(OBJEXT):  \
@@ -688,12 +755,17 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/testappchooser-appchooserdialog.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/testappchooser-appchooserrow.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/testappchooser-resources.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/testappchooser-testappchooser.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-access.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-account.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-accountdialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-appchooser.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-appchooserdialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-appchooserrow.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-email.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-externalwindow-wayland.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-externalwindow-x11.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-externalwindow.Po@am__quote@
@@ -734,6 +806,62 @@ distclean-compile:
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LTCOMPILE) -c -o $@ $<
+
+src/testappchooser-testappchooser.o: src/testappchooser.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(testappchooser_CPPFLAGS) $(CPPFLAGS) $(testappchooser_CFLAGS) $(CFLAGS) -MT src/testappchooser-testappchooser.o -MD -MP -MF src/$(DEPDIR)/testappchooser-testappchooser.Tpo -c -o src/testappchooser-testappchooser.o `test -f 'src/testappchooser.c' || echo '$(srcdir)/'`src/testappchooser.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/testappchooser-testappchooser.Tpo src/$(DEPDIR)/testappchooser-testappchooser.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/testappchooser.c' object='src/testappchooser-testappchooser.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(testappchooser_CPPFLAGS) $(CPPFLAGS) $(testappchooser_CFLAGS) $(CFLAGS) -c -o src/testappchooser-testappchooser.o `test -f 'src/testappchooser.c' || echo '$(srcdir)/'`src/testappchooser.c
+
+src/testappchooser-testappchooser.obj: src/testappchooser.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(testappchooser_CPPFLAGS) $(CPPFLAGS) $(testappchooser_CFLAGS) $(CFLAGS) -MT src/testappchooser-testappchooser.obj -MD -MP -MF src/$(DEPDIR)/testappchooser-testappchooser.Tpo -c -o src/testappchooser-testappchooser.obj `if test -f 'src/testappchooser.c'; then $(CYGPATH_W) 'src/testappchooser.c'; else $(CYGPATH_W) '$(srcdir)/src/testappchooser.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/testappchooser-testappchooser.Tpo src/$(DEPDIR)/testappchooser-testappchooser.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/testappchooser.c' object='src/testappchooser-testappchooser.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(testappchooser_CPPFLAGS) $(CPPFLAGS) $(testappchooser_CFLAGS) $(CFLAGS) -c -o src/testappchooser-testappchooser.obj `if test -f 'src/testappchooser.c'; then $(CYGPATH_W) 'src/testappchooser.c'; else $(CYGPATH_W) '$(srcdir)/src/testappchooser.c'; fi`
+
+src/testappchooser-appchooserrow.o: src/appchooserrow.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(testappchooser_CPPFLAGS) $(CPPFLAGS) $(testappchooser_CFLAGS) $(CFLAGS) -MT src/testappchooser-appchooserrow.o -MD -MP -MF src/$(DEPDIR)/testappchooser-appchooserrow.Tpo -c -o src/testappchooser-appchooserrow.o `test -f 'src/appchooserrow.c' || echo '$(srcdir)/'`src/appchooserrow.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/testappchooser-appchooserrow.Tpo src/$(DEPDIR)/testappchooser-appchooserrow.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/appchooserrow.c' object='src/testappchooser-appchooserrow.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(testappchooser_CPPFLAGS) $(CPPFLAGS) $(testappchooser_CFLAGS) $(CFLAGS) -c -o src/testappchooser-appchooserrow.o `test -f 'src/appchooserrow.c' || echo '$(srcdir)/'`src/appchooserrow.c
+
+src/testappchooser-appchooserrow.obj: src/appchooserrow.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(testappchooser_CPPFLAGS) $(CPPFLAGS) $(testappchooser_CFLAGS) $(CFLAGS) -MT src/testappchooser-appchooserrow.obj -MD -MP -MF src/$(DEPDIR)/testappchooser-appchooserrow.Tpo -c -o src/testappchooser-appchooserrow.obj `if test -f 'src/appchooserrow.c'; then $(CYGPATH_W) 'src/appchooserrow.c'; else $(CYGPATH_W) '$(srcdir)/src/appchooserrow.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/testappchooser-appchooserrow.Tpo src/$(DEPDIR)/testappchooser-appchooserrow.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/appchooserrow.c' object='src/testappchooser-appchooserrow.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(testappchooser_CPPFLAGS) $(CPPFLAGS) $(testappchooser_CFLAGS) $(CFLAGS) -c -o src/testappchooser-appchooserrow.obj `if test -f 'src/appchooserrow.c'; then $(CYGPATH_W) 'src/appchooserrow.c'; else $(CYGPATH_W) '$(srcdir)/src/appchooserrow.c'; fi`
+
+src/testappchooser-appchooserdialog.o: src/appchooserdialog.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(testappchooser_CPPFLAGS) $(CPPFLAGS) $(testappchooser_CFLAGS) $(CFLAGS) -MT src/testappchooser-appchooserdialog.o -MD -MP -MF src/$(DEPDIR)/testappchooser-appchooserdialog.Tpo -c -o src/testappchooser-appchooserdialog.o `test -f 'src/appchooserdialog.c' || echo '$(srcdir)/'`src/appchooserdialog.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/testappchooser-appchooserdialog.Tpo src/$(DEPDIR)/testappchooser-appchooserdialog.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/appchooserdialog.c' object='src/testappchooser-appchooserdialog.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(testappchooser_CPPFLAGS) $(CPPFLAGS) $(testappchooser_CFLAGS) $(CFLAGS) -c -o src/testappchooser-appchooserdialog.o `test -f 'src/appchooserdialog.c' || echo '$(srcdir)/'`src/appchooserdialog.c
+
+src/testappchooser-appchooserdialog.obj: src/appchooserdialog.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(testappchooser_CPPFLAGS) $(CPPFLAGS) $(testappchooser_CFLAGS) $(CFLAGS) -MT src/testappchooser-appchooserdialog.obj -MD -MP -MF src/$(DEPDIR)/testappchooser-appchooserdialog.Tpo -c -o src/testappchooser-appchooserdialog.obj `if test -f 'src/appchooserdialog.c'; then $(CYGPATH_W) 'src/appchooserdialog.c'; else $(CYGPATH_W) '$(srcdir)/src/appchooserdialog.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/testappchooser-appchooserdialog.Tpo src/$(DEPDIR)/testappchooser-appchooserdialog.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/appchooserdialog.c' object='src/testappchooser-appchooserdialog.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(testappchooser_CPPFLAGS) $(CPPFLAGS) $(testappchooser_CFLAGS) $(CFLAGS) -c -o src/testappchooser-appchooserdialog.obj `if test -f 'src/appchooserdialog.c'; then $(CYGPATH_W) 'src/appchooserdialog.c'; else $(CYGPATH_W) '$(srcdir)/src/appchooserdialog.c'; fi`
+
+src/testappchooser-resources.o: src/resources.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(testappchooser_CPPFLAGS) $(CPPFLAGS) $(testappchooser_CFLAGS) $(CFLAGS) -MT src/testappchooser-resources.o -MD -MP -MF src/$(DEPDIR)/testappchooser-resources.Tpo -c -o src/testappchooser-resources.o `test -f 'src/resources.c' || echo '$(srcdir)/'`src/resources.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/testappchooser-resources.Tpo src/$(DEPDIR)/testappchooser-resources.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/resources.c' object='src/testappchooser-resources.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(testappchooser_CPPFLAGS) $(CPPFLAGS) $(testappchooser_CFLAGS) $(CFLAGS) -c -o src/testappchooser-resources.o `test -f 'src/resources.c' || echo '$(srcdir)/'`src/resources.c
+
+src/testappchooser-resources.obj: src/resources.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(testappchooser_CPPFLAGS) $(CPPFLAGS) $(testappchooser_CFLAGS) $(CFLAGS) -MT src/testappchooser-resources.obj -MD -MP -MF src/$(DEPDIR)/testappchooser-resources.Tpo -c -o src/testappchooser-resources.obj `if test -f 'src/resources.c'; then $(CYGPATH_W) 'src/resources.c'; else $(CYGPATH_W) '$(srcdir)/src/resources.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/testappchooser-resources.Tpo src/$(DEPDIR)/testappchooser-resources.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/resources.c' object='src/testappchooser-resources.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(testappchooser_CPPFLAGS) $(CPPFLAGS) $(testappchooser_CFLAGS) $(CFLAGS) -c -o src/testappchooser-resources.obj `if test -f 'src/resources.c'; then $(CYGPATH_W) 'src/resources.c'; else $(CYGPATH_W) '$(srcdir)/src/resources.c'; fi`
 
 src/xdg_desktop_portal_gtk-xdg-desktop-portal-gtk.o: src/xdg-desktop-portal-gtk.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-xdg-desktop-portal-gtk.o -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-xdg-desktop-portal-gtk.Tpo -c -o src/xdg_desktop_portal_gtk-xdg-desktop-portal-gtk.o `test -f 'src/xdg-desktop-portal-gtk.c' || echo '$(srcdir)/'`src/xdg-desktop-portal-gtk.c
@@ -959,6 +1087,20 @@ src/xdg_desktop_portal_gtk-accountdialog.obj: src/accountdialog.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-accountdialog.obj `if test -f 'src/accountdialog.c'; then $(CYGPATH_W) 'src/accountdialog.c'; else $(CYGPATH_W) '$(srcdir)/src/accountdialog.c'; fi`
 
+src/xdg_desktop_portal_gtk-email.o: src/email.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-email.o -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-email.Tpo -c -o src/xdg_desktop_portal_gtk-email.o `test -f 'src/email.c' || echo '$(srcdir)/'`src/email.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-email.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-email.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/email.c' object='src/xdg_desktop_portal_gtk-email.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-email.o `test -f 'src/email.c' || echo '$(srcdir)/'`src/email.c
+
+src/xdg_desktop_portal_gtk-email.obj: src/email.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-email.obj -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-email.Tpo -c -o src/xdg_desktop_portal_gtk-email.obj `if test -f 'src/email.c'; then $(CYGPATH_W) 'src/email.c'; else $(CYGPATH_W) '$(srcdir)/src/email.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-email.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-email.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/email.c' object='src/xdg_desktop_portal_gtk-email.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-email.obj `if test -f 'src/email.c'; then $(CYGPATH_W) 'src/email.c'; else $(CYGPATH_W) '$(srcdir)/src/email.c'; fi`
+
 src/xdg_desktop_portal_gtk-gtkbackports.o: src/gtkbackports.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-gtkbackports.o -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-gtkbackports.Tpo -c -o src/xdg_desktop_portal_gtk-gtkbackports.o `test -f 'src/gtkbackports.c' || echo '$(srcdir)/'`src/gtkbackports.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-gtkbackports.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-gtkbackports.Po
@@ -1072,6 +1214,27 @@ uninstall-dbus_serviceDATA:
 	@list='$(dbus_service_DATA)'; test -n "$(dbus_servicedir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 	dir='$(DESTDIR)$(dbus_servicedir)'; $(am__uninstall_files_from_dir)
+install-dist_desktopDATA: $(dist_desktop_DATA)
+	@$(NORMAL_INSTALL)
+	@list='$(dist_desktop_DATA)'; test -n "$(desktopdir)" || list=; \
+	if test -n "$$list"; then \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(desktopdir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(desktopdir)" || exit 1; \
+	fi; \
+	for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  echo "$$d$$p"; \
+	done | $(am__base_list) | \
+	while read files; do \
+	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(desktopdir)'"; \
+	  $(INSTALL_DATA) $$files "$(DESTDIR)$(desktopdir)" || exit $$?; \
+	done
+
+uninstall-dist_desktopDATA:
+	@$(NORMAL_UNINSTALL)
+	@list='$(dist_desktop_DATA)'; test -n "$(desktopdir)" || list=; \
+	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+	dir='$(DESTDIR)$(desktopdir)'; $(am__uninstall_files_from_dir)
 install-dist_portalDATA: $(dist_portal_DATA)
 	@$(NORMAL_INSTALL)
 	@list='$(dist_portal_DATA)'; test -n "$(portaldir)" || list=; \
@@ -1093,6 +1256,27 @@ uninstall-dist_portalDATA:
 	@list='$(dist_portal_DATA)'; test -n "$(portaldir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 	dir='$(DESTDIR)$(portaldir)'; $(am__uninstall_files_from_dir)
+install-systemduserunitDATA: $(systemduserunit_DATA)
+	@$(NORMAL_INSTALL)
+	@list='$(systemduserunit_DATA)'; test -n "$(systemduserunitdir)" || list=; \
+	if test -n "$$list"; then \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(systemduserunitdir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(systemduserunitdir)" || exit 1; \
+	fi; \
+	for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  echo "$$d$$p"; \
+	done | $(am__base_list) | \
+	while read files; do \
+	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(systemduserunitdir)'"; \
+	  $(INSTALL_DATA) $$files "$(DESTDIR)$(systemduserunitdir)" || exit $$?; \
+	done
+
+uninstall-systemduserunitDATA:
+	@$(NORMAL_UNINSTALL)
+	@list='$(systemduserunit_DATA)'; test -n "$(systemduserunitdir)" || list=; \
+	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+	dir='$(DESTDIR)$(systemduserunitdir)'; $(am__uninstall_files_from_dir)
 
 # This directory's subdirectories are mostly independent; you can cd
 # into them and run 'make' without going through this Makefile.
@@ -1393,7 +1577,7 @@ check: $(BUILT_SOURCES)
 all-am: Makefile $(PROGRAMS) $(DATA) config.h
 installdirs: installdirs-recursive
 installdirs-am:
-	for dir in "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(dbus_servicedir)" "$(DESTDIR)$(portaldir)"; do \
+	for dir in "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(dbus_servicedir)" "$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(portaldir)" "$(DESTDIR)$(systemduserunitdir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: $(BUILT_SOURCES)
@@ -1434,7 +1618,7 @@ maintainer-clean-generic:
 clean: clean-recursive
 
 clean-am: clean-generic clean-libexecPROGRAMS clean-libtool \
-	mostlyclean-am
+	clean-noinstPROGRAMS mostlyclean-am
 
 distclean: distclean-recursive
 	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
@@ -1455,7 +1639,8 @@ info: info-recursive
 
 info-am:
 
-install-data-am: install-dbus_serviceDATA install-dist_portalDATA
+install-data-am: install-dbus_serviceDATA install-dist_desktopDATA \
+	install-dist_portalDATA install-systemduserunitDATA
 
 install-dvi: install-dvi-recursive
 
@@ -1503,31 +1688,35 @@ ps: ps-recursive
 
 ps-am:
 
-uninstall-am: uninstall-dbus_serviceDATA uninstall-dist_portalDATA \
-	uninstall-libexecPROGRAMS
+uninstall-am: uninstall-dbus_serviceDATA uninstall-dist_desktopDATA \
+	uninstall-dist_portalDATA uninstall-libexecPROGRAMS \
+	uninstall-systemduserunitDATA
 
 .MAKE: $(am__recursive_targets) all check install install-am \
 	install-strip
 
 .PHONY: $(am__recursive_targets) CTAGS GTAGS TAGS all all-am \
 	am--refresh check check-am clean clean-cscope clean-generic \
-	clean-libexecPROGRAMS clean-libtool cscope cscopelist-am ctags \
-	ctags-am dist dist-all dist-bzip2 dist-gzip dist-lzip \
-	dist-shar dist-tarZ dist-xz dist-zip distcheck distclean \
-	distclean-compile distclean-generic distclean-hdr \
-	distclean-libtool distclean-tags distcleancheck distdir \
-	distuninstallcheck dvi dvi-am html html-am info info-am \
-	install install-am install-data install-data-am \
-	install-dbus_serviceDATA install-dist_portalDATA install-dvi \
-	install-dvi-am install-exec install-exec-am install-html \
-	install-html-am install-info install-info-am \
-	install-libexecPROGRAMS install-man install-pdf install-pdf-am \
-	install-ps install-ps-am install-strip installcheck \
-	installcheck-am installdirs installdirs-am maintainer-clean \
-	maintainer-clean-generic mostlyclean mostlyclean-compile \
-	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am \
-	tags tags-am uninstall uninstall-am uninstall-dbus_serviceDATA \
-	uninstall-dist_portalDATA uninstall-libexecPROGRAMS
+	clean-libexecPROGRAMS clean-libtool clean-noinstPROGRAMS \
+	cscope cscopelist-am ctags ctags-am dist dist-all dist-bzip2 \
+	dist-gzip dist-lzip dist-shar dist-tarZ dist-xz dist-zip \
+	distcheck distclean distclean-compile distclean-generic \
+	distclean-hdr distclean-libtool distclean-tags distcleancheck \
+	distdir distuninstallcheck dvi dvi-am html html-am info \
+	info-am install install-am install-data install-data-am \
+	install-dbus_serviceDATA install-dist_desktopDATA \
+	install-dist_portalDATA install-dvi install-dvi-am \
+	install-exec install-exec-am install-html install-html-am \
+	install-info install-info-am install-libexecPROGRAMS \
+	install-man install-pdf install-pdf-am install-ps \
+	install-ps-am install-strip install-systemduserunitDATA \
+	installcheck installcheck-am installdirs installdirs-am \
+	maintainer-clean maintainer-clean-generic mostlyclean \
+	mostlyclean-compile mostlyclean-generic mostlyclean-libtool \
+	pdf pdf-am ps ps-am tags tags-am uninstall uninstall-am \
+	uninstall-dbus_serviceDATA uninstall-dist_desktopDATA \
+	uninstall-dist_portalDATA uninstall-libexecPROGRAMS \
+	uninstall-systemduserunitDATA
 
 .PRECIOUS: Makefile
 
@@ -1547,6 +1736,7 @@ $(dbus_built_sources): src/Makefile.am.inc
 	 $(DESKTOP_PORTAL_INTERFACES_DIR)/org.freedesktop.impl.portal.Inhibit.xml \
 	 $(DESKTOP_PORTAL_INTERFACES_DIR)/org.freedesktop.impl.portal.Access.xml \
 	 $(DESKTOP_PORTAL_INTERFACES_DIR)/org.freedesktop.impl.portal.Account.xml \
+	 $(DESKTOP_PORTAL_INTERFACES_DIR)/org.freedesktop.impl.portal.Email.xml \
 	$(NULL)
 
 $(shell_built_sources): src/Makefile.am.inc
@@ -1566,6 +1756,12 @@ src/resources.c: src/xdg-desktop-portal-gtk.gresource.xml $(resource_files)
 
 %.service: data/%.service.in config.log
 	$(AM_V_GEN) $(SED) -e "s|\@libexecdir\@|$(libexecdir)|" $< > $@
+
+%.desktop.in: data/%.desktop.in.in
+	$(AM_V_GEN) sed -e "s|@libexecdir[@]|$(libexecdir)|" $< > $@
+
+%.desktop: %.desktop.in
+	$(AM_V_GEN) msgfmt --desktop -d po --template $< -o $@
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

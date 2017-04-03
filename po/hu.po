@@ -1,14 +1,14 @@
 # Hungarian translation for xdg-desktop-portal-gtk.
-# Copyright (C) 2016 Free Software Foundation, Inc.
+# Copyright (C) 2016, 2017 Free Software Foundation, Inc.
 # This file is distributed under the same license as the xdg-sesktop-portal-gtk package.
 #
-# Balázs Úr <urbalazs at gmail dot com>, 2016.
+# Balázs Úr <urbalazs at gmail dot com>, 2016, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-18 11:49-0500\n"
-"PO-Revision-Date: 2016-07-15 23:39+0200\n"
+"POT-Creation-Date: 2017-03-31 08:58-0400\n"
+"PO-Revision-Date: 2017-03-19 20:30+0100\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
 "Language: hu\n"
@@ -28,42 +28,39 @@ msgstr "Hozzáférés megadása"
 
 #: src/accountdialog.c:166
 msgid "Select an Image"
-msgstr ""
+msgstr "Válasszon lemezképet"
 
 #: src/accountdialog.c:169
-#, fuzzy
 msgid "Cancel"
-msgstr "_Mégse"
+msgstr "Mégse"
 
 #: src/accountdialog.c:170
-#, fuzzy
 msgid "Select"
-msgstr "_Kiválasztás"
+msgstr "Kiválasztás"
 
 #: src/accountdialog.c:171
 msgid "Clear"
-msgstr ""
+msgstr "Törlés"
 
 #: src/accountdialog.c:185
 msgid "Images"
-msgstr ""
+msgstr "Lemezképek"
 
 #: src/accountdialog.c:260
 #, c-format
 msgid "Share your personal information with %s?"
-msgstr ""
+msgstr "Megosztja a személyes információit ezzel: %s?"
 
 #: src/accountdialog.c:263
-#, fuzzy
 msgid "Share your personal information with the requesting application?"
-msgstr "Megosztja ezt a képernyőképet a kérő alkalmazással?"
+msgstr "Megosztja a személyes információit a kérelmező alkalmazással?"
 
 #: src/accountdialog.ui:10
 msgid "Share Details"
-msgstr ""
+msgstr "Részletek megosztása"
 
-#: src/accountdialog.ui:14 src/appchooser.c:179 src/appchooserdialog.ui:14
-#: src/filechooser.c:364 src/screenshotdialog.ui:14
+#: src/accountdialog.ui:14 src/appchooser.c:179 src/appchooserdialog.ui:16
+#: src/filechooser.c:365 src/screenshotdialog.ui:14
 msgid "_Cancel"
 msgstr "_Mégse"
 
@@ -73,13 +70,13 @@ msgstr "Meg_osztás"
 
 #: src/accountdialog.ui:148
 msgid "Make changes before sharing the information"
-msgstr ""
+msgstr "Megváltoztatás az információk megosztása előtt"
 
 #: src/appchooser.c:169
 msgid "_Select"
 msgstr "_Kiválasztás"
 
-#: src/appchooser.c:171 src/appchooserdialog.ui:10
+#: src/appchooser.c:171 src/appchooserdialog.ui:12
 msgid "Open With"
 msgstr "Megnyitás ezzel"
 
@@ -87,7 +84,12 @@ msgstr "Megnyitás ezzel"
 msgid "Select application"
 msgstr "Alkalmazás kiválasztása"
 
-#: src/appchooserdialog.ui:26 src/filechooser.c:362
+#: src/appchooserdialog.ui:77
+#, fuzzy
+msgid "No applications found"
+msgstr "Alkalmazás kiválasztása"
+
+#: src/filechooser.c:363
 msgid "_Open"
 msgstr "Meg_nyitás"
 
@@ -103,3 +105,11 @@ msgstr "Megosztja ezt a képernyőképet a kérő alkalmazással?"
 #: src/screenshotdialog.ui:10
 msgid "Screenshot"
 msgstr "Képernyőkép"
+
+#: data/xdg-desktop-portal-gtk.desktop.in.in:4
+msgid "Portal"
+msgstr ""
+
+#: data/xdg-desktop-portal-gtk.desktop.in.in:5
+msgid "applications-system-symbolic"
+msgstr ""

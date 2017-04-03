@@ -2,13 +2,13 @@
 # Copyright (C) 2016 xdg-desktop-portal-gtk's COPYRIGHT HOLDER
 # This file is distributed under the same license as the xdg-desktop-portal-gtk package.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2016.
+# Yuri Chornoivan <yurchor@ukr.net>, 2016, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-18 11:49-0500\n"
-"PO-Revision-Date: 2016-08-26 12:37+0300\n"
+"POT-Creation-Date: 2017-03-31 08:58-0400\n"
+"PO-Revision-Date: 2017-03-20 19:34+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -29,42 +29,39 @@ msgstr "Надати доступ"
 
 #: src/accountdialog.c:166
 msgid "Select an Image"
-msgstr ""
+msgstr "Виберіть образ"
 
 #: src/accountdialog.c:169
-#, fuzzy
 msgid "Cancel"
-msgstr "_Скасувати"
+msgstr "Скасувати"
 
 #: src/accountdialog.c:170
-#, fuzzy
 msgid "Select"
-msgstr "Ви_брати"
+msgstr "Вибрати"
 
 #: src/accountdialog.c:171
 msgid "Clear"
-msgstr ""
+msgstr "Спорожнити"
 
 #: src/accountdialog.c:185
 msgid "Images"
-msgstr ""
+msgstr "Образи"
 
 #: src/accountdialog.c:260
 #, c-format
 msgid "Share your personal information with %s?"
-msgstr ""
+msgstr "Поділитися вашими особистими даними з %s?"
 
 #: src/accountdialog.c:263
-#, fuzzy
 msgid "Share your personal information with the requesting application?"
-msgstr "Оприлюднити цей знімок екрана за допомогою відповідної програми?"
+msgstr "Поділитися вашими особистими даними з програмою, яка про це просить?"
 
 #: src/accountdialog.ui:10
 msgid "Share Details"
-msgstr ""
+msgstr "Оприлюднити подробиці"
 
-#: src/accountdialog.ui:14 src/appchooser.c:179 src/appchooserdialog.ui:14
-#: src/filechooser.c:364 src/screenshotdialog.ui:14
+#: src/accountdialog.ui:14 src/appchooser.c:179 src/appchooserdialog.ui:16
+#: src/filechooser.c:365 src/screenshotdialog.ui:14
 msgid "_Cancel"
 msgstr "_Скасувати"
 
@@ -74,13 +71,13 @@ msgstr "_Оприлюднити"
 
 #: src/accountdialog.ui:148
 msgid "Make changes before sharing the information"
-msgstr ""
+msgstr "Внести зміни до оприлюднення даних"
 
 #: src/appchooser.c:169
 msgid "_Select"
 msgstr "Ви_брати"
 
-#: src/appchooser.c:171 src/appchooserdialog.ui:10
+#: src/appchooser.c:171 src/appchooserdialog.ui:12
 msgid "Open With"
 msgstr "Відкрити за допомогою"
 
@@ -88,7 +85,12 @@ msgstr "Відкрити за допомогою"
 msgid "Select application"
 msgstr "Вибір програми"
 
-#: src/appchooserdialog.ui:26 src/filechooser.c:362
+#: src/appchooserdialog.ui:77
+#, fuzzy
+msgid "No applications found"
+msgstr "Вибір програми"
+
+#: src/filechooser.c:363
 msgid "_Open"
 msgstr "_Відкрити"
 
@@ -104,3 +106,11 @@ msgstr "Оприлюднити цей знімок екрана за допом�
 #: src/screenshotdialog.ui:10
 msgid "Screenshot"
 msgstr "Знімок екрана"
+
+#: data/xdg-desktop-portal-gtk.desktop.in.in:4
+msgid "Portal"
+msgstr ""
+
+#: data/xdg-desktop-portal-gtk.desktop.in.in:5
+msgid "applications-system-symbolic"
+msgstr ""

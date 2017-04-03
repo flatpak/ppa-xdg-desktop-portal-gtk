@@ -1,6 +1,6 @@
 AC_PREREQ([2.63])
 
-AC_INIT([xdg-desktop-portal-gtk],[0.5])
+AC_INIT([xdg-desktop-portal-gtk],[0.6])
 
 AC_PROG_CC
 AM_PROG_CC_C_O
@@ -43,12 +43,21 @@ AC_ARG_WITH(dbus_service_dir,
 DBUS_SERVICE_DIR=$with_dbus_service_dir
 AC_SUBST(DBUS_SERVICE_DIR)
 
+AC_ARG_WITH([systemduserunitdir],
+            [AS_HELP_STRING([--with-systemduserunitdir=DIR],
+                            [Directory for systemd user service files (default=PREFIX/lib/systemd/user)])],
+    [],
+    dnl This is deliberately not ${libdir}: systemd units always go in
+    dnl .../lib, never .../lib64 or .../lib/x86_64-linux-gnu
+    [with_systemduserunitdir='${prefix}/lib/systemd/user'])
+AC_SUBST([systemduserunitdir], [$with_systemduserunitdir])
+
 AC_SUBST([DESKTOP_PORTAL_INTERFACES_DIR], [`$PKG_CONFIG --variable=interfaces_dir xdg-desktop-portal`])
 AC_SUBST([DBUS_INTERFACES_DIR], [`$PKG_CONFIG --variable=interfaces_dir dbus-1`])
 AC_SUBST([GDBUS_CODEGEN], [`$PKG_CONFIG --variable gdbus_codegen gio-2.0`])
 AC_SUBST([GLIB_COMPILE_RESOURCES], [`$PKG_CONFIG --variable glib_compile_resources gio-2.0`])
 
-PKG_CHECK_MODULES(GTK, [xdg-desktop-portal gtk+-3.0 gtk+-unix-print-3.0])
+PKG_CHECK_MODULES(GTK, [xdg-desktop-portal glib-2.0 >= 2.44 gtk+-3.0 >= 3.14 gtk+-unix-print-3.0])
 AC_SUBST(GTK_CFLAGS)
 AC_SUBST(GTK_LIBS)
 

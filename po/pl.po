@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-18 11:49-0500\n"
+"POT-Creation-Date: 2017-03-31 08:58-0400\n"
 "PO-Revision-Date: 2017-01-16 14:00+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
@@ -60,8 +60,8 @@ msgstr "Udostępnić informacje o użytkowniku proszącemu o to programowi?"
 msgid "Share Details"
 msgstr "Udostępnianie informacji"
 
-#: src/accountdialog.ui:14 src/appchooser.c:179 src/appchooserdialog.ui:14
-#: src/filechooser.c:364 src/screenshotdialog.ui:14
+#: src/accountdialog.ui:14 src/appchooser.c:179 src/appchooserdialog.ui:16
+#: src/filechooser.c:365 src/screenshotdialog.ui:14
 msgid "_Cancel"
 msgstr "_Anuluj"
 
@@ -77,7 +77,7 @@ msgstr "Umożliwia wprowadzenie zmian przed udostępnieniem informacji"
 msgid "_Select"
 msgstr "_Wybierz"
 
-#: src/appchooser.c:171 src/appchooserdialog.ui:10
+#: src/appchooser.c:171 src/appchooserdialog.ui:12
 msgid "Open With"
 msgstr "Otwarcie za pomocą"
 
@@ -85,7 +85,12 @@ msgstr "Otwarcie za pomocą"
 msgid "Select application"
 msgstr "Wybór programu"
 
-#: src/appchooserdialog.ui:26 src/filechooser.c:362
+#: src/appchooserdialog.ui:77
+#, fuzzy
+msgid "No applications found"
+msgstr "Wybór programu"
+
+#: src/filechooser.c:363
 msgid "_Open"
 msgstr "_Otwórz"
 
@@ -101,3 +106,11 @@ msgstr "Udostępnić ten zrzut ekranu proszącemu o to programowi?"
 #: src/screenshotdialog.ui:10
 msgid "Screenshot"
 msgstr "Zrzut ekranu"
+
+#: data/xdg-desktop-portal-gtk.desktop.in.in:4
+msgid "Portal"
+msgstr ""
+
+#: data/xdg-desktop-portal-gtk.desktop.in.in:5
+msgid "applications-system-symbolic"
+msgstr ""
