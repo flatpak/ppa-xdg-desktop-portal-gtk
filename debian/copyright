@@ -5,7 +5,8 @@ Source: https://github.com/flatpak/xdg-desktop-portal-gtk/releases
 Files:
  *
 Copyright:
- © 2015-2016 Red Hat, Inc
+ © 2015-2017 Red Hat, Inc
+ © 2016-2017 Free Software Foundation, Inc.
  © 2016 Christian Kirbach
  © 2016 Mario Sanchez Prada
  © 2016 Piotr Drag
@@ -16,6 +17,7 @@ Files:
  debian/*
 Copyright:
  © 2016 Simon McVittie
+ © 2017 Collabora Ltd.
 License: LGPL-2+
 
 License: LGPL-2+
