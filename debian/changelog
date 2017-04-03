@@ -1,4 +1,4 @@
-xdg-desktop-portal-gtk (0.6-1) unstable; urgency=medium
+xdg-desktop-portal-gtk (0.6-1) experimental; urgency=medium
 
   * New upstream release
     - Apply some post-release bug fixes from upstream
@@ -8,7 +8,7 @@ xdg-desktop-portal-gtk (0.6-1) unstable; urgency=medium
   * Do not explicitly disable quiet Automake output: dh now does this
     by default
 
- -- Simon McVittie <smcv@debian.org>  Mon, 03 Apr 2017 16:34:51 +0100
+ -- Simon McVittie <smcv@debian.org>  Mon, 03 Apr 2017 18:03:41 +0100
 
 xdg-desktop-portal-gtk (0.5-1) unstable; urgency=medium
 
