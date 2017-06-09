@@ -1,4 +1,4 @@
-xdg-desktop-portal-gtk (0.7-1) UNRELEASED; urgency=medium
+xdg-desktop-portal-gtk (0.7-1) experimental; urgency=medium
 
   * New upstream release
     - Drop patches, no longer needed
@@ -7,7 +7,7 @@ xdg-desktop-portal-gtk (0.7-1) UNRELEASED; urgency=medium
     of xdg-desktop-portal-dev instead.
   * debian/patches/*: Update app chooser design from upstream git
 
- -- Simon McVittie <smcv@debian.org>  Fri, 09 Jun 2017 08:07:35 +0100
+ -- Simon McVittie <smcv@debian.org>  Fri, 09 Jun 2017 08:28:33 +0100
 
 xdg-desktop-portal-gtk (0.6-1) experimental; urgency=medium
 
