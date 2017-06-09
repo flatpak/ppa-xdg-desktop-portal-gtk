@@ -5,6 +5,7 @@ xdg-desktop-portal-gtk (0.7-1) UNRELEASED; urgency=medium
   * Drop build-dependency on libflatpak-dev, which was only needed due
     to bugs in xdg-desktop-portal-dev. Build-depend on a fixed version
     of xdg-desktop-portal-dev instead.
+  * debian/patches/*: Update app chooser design from upstream git
 
  -- Simon McVittie <smcv@debian.org>  Fri, 09 Jun 2017 08:07:35 +0100
 

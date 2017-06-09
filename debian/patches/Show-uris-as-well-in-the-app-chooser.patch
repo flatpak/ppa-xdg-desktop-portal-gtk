@@ -1,0 +1,116 @@
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Tue, 6 Jun 2017 12:48:43 -0400
+Subject: Show uris as well in the app chooser
+
+The latest mockups call for this, and it lets the user make
+an informed decision.
+
+Origin: upstream, 0.8, commit:5b730017b98e046581b8c37d0cf8f229849630ac
+---
+ src/appchooser.c       |  9 +++++----
+ src/appchooserdialog.c | 10 +++++-----
+ src/testappchooser.c   |  6 +++---
+ 3 files changed, 13 insertions(+), 12 deletions(-)
+
+diff --git a/src/appchooser.c b/src/appchooser.c
+index 51af4f5..308997e 100644
+--- a/src/appchooser.c
++++ b/src/appchooser.c
+@@ -153,7 +153,7 @@ handle_choose_application (XdpImplAppChooser *object,
+   const char *sender;
+   const char *latest_chosen_id;
+   const char *content_type;
+-  const char *filename;
++  const char *location;
+   gboolean modal;
+   GdkDisplay *display;
+   GdkScreen *screen;
+@@ -170,8 +170,9 @@ handle_choose_application (XdpImplAppChooser *object,
+     modal = TRUE;
+   if (!g_variant_lookup (arg_options, "content_type", "&s", &content_type))
+     content_type = NULL;
+-  if (!g_variant_lookup (arg_options, "filename", "&s", &filename))
+-    filename = NULL;
++  if (!g_variant_lookup (arg_options, "filename", "&s", &location) &&
++      !g_variant_lookup (arg_options, "uri", "&s", &location))
++    location = NULL;
+ 
+   if (arg_parent_window)
+     {
+@@ -193,7 +194,7 @@ handle_choose_application (XdpImplAppChooser *object,
+                               NULL);
+   g_object_ref_sink (fake_parent);
+ 
+-  dialog = GTK_WIDGET (app_chooser_dialog_new (choices, latest_chosen_id, content_type, filename));
++  dialog = GTK_WIDGET (app_chooser_dialog_new (choices, latest_chosen_id, content_type, location));
+   gtk_window_set_transient_for (GTK_WINDOW (dialog), GTK_WINDOW (fake_parent));
+ 
+   gtk_window_set_modal (GTK_WINDOW (dialog), modal);
+diff --git a/src/appchooserdialog.c b/src/appchooserdialog.c
+index 855d9aa..5eb2da6 100644
+--- a/src/appchooserdialog.c
++++ b/src/appchooserdialog.c
+@@ -345,7 +345,7 @@ AppChooserDialog *
+ app_chooser_dialog_new (const char **choices,
+                         const char *default_id,
+                         const char *content_type,
+-                        const char *filename)
++                        const char *location)
+ {
+   AppChooserDialog *dialog;
+   int n_choices;
+@@ -366,11 +366,11 @@ app_chooser_dialog_new (const char **choices,
+ 
+   dialog->content_type = g_strdup (content_type);
+ 
+-  if (filename)
++  if (location)
+     {
+       g_autofree char *heading = NULL;
+ 
+-      heading = g_strdup_printf (_("Select an application to open “%s”. More applications are available in <a href='software'>Software.</a>"), filename);
++      heading = g_strdup_printf (_("Select an application to open “%s”. More applications are available in <a href='software'>Software.</a>"), location);
+       gtk_label_set_label (GTK_LABEL (dialog->heading), heading);
+     }
+   else
+@@ -384,11 +384,11 @@ app_chooser_dialog_new (const char **choices,
+   if (n_choices == 0)
+     {
+       gtk_stack_set_visible_child_name (GTK_STACK (dialog->stack), "empty");
+-      if (filename)
++      if (location)
+         {
+           g_autofree char *label = NULL;
+ 
+-          label = g_strdup_printf (_("Unable to find an application that is able to open “%s”."), filename);
++          label = g_strdup_printf (_("Unable to find an application that is able to open “%s”."), location);
+           gtk_label_set_label (GTK_LABEL (dialog->empty_label), label);
+         }
+       else
+diff --git a/src/testappchooser.c b/src/testappchooser.c
+index a98b27c..f6e76c9 100644
+--- a/src/testappchooser.c
++++ b/src/testappchooser.c
+@@ -25,11 +25,11 @@ main (int argc, char *argv[])
+         int i;
+         const char *default_id = NULL;
+         const char *content_type = NULL;
+-        const char *filename = NULL;
++        const char *location = NULL;
+         GOptionEntry entries[] = {
+           { "default", 0, 0, G_OPTION_ARG_STRING, &default_id, "The default choice", "ID" },
+           { "content-type", 0, 0, G_OPTION_ARG_STRING, &content_type, "The content type", "TYPE" },
+-          { "filename", 0, 0, G_OPTION_ARG_STRING, &filename, "The filename", "FILE" },
++          { "location", 0, 0, G_OPTION_ARG_STRING, &location, "The location (file or uri)", "LOCATION" },
+           { NULL, }
+         };
+ 
+@@ -40,7 +40,7 @@ main (int argc, char *argv[])
+                 apps[i] = argv[i + 1];
+         apps[argc - 1] = NULL;
+ 
+-        window = GTK_WIDGET (app_chooser_dialog_new (apps, default_id, content_type, filename));
++        window = GTK_WIDGET (app_chooser_dialog_new (apps, default_id, content_type, location));
+         g_signal_connect (window, "close", G_CALLBACK (close_cb), NULL);
+ 
+         gtk_widget_show (window);
