@@ -114,8 +114,7 @@ am__aclocal_m4_deps = $(top_srcdir)/m4/gettext.m4 \
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 DIST_COMMON = $(srcdir)/Makefile.am $(top_srcdir)/configure \
-	$(am__configure_deps) $(dist_desktop_DATA) $(dist_portal_DATA) \
-	$(am__DIST_COMMON)
+	$(am__configure_deps) $(dist_portal_DATA) $(am__DIST_COMMON)
 am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno config.status.lineno
 mkinstalldirs = $(install_sh) -d
@@ -152,19 +151,14 @@ am__xdg_desktop_portal_gtk_SOURCES_DIST =  \
 	src/inhibit.c src/appchooserrow.h src/appchooserrow.c \
 	src/appchooserdialog.h src/appchooserdialog.c src/screenshot.h \
 	src/screenshot.c src/screenshotdialog.h src/screenshotdialog.c \
-	src/resources.c src/print.h src/print.c src/access.h \
-	src/access.c src/account.h src/account.c src/accountdialog.h \
+	src/print.h src/print.c src/access.h src/access.c \
+	src/account.h src/account.c src/accountdialog.h \
 	src/accountdialog.c src/email.h src/email.c src/gtkbackports.h \
 	src/gtkbackports.c src/externalwindow.h src/externalwindow.c \
-	src/xdg-desktop-portal-dbus.c src/xdg-desktop-portal-dbus.h \
-	src/shell-dbus.c src/shell-dbus.h src/externalwindow-x11.h \
-	src/externalwindow-x11.c src/externalwindow-wayland.h \
-	src/externalwindow-wayland.c
-am__objects_1 =  \
-	src/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.$(OBJEXT)
-am__objects_2 = src/xdg_desktop_portal_gtk-shell-dbus.$(OBJEXT)
-@HAVE_GTK_X11_TRUE@am__objects_3 = src/xdg_desktop_portal_gtk-externalwindow-x11.$(OBJEXT)
-@HAVE_GTK_WAYLAND_TRUE@am__objects_4 = src/xdg_desktop_portal_gtk-externalwindow-wayland.$(OBJEXT)
+	src/externalwindow-x11.h src/externalwindow-x11.c \
+	src/externalwindow-wayland.h src/externalwindow-wayland.c
+@HAVE_GTK_X11_TRUE@am__objects_1 = src/xdg_desktop_portal_gtk-externalwindow-x11.$(OBJEXT)
+@HAVE_GTK_WAYLAND_TRUE@am__objects_2 = src/xdg_desktop_portal_gtk-externalwindow-wayland.$(OBJEXT)
 am_xdg_desktop_portal_gtk_OBJECTS =  \
 	src/xdg_desktop_portal_gtk-xdg-desktop-portal-gtk.$(OBJEXT) \
 	src/xdg_desktop_portal_gtk-utils.$(OBJEXT) \
@@ -177,7 +171,6 @@ am_xdg_desktop_portal_gtk_OBJECTS =  \
 	src/xdg_desktop_portal_gtk-appchooserdialog.$(OBJEXT) \
 	src/xdg_desktop_portal_gtk-screenshot.$(OBJEXT) \
 	src/xdg_desktop_portal_gtk-screenshotdialog.$(OBJEXT) \
-	src/xdg_desktop_portal_gtk-resources.$(OBJEXT) \
 	src/xdg_desktop_portal_gtk-print.$(OBJEXT) \
 	src/xdg_desktop_portal_gtk-access.$(OBJEXT) \
 	src/xdg_desktop_portal_gtk-account.$(OBJEXT) \
@@ -185,9 +178,15 @@ am_xdg_desktop_portal_gtk_OBJECTS =  \
 	src/xdg_desktop_portal_gtk-email.$(OBJEXT) \
 	src/xdg_desktop_portal_gtk-gtkbackports.$(OBJEXT) \
 	src/xdg_desktop_portal_gtk-externalwindow.$(OBJEXT) \
-	$(am__objects_1) $(am__objects_2) $(am__objects_3) \
-	$(am__objects_4)
-xdg_desktop_portal_gtk_OBJECTS = $(am_xdg_desktop_portal_gtk_OBJECTS)
+	$(am__objects_1) $(am__objects_2)
+am__objects_3 =  \
+	src/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.$(OBJEXT)
+am__objects_4 = src/xdg_desktop_portal_gtk-shell-dbus.$(OBJEXT)
+nodist_xdg_desktop_portal_gtk_OBJECTS =  \
+	src/xdg_desktop_portal_gtk-resources.$(OBJEXT) \
+	$(am__objects_3) $(am__objects_4)
+xdg_desktop_portal_gtk_OBJECTS = $(am_xdg_desktop_portal_gtk_OBJECTS) \
+	$(nodist_xdg_desktop_portal_gtk_OBJECTS)
 xdg_desktop_portal_gtk_DEPENDENCIES = $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 xdg_desktop_portal_gtk_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
@@ -228,7 +227,8 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(testappchooser_SOURCES) $(xdg_desktop_portal_gtk_SOURCES)
+SOURCES = $(testappchooser_SOURCES) $(xdg_desktop_portal_gtk_SOURCES) \
+	$(nodist_xdg_desktop_portal_gtk_SOURCES)
 DIST_SOURCES = $(testappchooser_SOURCES) \
 	$(am__xdg_desktop_portal_gtk_SOURCES_DIST)
 RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
@@ -271,7 +271,7 @@ am__uninstall_files_from_dir = { \
     || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
          $(am__cd) "$$dir" && rm -f $$files; }; \
   }
-DATA = $(dbus_service_DATA) $(dist_desktop_DATA) $(dist_portal_DATA) \
+DATA = $(dbus_service_DATA) $(desktop_DATA) $(dist_portal_DATA) \
 	$(systemduserunit_DATA)
 RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
   distclean-recursive maintainer-clean-recursive
@@ -500,8 +500,9 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = po
 BUILT_SOURCES = $(dbus_built_sources) $(shell_built_sources)
-CLEANFILES = $(dbus_service_DATA) $(systemduserunit_DATA) \
-	$(dist_desktop_DATA)
+CLEANFILES = $(dbus_built_sources) $(shell_built_sources) \
+	$(dbus_service_DATA) $(systemduserunit_DATA) \
+	$(desktop_in_files) $(desktop_DATA) $(NULL)
 EXTRA_DIST = src/xdg-desktop-portal-gtk.gresource.xml \
 	src/appchooserdialog.ui src/appchooserdialog.css \
 	src/appchooserrow.ui src/screenshotdialog.ui \
@@ -523,13 +524,18 @@ xdg_desktop_portal_gtk_SOURCES = src/xdg-desktop-portal-gtk.c \
 	src/inhibit.h src/inhibit.c src/appchooserrow.h \
 	src/appchooserrow.c src/appchooserdialog.h \
 	src/appchooserdialog.c src/screenshot.h src/screenshot.c \
-	src/screenshotdialog.h src/screenshotdialog.c src/resources.c \
-	src/print.h src/print.c src/access.h src/access.c \
-	src/account.h src/account.c src/accountdialog.h \
-	src/accountdialog.c src/email.h src/email.c src/gtkbackports.h \
-	src/gtkbackports.c src/externalwindow.h src/externalwindow.c \
-	$(dbus_built_sources) $(shell_built_sources) $(NULL) \
+	src/screenshotdialog.h src/screenshotdialog.c src/print.h \
+	src/print.c src/access.h src/access.c src/account.h \
+	src/account.c src/accountdialog.h src/accountdialog.c \
+	src/email.h src/email.c src/gtkbackports.h src/gtkbackports.c \
+	src/externalwindow.h src/externalwindow.c $(NULL) \
 	$(am__append_1) $(am__append_2)
+nodist_xdg_desktop_portal_gtk_SOURCES = \
+	src/resources.c				\
+	$(dbus_built_sources)			\
+	$(shell_built_sources)			\
+	$(NULL)
+
 xdg_desktop_portal_gtk_LDADD = $(BASE_LIBS) $(GTK_LIBS) $(GTK_X11_LIBS)
 xdg_desktop_portal_gtk_CFLAGS = $(BASE_CFLAGS) $(GTK_CFLAGS) $(GTK_X11_CFLAGS)
 xdg_desktop_portal_gtk_CPPFLAGS = \
@@ -566,7 +572,8 @@ systemduserunit_in_files = data/xdg-desktop-portal-gtk.service.in
 systemduserunit_DATA = xdg-desktop-portal-gtk.service
 desktopdir = $(datadir)/applications
 desktop_in_in_files = data/xdg-desktop-portal-gtk.desktop.in.in
-dist_desktop_DATA = xdg-desktop-portal-gtk.desktop
+desktop_in_files = xdg-desktop-portal-gtk.desktop.in
+desktop_DATA = xdg-desktop-portal-gtk.desktop
 all: $(BUILT_SOURCES) config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
 
@@ -719,8 +726,6 @@ src/xdg_desktop_portal_gtk-screenshot.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
 src/xdg_desktop_portal_gtk-screenshotdialog.$(OBJEXT):  \
 	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
-src/xdg_desktop_portal_gtk-resources.$(OBJEXT): src/$(am__dirstamp) \
-	src/$(DEPDIR)/$(am__dirstamp)
 src/xdg_desktop_portal_gtk-print.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
 src/xdg_desktop_portal_gtk-access.$(OBJEXT): src/$(am__dirstamp) \
@@ -735,14 +740,16 @@ src/xdg_desktop_portal_gtk-gtkbackports.$(OBJEXT):  \
 	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
 src/xdg_desktop_portal_gtk-externalwindow.$(OBJEXT):  \
 	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
-src/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.$(OBJEXT):  \
-	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
-src/xdg_desktop_portal_gtk-shell-dbus.$(OBJEXT): src/$(am__dirstamp) \
-	src/$(DEPDIR)/$(am__dirstamp)
 src/xdg_desktop_portal_gtk-externalwindow-x11.$(OBJEXT):  \
 	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
 src/xdg_desktop_portal_gtk-externalwindow-wayland.$(OBJEXT):  \
 	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/xdg_desktop_portal_gtk-resources.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
+src/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/xdg_desktop_portal_gtk-shell-dbus.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
 
 xdg-desktop-portal-gtk$(EXEEXT): $(xdg_desktop_portal_gtk_OBJECTS) $(xdg_desktop_portal_gtk_DEPENDENCIES) $(EXTRA_xdg_desktop_portal_gtk_DEPENDENCIES) 
 	@rm -f xdg-desktop-portal-gtk$(EXEEXT)
@@ -1017,20 +1024,6 @@ src/xdg_desktop_portal_gtk-screenshotdialog.obj: src/screenshotdialog.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-screenshotdialog.obj `if test -f 'src/screenshotdialog.c'; then $(CYGPATH_W) 'src/screenshotdialog.c'; else $(CYGPATH_W) '$(srcdir)/src/screenshotdialog.c'; fi`
 
-src/xdg_desktop_portal_gtk-resources.o: src/resources.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-resources.o -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-resources.Tpo -c -o src/xdg_desktop_portal_gtk-resources.o `test -f 'src/resources.c' || echo '$(srcdir)/'`src/resources.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-resources.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-resources.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/resources.c' object='src/xdg_desktop_portal_gtk-resources.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-resources.o `test -f 'src/resources.c' || echo '$(srcdir)/'`src/resources.c
-
-src/xdg_desktop_portal_gtk-resources.obj: src/resources.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-resources.obj -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-resources.Tpo -c -o src/xdg_desktop_portal_gtk-resources.obj `if test -f 'src/resources.c'; then $(CYGPATH_W) 'src/resources.c'; else $(CYGPATH_W) '$(srcdir)/src/resources.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-resources.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-resources.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/resources.c' object='src/xdg_desktop_portal_gtk-resources.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-resources.obj `if test -f 'src/resources.c'; then $(CYGPATH_W) 'src/resources.c'; else $(CYGPATH_W) '$(srcdir)/src/resources.c'; fi`
-
 src/xdg_desktop_portal_gtk-print.o: src/print.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-print.o -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-print.Tpo -c -o src/xdg_desktop_portal_gtk-print.o `test -f 'src/print.c' || echo '$(srcdir)/'`src/print.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-print.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-print.Po
@@ -1129,34 +1122,6 @@ src/xdg_desktop_portal_gtk-externalwindow.obj: src/externalwindow.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-externalwindow.obj `if test -f 'src/externalwindow.c'; then $(CYGPATH_W) 'src/externalwindow.c'; else $(CYGPATH_W) '$(srcdir)/src/externalwindow.c'; fi`
 
-src/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.o: src/xdg-desktop-portal-dbus.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.o -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.Tpo -c -o src/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.o `test -f 'src/xdg-desktop-portal-dbus.c' || echo '$(srcdir)/'`src/xdg-desktop-portal-dbus.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/xdg-desktop-portal-dbus.c' object='src/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.o `test -f 'src/xdg-desktop-portal-dbus.c' || echo '$(srcdir)/'`src/xdg-desktop-portal-dbus.c
-
-src/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.obj: src/xdg-desktop-portal-dbus.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.obj -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.Tpo -c -o src/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.obj `if test -f 'src/xdg-desktop-portal-dbus.c'; then $(CYGPATH_W) 'src/xdg-desktop-portal-dbus.c'; else $(CYGPATH_W) '$(srcdir)/src/xdg-desktop-portal-dbus.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/xdg-desktop-portal-dbus.c' object='src/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.obj `if test -f 'src/xdg-desktop-portal-dbus.c'; then $(CYGPATH_W) 'src/xdg-desktop-portal-dbus.c'; else $(CYGPATH_W) '$(srcdir)/src/xdg-desktop-portal-dbus.c'; fi`
-
-src/xdg_desktop_portal_gtk-shell-dbus.o: src/shell-dbus.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-shell-dbus.o -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-shell-dbus.Tpo -c -o src/xdg_desktop_portal_gtk-shell-dbus.o `test -f 'src/shell-dbus.c' || echo '$(srcdir)/'`src/shell-dbus.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-shell-dbus.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-shell-dbus.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/shell-dbus.c' object='src/xdg_desktop_portal_gtk-shell-dbus.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-shell-dbus.o `test -f 'src/shell-dbus.c' || echo '$(srcdir)/'`src/shell-dbus.c
-
-src/xdg_desktop_portal_gtk-shell-dbus.obj: src/shell-dbus.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-shell-dbus.obj -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-shell-dbus.Tpo -c -o src/xdg_desktop_portal_gtk-shell-dbus.obj `if test -f 'src/shell-dbus.c'; then $(CYGPATH_W) 'src/shell-dbus.c'; else $(CYGPATH_W) '$(srcdir)/src/shell-dbus.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-shell-dbus.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-shell-dbus.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/shell-dbus.c' object='src/xdg_desktop_portal_gtk-shell-dbus.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-shell-dbus.obj `if test -f 'src/shell-dbus.c'; then $(CYGPATH_W) 'src/shell-dbus.c'; else $(CYGPATH_W) '$(srcdir)/src/shell-dbus.c'; fi`
-
 src/xdg_desktop_portal_gtk-externalwindow-x11.o: src/externalwindow-x11.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-externalwindow-x11.o -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-externalwindow-x11.Tpo -c -o src/xdg_desktop_portal_gtk-externalwindow-x11.o `test -f 'src/externalwindow-x11.c' || echo '$(srcdir)/'`src/externalwindow-x11.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-externalwindow-x11.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-externalwindow-x11.Po
@@ -1184,6 +1149,48 @@ src/xdg_desktop_portal_gtk-externalwindow-wayland.obj: src/externalwindow-waylan
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/externalwindow-wayland.c' object='src/xdg_desktop_portal_gtk-externalwindow-wayland.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-externalwindow-wayland.obj `if test -f 'src/externalwindow-wayland.c'; then $(CYGPATH_W) 'src/externalwindow-wayland.c'; else $(CYGPATH_W) '$(srcdir)/src/externalwindow-wayland.c'; fi`
+
+src/xdg_desktop_portal_gtk-resources.o: src/resources.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-resources.o -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-resources.Tpo -c -o src/xdg_desktop_portal_gtk-resources.o `test -f 'src/resources.c' || echo '$(srcdir)/'`src/resources.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-resources.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-resources.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/resources.c' object='src/xdg_desktop_portal_gtk-resources.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-resources.o `test -f 'src/resources.c' || echo '$(srcdir)/'`src/resources.c
+
+src/xdg_desktop_portal_gtk-resources.obj: src/resources.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-resources.obj -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-resources.Tpo -c -o src/xdg_desktop_portal_gtk-resources.obj `if test -f 'src/resources.c'; then $(CYGPATH_W) 'src/resources.c'; else $(CYGPATH_W) '$(srcdir)/src/resources.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-resources.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-resources.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/resources.c' object='src/xdg_desktop_portal_gtk-resources.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-resources.obj `if test -f 'src/resources.c'; then $(CYGPATH_W) 'src/resources.c'; else $(CYGPATH_W) '$(srcdir)/src/resources.c'; fi`
+
+src/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.o: src/xdg-desktop-portal-dbus.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.o -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.Tpo -c -o src/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.o `test -f 'src/xdg-desktop-portal-dbus.c' || echo '$(srcdir)/'`src/xdg-desktop-portal-dbus.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/xdg-desktop-portal-dbus.c' object='src/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.o `test -f 'src/xdg-desktop-portal-dbus.c' || echo '$(srcdir)/'`src/xdg-desktop-portal-dbus.c
+
+src/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.obj: src/xdg-desktop-portal-dbus.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.obj -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.Tpo -c -o src/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.obj `if test -f 'src/xdg-desktop-portal-dbus.c'; then $(CYGPATH_W) 'src/xdg-desktop-portal-dbus.c'; else $(CYGPATH_W) '$(srcdir)/src/xdg-desktop-portal-dbus.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/xdg-desktop-portal-dbus.c' object='src/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.obj `if test -f 'src/xdg-desktop-portal-dbus.c'; then $(CYGPATH_W) 'src/xdg-desktop-portal-dbus.c'; else $(CYGPATH_W) '$(srcdir)/src/xdg-desktop-portal-dbus.c'; fi`
+
+src/xdg_desktop_portal_gtk-shell-dbus.o: src/shell-dbus.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-shell-dbus.o -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-shell-dbus.Tpo -c -o src/xdg_desktop_portal_gtk-shell-dbus.o `test -f 'src/shell-dbus.c' || echo '$(srcdir)/'`src/shell-dbus.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-shell-dbus.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-shell-dbus.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/shell-dbus.c' object='src/xdg_desktop_portal_gtk-shell-dbus.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-shell-dbus.o `test -f 'src/shell-dbus.c' || echo '$(srcdir)/'`src/shell-dbus.c
+
+src/xdg_desktop_portal_gtk-shell-dbus.obj: src/shell-dbus.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-shell-dbus.obj -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-shell-dbus.Tpo -c -o src/xdg_desktop_portal_gtk-shell-dbus.obj `if test -f 'src/shell-dbus.c'; then $(CYGPATH_W) 'src/shell-dbus.c'; else $(CYGPATH_W) '$(srcdir)/src/shell-dbus.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-shell-dbus.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-shell-dbus.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/shell-dbus.c' object='src/xdg_desktop_portal_gtk-shell-dbus.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-shell-dbus.obj `if test -f 'src/shell-dbus.c'; then $(CYGPATH_W) 'src/shell-dbus.c'; else $(CYGPATH_W) '$(srcdir)/src/shell-dbus.c'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo
@@ -1214,9 +1221,9 @@ uninstall-dbus_serviceDATA:
 	@list='$(dbus_service_DATA)'; test -n "$(dbus_servicedir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 	dir='$(DESTDIR)$(dbus_servicedir)'; $(am__uninstall_files_from_dir)
-install-dist_desktopDATA: $(dist_desktop_DATA)
+install-desktopDATA: $(desktop_DATA)
 	@$(NORMAL_INSTALL)
-	@list='$(dist_desktop_DATA)'; test -n "$(desktopdir)" || list=; \
+	@list='$(desktop_DATA)'; test -n "$(desktopdir)" || list=; \
 	if test -n "$$list"; then \
 	  echo " $(MKDIR_P) '$(DESTDIR)$(desktopdir)'"; \
 	  $(MKDIR_P) "$(DESTDIR)$(desktopdir)" || exit 1; \
@@ -1230,9 +1237,9 @@ install-dist_desktopDATA: $(dist_desktop_DATA)
 	  $(INSTALL_DATA) $$files "$(DESTDIR)$(desktopdir)" || exit $$?; \
 	done
 
-uninstall-dist_desktopDATA:
+uninstall-desktopDATA:
 	@$(NORMAL_UNINSTALL)
-	@list='$(dist_desktop_DATA)'; test -n "$(desktopdir)" || list=; \
+	@list='$(desktop_DATA)'; test -n "$(desktopdir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 	dir='$(DESTDIR)$(desktopdir)'; $(am__uninstall_files_from_dir)
 install-dist_portalDATA: $(dist_portal_DATA)
@@ -1639,7 +1646,7 @@ info: info-recursive
 
 info-am:
 
-install-data-am: install-dbus_serviceDATA install-dist_desktopDATA \
+install-data-am: install-dbus_serviceDATA install-desktopDATA \
 	install-dist_portalDATA install-systemduserunitDATA
 
 install-dvi: install-dvi-recursive
@@ -1688,7 +1695,7 @@ ps: ps-recursive
 
 ps-am:
 
-uninstall-am: uninstall-dbus_serviceDATA uninstall-dist_desktopDATA \
+uninstall-am: uninstall-dbus_serviceDATA uninstall-desktopDATA \
 	uninstall-dist_portalDATA uninstall-libexecPROGRAMS \
 	uninstall-systemduserunitDATA
 
@@ -1704,7 +1711,7 @@ uninstall-am: uninstall-dbus_serviceDATA uninstall-dist_desktopDATA \
 	distclean-hdr distclean-libtool distclean-tags distcleancheck \
 	distdir distuninstallcheck dvi dvi-am html html-am info \
 	info-am install install-am install-data install-data-am \
-	install-dbus_serviceDATA install-dist_desktopDATA \
+	install-dbus_serviceDATA install-desktopDATA \
 	install-dist_portalDATA install-dvi install-dvi-am \
 	install-exec install-exec-am install-html install-html-am \
 	install-info install-info-am install-libexecPROGRAMS \
@@ -1714,7 +1721,7 @@ uninstall-am: uninstall-dbus_serviceDATA uninstall-dist_desktopDATA \
 	maintainer-clean maintainer-clean-generic mostlyclean \
 	mostlyclean-compile mostlyclean-generic mostlyclean-libtool \
 	pdf pdf-am ps ps-am tags tags-am uninstall uninstall-am \
-	uninstall-dbus_serviceDATA uninstall-dist_desktopDATA \
+	uninstall-dbus_serviceDATA uninstall-desktopDATA \
 	uninstall-dist_portalDATA uninstall-libexecPROGRAMS \
 	uninstall-systemduserunitDATA
 
@@ -1758,10 +1765,10 @@ src/resources.c: src/xdg-desktop-portal-gtk.gresource.xml $(resource_files)
 	$(AM_V_GEN) $(SED) -e "s|\@libexecdir\@|$(libexecdir)|" $< > $@
 
 %.desktop.in: data/%.desktop.in.in
-	$(AM_V_GEN) sed -e "s|@libexecdir[@]|$(libexecdir)|" $< > $@
+	$(AM_V_GEN) msgfmt --desktop -d po --template $< -o $@
 
 %.desktop: %.desktop.in
-	$(AM_V_GEN) msgfmt --desktop -d po --template $< -o $@
+	$(AM_V_GEN) $(SED) -e "s|\@libexecdir\@|$(libexecdir)|" $< > $@
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
