@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-31 08:58-0400\n"
+"POT-Creation-Date: 2017-06-05 20:38-0400\n"
 "PO-Revision-Date: 2017-03-19 20:30+0100\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
@@ -59,8 +59,8 @@ msgstr "Megosztja a személyes információit a kérelmező alkalmazással?"
 msgid "Share Details"
 msgstr "Részletek megosztása"
 
-#: src/accountdialog.ui:14 src/appchooser.c:179 src/appchooserdialog.ui:16
-#: src/filechooser.c:365 src/screenshotdialog.ui:14
+#: src/accountdialog.ui:14 src/appchooserdialog.ui:17 src/filechooser.c:365
+#: src/screenshotdialog.ui:14
 msgid "_Cancel"
 msgstr "_Mégse"
 
@@ -72,22 +72,9 @@ msgstr "Meg_osztás"
 msgid "Make changes before sharing the information"
 msgstr "Megváltoztatás az információk megosztása előtt"
 
-#: src/appchooser.c:169
-msgid "_Select"
-msgstr "_Kiválasztás"
-
-#: src/appchooser.c:171 src/appchooserdialog.ui:12
+#: src/appchooserdialog.ui:13
 msgid "Open With"
 msgstr "Megnyitás ezzel"
-
-#: src/appchooser.c:173
-msgid "Select application"
-msgstr "Alkalmazás kiválasztása"
-
-#: src/appchooserdialog.ui:77
-#, fuzzy
-msgid "No applications found"
-msgstr "Alkalmazás kiválasztása"
 
 #: src/filechooser.c:363
 msgid "_Open"
@@ -110,6 +97,17 @@ msgstr "Képernyőkép"
 msgid "Portal"
 msgstr ""
 
-#: data/xdg-desktop-portal-gtk.desktop.in.in:5
+#. TRANSLATORS: Don't translate this text (this is icon name)
+#: data/xdg-desktop-portal-gtk.desktop.in.in:6
 msgid "applications-system-symbolic"
 msgstr ""
+
+#~ msgid "_Select"
+#~ msgstr "_Kiválasztás"
+
+#~ msgid "Select application"
+#~ msgstr "Alkalmazás kiválasztása"
+
+#, fuzzy
+#~ msgid "No applications found"
+#~ msgstr "Alkalmazás kiválasztása"
