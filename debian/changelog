@@ -1,7 +1,8 @@
-xdg-desktop-portal-gtk (0.7-2) UNRELEASED; urgency=medium
+xdg-desktop-portal-gtk (0.7-2) unstable; urgency=medium
 
   * Move patches taken from upstream to debian/patches/0.8/ to make it
     obvious when they can be dropped
+  * Upload to unstable
 
  -- Simon McVittie <smcv@debian.org>  Sat, 10 Jun 2017 10:13:02 +0100
 
