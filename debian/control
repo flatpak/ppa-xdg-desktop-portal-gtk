@@ -12,6 +12,7 @@ Build-Depends:
  libgtk-3-dev (>= 3.14),
  xdg-desktop-portal-dev (>= 0.8-1~),
  xmlto,
+Rules-Requires-Root: no
 Standards-Version: 3.9.8
 Homepage: http://flatpak.org/
 Vcs-Git: https://anonscm.debian.org/git/collab-maint/xdg-desktop-portal-gtk.git

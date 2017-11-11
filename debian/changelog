@@ -1,3 +1,9 @@
+xdg-desktop-portal-gtk (0.7-3) UNRELEASED; urgency=medium
+
+  * Set Rules-Requires-Root to no
+
+ -- Simon McVittie <smcv@debian.org>  Sat, 11 Nov 2017 12:33:07 +0000
+
 xdg-desktop-portal-gtk (0.7-2) unstable; urgency=medium
 
   * Move patches taken from upstream to debian/patches/0.8/ to make it
