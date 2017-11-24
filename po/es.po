@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-05 20:38-0400\n"
+"POT-Creation-Date: 2017-11-16 21:20-0500\n"
 "PO-Revision-Date: 2016-06-28 01:17+0100\n"
 "Last-Translator: Mario Sanchez Prada <mario@endlessm.com>\n"
 "Language-Team: Spanish; Castilian <>\n"
@@ -76,9 +76,44 @@ msgstr "_Compartir"
 msgid "Make changes before sharing the information"
 msgstr ""
 
+#: src/appchooserdialog.c:154
+msgid "Failed to start Software"
+msgstr ""
+
+#: src/appchooserdialog.c:373
+#, c-format
+msgid ""
+"Select an application to open “%s”. More applications are available in <a "
+"href='software'>Software.</a>"
+msgstr ""
+
+#: src/appchooserdialog.c:378
+msgid ""
+"Select an application. More applications are available in <a "
+"href='software'>Software.</a>"
+msgstr ""
+
+#: src/appchooserdialog.c:391
+#, c-format
+msgid "Unable to find an application that is able to open “%s”."
+msgstr ""
+
+#: src/appchooserdialog.c:396
+msgid "Unable to find a suitable application."
+msgstr ""
+
 #: src/appchooserdialog.ui:13
 msgid "Open With"
 msgstr "Abrir Con"
+
+#: src/appchooserdialog.ui:166
+#, fuzzy
+msgid "No Applications Found"
+msgstr "Seleccionar aplicación"
+
+#: src/appchooserdialog.ui:182
+msgid "Find Compatible Applications in Software"
+msgstr ""
 
 #: src/filechooser.c:363
 msgid "_Open"
@@ -111,8 +146,4 @@ msgstr ""
 #~ msgstr "_Seleccionar"
 
 #~ msgid "Select application"
-#~ msgstr "Seleccionar aplicación"
-
-#, fuzzy
-#~ msgid "No applications found"
 #~ msgstr "Seleccionar aplicación"

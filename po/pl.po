@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-05 20:38-0400\n"
-"PO-Revision-Date: 2017-04-01 10:50+0200\n"
+"POT-Creation-Date: 2017-11-16 21:20-0500\n"
+"PO-Revision-Date: 2017-06-07 14:17+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -73,9 +73,47 @@ msgstr "_Udostępnij"
 msgid "Make changes before sharing the information"
 msgstr "Umożliwia wprowadzenie zmian przed udostępnieniem informacji"
 
+#: src/appchooserdialog.c:154
+msgid "Failed to start Software"
+msgstr "Uruchomienie Menedżera oprogramowania się nie powiodło"
+
+#: src/appchooserdialog.c:373
+#, c-format
+msgid ""
+"Select an application to open “%s”. More applications are available in <a "
+"href='software'>Software.</a>"
+msgstr ""
+"Proszę wybrać program do otwarcia pliku „%s”. Więcej programów jest "
+"dostępnych w <a href='software'>Menedżerze oprogramowania.</a>"
+
+#: src/appchooserdialog.c:378
+msgid ""
+"Select an application. More applications are available in <a "
+"href='software'>Software.</a>"
+msgstr ""
+"Proszę wybrać program. Więcej programów jest dostępnych w <a "
+"href='software'>Menedżerze oprogramowania.</a>"
+
+#: src/appchooserdialog.c:391
+#, c-format
+msgid "Unable to find an application that is able to open “%s”."
+msgstr "Nie można odnaleźć programu do otwarcia pliku „%s”."
+
+#: src/appchooserdialog.c:396
+msgid "Unable to find a suitable application."
+msgstr "Nie można odnaleźć odpowiedniego programu."
+
 #: src/appchooserdialog.ui:13
 msgid "Open With"
 msgstr "Otwarcie za pomocą"
+
+#: src/appchooserdialog.ui:166
+msgid "No Applications Found"
+msgstr "Nie odnaleziono programów"
+
+#: src/appchooserdialog.ui:182
+msgid "Find Compatible Applications in Software"
+msgstr "Znajdź zgodne programy w Menedżerze oprogramowania"
 
 #: src/filechooser.c:363
 msgid "_Open"
@@ -102,12 +140,3 @@ msgstr "Portal"
 #: data/xdg-desktop-portal-gtk.desktop.in.in:6
 msgid "applications-system-symbolic"
 msgstr "applications-system-symbolic"
-
-#~ msgid "_Select"
-#~ msgstr "_Wybierz"
-
-#~ msgid "Select application"
-#~ msgstr "Wybór programu"
-
-#~ msgid "No applications found"
-#~ msgstr "Nie odnaleziono programów"
