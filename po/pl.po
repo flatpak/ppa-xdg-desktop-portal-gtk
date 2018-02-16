@@ -1,15 +1,15 @@
 # Polish translation for xdg-desktop-portal-gtk.
-# Copyright © 2016-2017 the xdg-desktop-portal-gtk authors.
+# Copyright © 2016-2018 the xdg-desktop-portal-gtk authors.
 # This file is distributed under the same license as the xdg-desktop-portal-gtk package.
-# Piotr Drąg <piotrdrag@gmail.com>, 2016-2017.
-# Aviary.pl <community-poland@mozilla.org>, 2016-2017.
+# Piotr Drąg <piotrdrag@gmail.com>, 2016-2018.
+# Aviary.pl <community-poland@mozilla.org>, 2016-2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-16 21:20-0500\n"
-"PO-Revision-Date: 2017-06-07 14:17+0200\n"
+"POT-Creation-Date: 2018-02-14 12:37+0100\n"
+"PO-Revision-Date: 2018-02-13 16:22+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -18,6 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
+
+#: data/xdg-desktop-portal-gtk.desktop.in.in:4
+msgid "Portal"
+msgstr "Portal"
+
+#. TRANSLATORS: Don't translate this text (this is icon name)
+#: data/xdg-desktop-portal-gtk.desktop.in.in:6
+msgid "applications-system-symbolic"
+msgstr "applications-system-symbolic"
 
 #: src/access.c:271
 msgid "Deny Access"
@@ -61,11 +70,13 @@ msgid "Share Details"
 msgstr "Udostępnianie informacji"
 
 #: src/accountdialog.ui:14 src/appchooserdialog.ui:17 src/filechooser.c:365
+#: src/remotedesktopdialog.ui:16 src/screencastdialog.ui:16
 #: src/screenshotdialog.ui:14
 msgid "_Cancel"
 msgstr "_Anuluj"
 
-#: src/accountdialog.ui:22 src/screenshotdialog.ui:25
+#: src/accountdialog.ui:22 src/remotedesktopdialog.ui:28
+#: src/screencastdialog.ui:28 src/screenshotdialog.ui:38
 msgid "_Share"
 msgstr "_Udostępnij"
 
@@ -119,12 +130,50 @@ msgstr "Znajdź zgodne programy w Menedżerze oprogramowania"
 msgid "_Open"
 msgstr "_Otwórz"
 
-#: src/screenshotdialog.c:93
+#: src/remotedesktopdialog.c:190
+msgid "Pointer"
+msgstr "Kursor"
+
+#: src/remotedesktopdialog.c:193
+msgid "Keyboard"
+msgstr "Klawiatura"
+
+#: src/remotedesktopdialog.c:196
+msgid "Touch screen"
+msgstr "Ekran dotykowy"
+
+#: src/remotedesktopdialog.c:302
+#, c-format
+msgid "Select what to share with %s"
+msgstr "Wybór, co udostępnić programowi „%s”"
+
+#: src/remotedesktopdialog.c:307
+msgid "Select what to share with the requesting application"
+msgstr "Wybór, co udostępnić proszącemu o to programowi"
+
+#: src/remotedesktopdialog.ui:12
+msgid "Remote desktop"
+msgstr "Zdalny pulpit"
+
+#: src/screencastdialog.ui:12
+msgid "Screen casting"
+msgstr "Udostępnianie ekranu"
+
+#: src/screencastwidget.c:243
+#, c-format
+msgid "Select monitor to share with %s"
+msgstr "Wybór monitora do udostępnienia programowi „%s”"
+
+#: src/screencastwidget.c:248
+msgid "Select monitor to share with the requesting application"
+msgstr "Wybór monitora do udostępnienia proszącemu o to programowi"
+
+#: src/screenshotdialog.c:420
 #, c-format
 msgid "Share this screenshot with %s?"
 msgstr "Udostępnić ten zrzut ekranu programowi „%s”?"
 
-#: src/screenshotdialog.c:96
+#: src/screenshotdialog.c:423
 msgid "Share this screenshot with the requesting application?"
 msgstr "Udostępnić ten zrzut ekranu proszącemu o to programowi?"
 
@@ -132,11 +181,46 @@ msgstr "Udostępnić ten zrzut ekranu proszącemu o to programowi?"
 msgid "Screenshot"
 msgstr "Zrzut ekranu"
 
-#: data/xdg-desktop-portal-gtk.desktop.in.in:4
-msgid "Portal"
-msgstr "Portal"
+#: src/screenshotdialog.ui:30
+msgid "_Options…"
+msgstr "_Opcje…"
 
-#. TRANSLATORS: Don't translate this text (this is icon name)
-#: data/xdg-desktop-portal-gtk.desktop.in.in:6
-msgid "applications-system-symbolic"
-msgstr "applications-system-symbolic"
+#: src/screenshotdialog.ui:55
+msgid "Take _Screenshot"
+msgstr "_Wykonaj zrzut ekranu"
+
+#: src/screenshotdialog.ui:111
+msgid "Take Screenshot"
+msgstr "Zrzut ekranu"
+
+#: src/screenshotdialog.ui:122
+msgid "Grab the whole sc_reen"
+msgstr "_Cały ekran"
+
+#: src/screenshotdialog.ui:133
+msgid "Grab the current _window"
+msgstr "O_becne okno"
+
+#: src/screenshotdialog.ui:144
+msgid "Select _area to grab"
+msgstr "Zaznaczony ob_szar"
+
+#: src/screenshotdialog.ui:158
+msgid "Grab after a _delay of"
+msgstr "Po _upływie"
+
+#: src/screenshotdialog.ui:171
+msgid "seconds"
+msgstr "s"
+
+#: src/screenshotdialog.ui:181
+msgid "Effects"
+msgstr "Efekty"
+
+#: src/screenshotdialog.ui:192
+msgid "Include _pointer"
+msgstr "Wi_doczny kursor"
+
+#: src/screenshotdialog.ui:201
+msgid "Include the window _border"
+msgstr "_Krawędź okna"

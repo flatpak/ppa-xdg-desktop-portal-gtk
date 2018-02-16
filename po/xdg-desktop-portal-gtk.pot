@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: xdg-desktop-portal-gtk 0.9\n"
+"Project-Id-Version: xdg-desktop-portal-gtk 0.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-16 21:20-0500\n"
+"POT-Creation-Date: 2018-02-14 12:37+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,15 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: data/xdg-desktop-portal-gtk.desktop.in.in:4
+msgid "Portal"
+msgstr ""
+
+#. TRANSLATORS: Don't translate this text (this is icon name)
+#: data/xdg-desktop-portal-gtk.desktop.in.in:6
+msgid "applications-system-symbolic"
+msgstr ""
 
 #: src/access.c:271
 msgid "Deny Access"
@@ -59,11 +68,13 @@ msgid "Share Details"
 msgstr ""
 
 #: src/accountdialog.ui:14 src/appchooserdialog.ui:17 src/filechooser.c:365
+#: src/remotedesktopdialog.ui:16 src/screencastdialog.ui:16
 #: src/screenshotdialog.ui:14
 msgid "_Cancel"
 msgstr ""
 
-#: src/accountdialog.ui:22 src/screenshotdialog.ui:25
+#: src/accountdialog.ui:22 src/remotedesktopdialog.ui:28
+#: src/screencastdialog.ui:28 src/screenshotdialog.ui:38
 msgid "_Share"
 msgstr ""
 
@@ -113,12 +124,50 @@ msgstr ""
 msgid "_Open"
 msgstr ""
 
-#: src/screenshotdialog.c:93
+#: src/remotedesktopdialog.c:190
+msgid "Pointer"
+msgstr ""
+
+#: src/remotedesktopdialog.c:193
+msgid "Keyboard"
+msgstr ""
+
+#: src/remotedesktopdialog.c:196
+msgid "Touch screen"
+msgstr ""
+
+#: src/remotedesktopdialog.c:302
+#, c-format
+msgid "Select what to share with %s"
+msgstr ""
+
+#: src/remotedesktopdialog.c:307
+msgid "Select what to share with the requesting application"
+msgstr ""
+
+#: src/remotedesktopdialog.ui:12
+msgid "Remote desktop"
+msgstr ""
+
+#: src/screencastdialog.ui:12
+msgid "Screen casting"
+msgstr ""
+
+#: src/screencastwidget.c:243
+#, c-format
+msgid "Select monitor to share with %s"
+msgstr ""
+
+#: src/screencastwidget.c:248
+msgid "Select monitor to share with the requesting application"
+msgstr ""
+
+#: src/screenshotdialog.c:420
 #, c-format
 msgid "Share this screenshot with %s?"
 msgstr ""
 
-#: src/screenshotdialog.c:96
+#: src/screenshotdialog.c:423
 msgid "Share this screenshot with the requesting application?"
 msgstr ""
 
@@ -126,11 +175,46 @@ msgstr ""
 msgid "Screenshot"
 msgstr ""
 
-#: data/xdg-desktop-portal-gtk.desktop.in.in:4
-msgid "Portal"
+#: src/screenshotdialog.ui:30
+msgid "_Options…"
 msgstr ""
 
-#. TRANSLATORS: Don't translate this text (this is icon name)
-#: data/xdg-desktop-portal-gtk.desktop.in.in:6
-msgid "applications-system-symbolic"
+#: src/screenshotdialog.ui:55
+msgid "Take _Screenshot"
+msgstr ""
+
+#: src/screenshotdialog.ui:111
+msgid "Take Screenshot"
+msgstr ""
+
+#: src/screenshotdialog.ui:122
+msgid "Grab the whole sc_reen"
+msgstr ""
+
+#: src/screenshotdialog.ui:133
+msgid "Grab the current _window"
+msgstr ""
+
+#: src/screenshotdialog.ui:144
+msgid "Select _area to grab"
+msgstr ""
+
+#: src/screenshotdialog.ui:158
+msgid "Grab after a _delay of"
+msgstr ""
+
+#: src/screenshotdialog.ui:171
+msgid "seconds"
+msgstr ""
+
+#: src/screenshotdialog.ui:181
+msgid "Effects"
+msgstr ""
+
+#: src/screenshotdialog.ui:192
+msgid "Include _pointer"
+msgstr ""
+
+#: src/screenshotdialog.ui:201
+msgid "Include the window _border"
 msgstr ""

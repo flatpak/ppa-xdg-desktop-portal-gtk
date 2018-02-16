@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-16 21:20-0500\n"
-"PO-Revision-Date: 2017-09-16 18:12+0200\n"
+"POT-Creation-Date: 2018-02-14 12:37+0100\n"
+"PO-Revision-Date: 2018-01-25 20:58+0100\n"
 "Last-Translator: Daniel Rusek <mail@asciiwolf.com>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -19,6 +19,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Poedit 2.0.3\n"
+
+#: data/xdg-desktop-portal-gtk.desktop.in.in:4
+msgid "Portal"
+msgstr "Portál"
+
+#. TRANSLATORS: Don't translate this text (this is icon name)
+#: data/xdg-desktop-portal-gtk.desktop.in.in:6
+msgid "applications-system-symbolic"
+msgstr ""
 
 #: src/access.c:271
 msgid "Deny Access"
@@ -62,11 +71,13 @@ msgid "Share Details"
 msgstr "Sdílet detaily"
 
 #: src/accountdialog.ui:14 src/appchooserdialog.ui:17 src/filechooser.c:365
+#: src/remotedesktopdialog.ui:16 src/screencastdialog.ui:16
 #: src/screenshotdialog.ui:14
 msgid "_Cancel"
 msgstr "_Zrušit"
 
-#: src/accountdialog.ui:22 src/screenshotdialog.ui:25
+#: src/accountdialog.ui:22 src/remotedesktopdialog.ui:28
+#: src/screencastdialog.ui:28 src/screenshotdialog.ui:38
 msgid "_Share"
 msgstr "_Sdílet"
 
@@ -121,12 +132,53 @@ msgstr "Najít kompatibilní aplikace v Software"
 msgid "_Open"
 msgstr "_Otevřít"
 
-#: src/screenshotdialog.c:93
+#: src/remotedesktopdialog.c:190
+msgid "Pointer"
+msgstr ""
+
+#: src/remotedesktopdialog.c:193
+msgid "Keyboard"
+msgstr ""
+
+#: src/remotedesktopdialog.c:196
+msgid "Touch screen"
+msgstr ""
+
+#: src/remotedesktopdialog.c:302
+#, c-format
+msgid "Select what to share with %s"
+msgstr ""
+
+#: src/remotedesktopdialog.c:307
+#, fuzzy
+msgid "Select what to share with the requesting application"
+msgstr "Sdílet tento snímek obrazovky s aplikací, která o to žádá?"
+
+#: src/remotedesktopdialog.ui:12
+msgid "Remote desktop"
+msgstr ""
+
+#: src/screencastdialog.ui:12
+#, fuzzy
+msgid "Screen casting"
+msgstr "Snímek obrazovky"
+
+#: src/screencastwidget.c:243
+#, c-format
+msgid "Select monitor to share with %s"
+msgstr ""
+
+#: src/screencastwidget.c:248
+#, fuzzy
+msgid "Select monitor to share with the requesting application"
+msgstr "Sdílet tento snímek obrazovky s aplikací, která o to žádá?"
+
+#: src/screenshotdialog.c:420
 #, c-format
 msgid "Share this screenshot with %s?"
 msgstr "Sdílet tento snímek obrazovky s aplikací %s?"
 
-#: src/screenshotdialog.c:96
+#: src/screenshotdialog.c:423
 msgid "Share this screenshot with the requesting application?"
 msgstr "Sdílet tento snímek obrazovky s aplikací, která o to žádá?"
 
@@ -134,17 +186,46 @@ msgstr "Sdílet tento snímek obrazovky s aplikací, která o to žádá?"
 msgid "Screenshot"
 msgstr "Snímek obrazovky"
 
-#: data/xdg-desktop-portal-gtk.desktop.in.in:4
-msgid "Portal"
-msgstr "Portál"
+#: src/screenshotdialog.ui:30
+msgid "_Options…"
+msgstr "_Volby…"
 
-#. TRANSLATORS: Don't translate this text (this is icon name)
-#: data/xdg-desktop-portal-gtk.desktop.in.in:6
-msgid "applications-system-symbolic"
-msgstr ""
+#: src/screenshotdialog.ui:55
+msgid "Take _Screenshot"
+msgstr "Zachytit _snímek obrazovky"
 
-#~ msgid "_Select"
-#~ msgstr "_Vybrat"
+#: src/screenshotdialog.ui:111
+msgid "Take Screenshot"
+msgstr "Zachytit snímek obrazovky"
 
-#~ msgid "Select application"
-#~ msgstr "Výběr aplikace"
+#: src/screenshotdialog.ui:122
+msgid "Grab the whole sc_reen"
+msgstr "Zachytit celou ob_razovku"
+
+#: src/screenshotdialog.ui:133
+msgid "Grab the current _window"
+msgstr "Zachytit akt_uální okno"
+
+#: src/screenshotdialog.ui:144
+msgid "Select _area to grab"
+msgstr "Vybr_at zachytávanou oblast"
+
+#: src/screenshotdialog.ui:158
+msgid "Grab after a _delay of"
+msgstr "Zachytit po pro_dlevě"
+
+#: src/screenshotdialog.ui:171
+msgid "seconds"
+msgstr "sekund"
+
+#: src/screenshotdialog.ui:181
+msgid "Effects"
+msgstr "Efekty"
+
+#: src/screenshotdialog.ui:192
+msgid "Include _pointer"
+msgstr "Zahrnout _kurzor myši"
+
+#: src/screenshotdialog.ui:201
+msgid "Include the window _border"
+msgstr "Zahrnout _rámeček okna"
