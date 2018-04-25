@@ -3,6 +3,7 @@ xdg-desktop-portal-gtk (0.11-1) UNRELEASED; urgency=medium
   * New upstream release
     - Drop patch, merged upstream
     - d/copyright: Update
+  * Add Suggests: evince, for evince-previewer
 
  -- Simon McVittie <smcv@debian.org>  Wed, 25 Apr 2018 16:34:00 +0100
 

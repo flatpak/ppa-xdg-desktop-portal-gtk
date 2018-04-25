@@ -28,6 +28,7 @@ Depends:
  ${shlibs:Depends},
 Suggests:
  accountsservice,
+ evince,
 Provides:
  xdg-desktop-portal-backend,
 Description: GTK+/GNOME portal backend for xdg-desktop-portal
