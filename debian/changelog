@@ -4,6 +4,7 @@ xdg-desktop-portal-gtk (0.11-1) UNRELEASED; urgency=medium
     - Drop patch, merged upstream
     - d/copyright: Update
   * Add Suggests: evince, for evince-previewer
+  * Standards-Version: 4.1.4 (no changes)
 
  -- Simon McVittie <smcv@debian.org>  Wed, 25 Apr 2018 16:34:00 +0100
 
