@@ -6,8 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-14 12:37+0100\n"
+"Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
+"issues\n"
+"POT-Creation-Date: 2018-04-24 18:45+0100\n"
 "PO-Revision-Date: 2018-02-13 01:28+0200\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian <gnome-lt@lists.akl.lt>\n"
@@ -132,29 +133,28 @@ msgstr "_Atverti"
 
 #: src/remotedesktopdialog.c:190
 msgid "Pointer"
-msgstr ""
+msgstr "Rodyklė"
 
 #: src/remotedesktopdialog.c:193
 msgid "Keyboard"
-msgstr ""
+msgstr "Klaviatūra"
 
 #: src/remotedesktopdialog.c:196
 msgid "Touch screen"
-msgstr ""
+msgstr "Jutiklinis ekranas"
 
-#: src/remotedesktopdialog.c:302
+#: src/remotedesktopdialog.c:303
 #, c-format
 msgid "Select what to share with %s"
-msgstr ""
+msgstr "Pasirinkti ką bendrinti su %s"
 
-#: src/remotedesktopdialog.c:307
-#, fuzzy
+#: src/remotedesktopdialog.c:308
 msgid "Select what to share with the requesting application"
-msgstr "Bendrinti šią ekrano kopiją su prašančia programa?"
+msgstr "Pasirinkti ką bendrinti su prašančia programa"
 
 #: src/remotedesktopdialog.ui:12
 msgid "Remote desktop"
-msgstr ""
+msgstr "Nuotolinis darbalaukis"
 
 #: src/screencastdialog.ui:12
 msgid "Screen casting"
@@ -163,19 +163,18 @@ msgstr "Ekrano įrašymas"
 #: src/screencastwidget.c:243
 #, c-format
 msgid "Select monitor to share with %s"
-msgstr ""
+msgstr "Pasirinkti vaizduoklį, kurį bendrinti su %s"
 
 #: src/screencastwidget.c:248
-#, fuzzy
 msgid "Select monitor to share with the requesting application"
-msgstr "Bendrinti šią ekrano kopiją su prašančia programa?"
+msgstr "Pasirinkti vaizduoklį, kurį bendrinti su prašančia programa"
 
-#: src/screenshotdialog.c:420
+#: src/screenshotdialog.c:422
 #, c-format
 msgid "Share this screenshot with %s?"
 msgstr "Bendrinti šią ekrano kopiją su %s?"
 
-#: src/screenshotdialog.c:423
+#: src/screenshotdialog.c:426
 msgid "Share this screenshot with the requesting application?"
 msgstr "Bendrinti šią ekrano kopiją su prašančia programa?"
 
