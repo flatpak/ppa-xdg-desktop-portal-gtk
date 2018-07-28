@@ -10,7 +10,7 @@ include /usr/share/dpkg/default.mk
 
 override_dh_auto_configure:
 	dh_auto_configure -- \
-		--libexecdir=/usr/lib/xdg-desktop-portal \
+		--libexecdir=/usr/libexec \
 		$(NULL)
 
 override_dh_auto_install:
