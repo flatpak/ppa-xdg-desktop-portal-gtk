@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2018-07-24 01:49+0000\n"
+"POT-Creation-Date: 2018-08-20 12:12+0000\n"
 "PO-Revision-Date: 2018-03-26 20:59+0800\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <chinese-l10n@googlegroups.com>\n"
@@ -140,12 +140,13 @@ msgid "Touch screen"
 msgstr "觸控螢幕"
 
 #: src/remotedesktopdialog.c:303
-#, c-format
-msgid "Select what to share with %s"
+#, fuzzy, c-format
+msgid "Select devices to share with %s"
 msgstr "選取您想和 %s 分享的項目"
 
 #: src/remotedesktopdialog.c:308
-msgid "Select what to share with the requesting application"
+#, fuzzy
+msgid "Select devices to share with the requesting application"
 msgstr "選取您想和請求程式分享的項目"
 
 #: src/remotedesktopdialog.ui:12

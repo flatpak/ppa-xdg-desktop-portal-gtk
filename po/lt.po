@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2018-07-24 01:49+0000\n"
+"POT-Creation-Date: 2018-08-20 12:12+0000\n"
 "PO-Revision-Date: 2018-02-13 01:28+0200\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian <gnome-lt@lists.akl.lt>\n"
@@ -144,12 +144,13 @@ msgid "Touch screen"
 msgstr "Jutiklinis ekranas"
 
 #: src/remotedesktopdialog.c:303
-#, c-format
-msgid "Select what to share with %s"
+#, fuzzy, c-format
+msgid "Select devices to share with %s"
 msgstr "Pasirinkti ką bendrinti su %s"
 
 #: src/remotedesktopdialog.c:308
-msgid "Select what to share with the requesting application"
+#, fuzzy
+msgid "Select devices to share with the requesting application"
 msgstr "Pasirinkti ką bendrinti su prašančia programa"
 
 #: src/remotedesktopdialog.ui:12
