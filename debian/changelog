@@ -1,6 +1,7 @@
 xdg-desktop-portal-gtk (1.0-1) UNRELEASED; urgency=medium
 
   * New upstream release
+  * Install upstream NEWS file
 
  -- Simon McVittie <smcv@debian.org>  Thu, 23 Aug 2018 09:56:30 +0100
 
