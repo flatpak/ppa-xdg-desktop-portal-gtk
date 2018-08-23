@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2018-07-24 01:49+0000\n"
+"POT-Creation-Date: 2018-08-20 12:12+0000\n"
 "PO-Revision-Date: 2018-03-18 10:34+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -144,12 +144,13 @@ msgid "Touch screen"
 msgstr "Сенсорна панель"
 
 #: src/remotedesktopdialog.c:303
-#, c-format
-msgid "Select what to share with %s"
+#, fuzzy, c-format
+msgid "Select devices to share with %s"
 msgstr "Виберіть, що слід оприлюднити для %s"
 
 #: src/remotedesktopdialog.c:308
-msgid "Select what to share with the requesting application"
+#, fuzzy
+msgid "Select devices to share with the requesting application"
 msgstr "Виберіть, що слід оприлюднити за допомогою відповідної програми"
 
 #: src/remotedesktopdialog.ui:12
