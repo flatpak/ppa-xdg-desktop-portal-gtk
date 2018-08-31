@@ -1,6 +1,7 @@
 xdg-desktop-portal-gtk (1.0.1-1) UNRELEASED; urgency=medium
 
   * New upstream release
+  * Standards-Version: 4.2.1 (no changes required)
 
  -- Simon McVittie <smcv@debian.org>  Fri, 31 Aug 2018 08:54:38 +0100
 
