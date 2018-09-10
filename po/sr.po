@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2018-08-29 23:02+0000\n"
+"POT-Creation-Date: 2018-09-03 16:18+0000\n"
 "PO-Revision-Date: 2016-09-14 12:56+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: српски <gnome-sr@googlegroups.org>\n"
@@ -72,7 +72,7 @@ msgstr "Да поделим овај снимак екрана са програ
 msgid "Share Details"
 msgstr ""
 
-#: src/accountdialog.ui:14 src/appchooserdialog.ui:17 src/filechooser.c:365
+#: src/accountdialog.ui:14 src/appchooserdialog.ui:17 src/filechooser.c:390
 #: src/remotedesktopdialog.ui:16 src/screencastdialog.ui:16
 #: src/screenshotdialog.ui:14
 msgid "_Cancel"
@@ -126,7 +126,7 @@ msgstr "Изаберите програм"
 msgid "Find Compatible Applications in Software"
 msgstr ""
 
-#: src/filechooser.c:363
+#: src/filechooser.c:388
 msgid "_Open"
 msgstr "От_вори"
 
