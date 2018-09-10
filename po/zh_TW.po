@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2018-08-29 23:02+0000\n"
+"POT-Creation-Date: 2018-09-03 16:18+0000\n"
 "PO-Revision-Date: 2018-03-26 20:59+0800\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <chinese-l10n@googlegroups.com>\n"
@@ -68,7 +68,7 @@ msgstr "是否要和請求程式分享您的個人資訊？"
 msgid "Share Details"
 msgstr "分享細節"
 
-#: src/accountdialog.ui:14 src/appchooserdialog.ui:17 src/filechooser.c:365
+#: src/accountdialog.ui:14 src/appchooserdialog.ui:17 src/filechooser.c:390
 #: src/remotedesktopdialog.ui:16 src/screencastdialog.ui:16
 #: src/screenshotdialog.ui:14
 msgid "_Cancel"
@@ -123,7 +123,7 @@ msgstr "找不到應用程式"
 msgid "Find Compatible Applications in Software"
 msgstr "在《軟體》中尋找相容的應用程式"
 
-#: src/filechooser.c:363
+#: src/filechooser.c:388
 msgid "_Open"
 msgstr "開啟(_O)"
 

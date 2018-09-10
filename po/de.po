@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2018-08-29 23:02+0000\n"
+"POT-Creation-Date: 2018-09-03 16:18+0000\n"
 "PO-Revision-Date: 2018-08-25 10:06+0200\n"
 "Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
@@ -73,7 +73,7 @@ msgstr ""
 msgid "Share Details"
 msgstr "Details freigeben"
 
-#: src/accountdialog.ui:14 src/appchooserdialog.ui:17 src/filechooser.c:365
+#: src/accountdialog.ui:14 src/appchooserdialog.ui:17 src/filechooser.c:390
 #: src/remotedesktopdialog.ui:16 src/screencastdialog.ui:16
 #: src/screenshotdialog.ui:14
 msgid "_Cancel"
@@ -131,7 +131,7 @@ msgstr "Keine Anwendungen gefunden"
 msgid "Find Compatible Applications in Software"
 msgstr "Kompatible Anwendungen in Software suchen"
 
-#: src/filechooser.c:363
+#: src/filechooser.c:388
 msgid "_Open"
 msgstr "_Öffnen"
 

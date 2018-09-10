@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2018-08-29 23:02+0000\n"
+"POT-Creation-Date: 2018-09-03 16:18+0000\n"
 "PO-Revision-Date: 2017-10-06 21:57+0300\n"
 "Last-Translator: Muhammet Kara <muhammetk@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
@@ -69,7 +69,7 @@ msgstr "Kişisel bilgileriniz, istekte bulunan uygulamayla paylaşılsın mı?"
 msgid "Share Details"
 msgstr "Ayrıntıları Paylaş"
 
-#: src/accountdialog.ui:14 src/appchooserdialog.ui:17 src/filechooser.c:365
+#: src/accountdialog.ui:14 src/appchooserdialog.ui:17 src/filechooser.c:390
 #: src/remotedesktopdialog.ui:16 src/screencastdialog.ui:16
 #: src/screenshotdialog.ui:14
 msgid "_Cancel"
@@ -126,7 +126,7 @@ msgstr "Hiçbir Uygulama Bulunamadı"
 msgid "Find Compatible Applications in Software"
 msgstr "Uyumlu Uygulamaları Yazılımlar'da Bul"
 
-#: src/filechooser.c:363
+#: src/filechooser.c:388
 msgid "_Open"
 msgstr "_Aç"
 
