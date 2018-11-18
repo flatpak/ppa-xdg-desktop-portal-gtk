@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2018-09-03 16:18+0000\n"
-"PO-Revision-Date: 2018-08-20 15:45+0200\n"
+"POT-Creation-Date: 2018-11-16 15:20-0500\n"
+"PO-Revision-Date: 2018-10-08 21:00+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -70,7 +70,7 @@ msgstr "Udostępnić informacje o użytkowniku proszącemu o to programowi?"
 msgid "Share Details"
 msgstr "Udostępnianie informacji"
 
-#: src/accountdialog.ui:14 src/appchooserdialog.ui:17 src/filechooser.c:390
+#: src/accountdialog.ui:14 src/appchooserdialog.ui:17 src/filechooser.c:395
 #: src/remotedesktopdialog.ui:16 src/screencastdialog.ui:16
 #: src/screenshotdialog.ui:14
 msgid "_Cancel"
@@ -85,11 +85,11 @@ msgstr "_Udostępnij"
 msgid "Make changes before sharing the information"
 msgstr "Umożliwia wprowadzenie zmian przed udostępnieniem informacji"
 
-#: src/appchooserdialog.c:156
+#: src/appchooserdialog.c:159
 msgid "Failed to start Software"
 msgstr "Uruchomienie Menedżera oprogramowania się nie powiodło"
 
-#: src/appchooserdialog.c:395
+#: src/appchooserdialog.c:398
 #, c-format
 msgid ""
 "Select an application to open “%s”. More applications are available in <a "
@@ -98,7 +98,7 @@ msgstr ""
 "Proszę wybrać program do otwarcia pliku „%s”. Więcej programów jest "
 "dostępnych w <a href='software'>Menedżerze oprogramowania.</a>"
 
-#: src/appchooserdialog.c:400
+#: src/appchooserdialog.c:403
 msgid ""
 "Select an application. More applications are available in <a "
 "href='software'>Software.</a>"
@@ -106,12 +106,12 @@ msgstr ""
 "Proszę wybrać program. Więcej programów jest dostępnych w <a "
 "href='software'>Menedżerze oprogramowania.</a>"
 
-#: src/appchooserdialog.c:413
+#: src/appchooserdialog.c:418
 #, c-format
 msgid "Unable to find an application that is able to open “%s”."
 msgstr "Nie można odnaleźć programu do otwarcia pliku „%s”."
 
-#: src/appchooserdialog.c:418
+#: src/appchooserdialog.c:423
 msgid "Unable to find a suitable application."
 msgstr "Nie można odnaleźć odpowiedniego programu."
 
@@ -127,7 +127,11 @@ msgstr "Nie odnaleziono programów"
 msgid "Find Compatible Applications in Software"
 msgstr "Znajdź zgodne programy w Menedżerze oprogramowania"
 
-#: src/filechooser.c:388
+#: src/filechooser.c:390
+msgid "_Save"
+msgstr "_Zapisz"
+
+#: src/filechooser.c:392
 msgid "_Open"
 msgstr "_Otwórz"
 

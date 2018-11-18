@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2018-09-03 16:18+0000\n"
-"PO-Revision-Date: 2018-03-18 10:34+0200\n"
+"POT-Creation-Date: 2018-11-16 15:20-0500\n"
+"PO-Revision-Date: 2018-10-29 13:20+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
-"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -70,7 +70,7 @@ msgstr "Поділитися вашими особистими даними з �
 msgid "Share Details"
 msgstr "Оприлюднити подробиці"
 
-#: src/accountdialog.ui:14 src/appchooserdialog.ui:17 src/filechooser.c:390
+#: src/accountdialog.ui:14 src/appchooserdialog.ui:17 src/filechooser.c:395
 #: src/remotedesktopdialog.ui:16 src/screencastdialog.ui:16
 #: src/screenshotdialog.ui:14
 msgid "_Cancel"
@@ -85,11 +85,11 @@ msgstr "_Оприлюднити"
 msgid "Make changes before sharing the information"
 msgstr "Внести зміни до оприлюднення даних"
 
-#: src/appchooserdialog.c:156
+#: src/appchooserdialog.c:159
 msgid "Failed to start Software"
 msgstr "Не вдалося запустити Програмні засоби"
 
-#: src/appchooserdialog.c:395
+#: src/appchooserdialog.c:398
 #, c-format
 msgid ""
 "Select an application to open “%s”. More applications are available in <a "
@@ -98,7 +98,7 @@ msgstr ""
 "Виберіть програму для відкриття «%s». Ширший список програм можна знайти у "
 "програмі <a href='software'>Програмні засоби</a>."
 
-#: src/appchooserdialog.c:400
+#: src/appchooserdialog.c:403
 msgid ""
 "Select an application. More applications are available in <a "
 "href='software'>Software.</a>"
@@ -106,12 +106,12 @@ msgstr ""
 "Виберіть програму. Ширший список програм можна знайти у програмі <a "
 "href='software'>Програмні засоби</a>."
 
-#: src/appchooserdialog.c:413
+#: src/appchooserdialog.c:418
 #, c-format
 msgid "Unable to find an application that is able to open “%s”."
 msgstr "Не вдалося знайти програму, яка здатна відкривати «%s»."
 
-#: src/appchooserdialog.c:418
+#: src/appchooserdialog.c:423
 msgid "Unable to find a suitable application."
 msgstr "Не вдалося знайти відповідну програму."
 
@@ -127,7 +127,11 @@ msgstr "Програм не знайдено"
 msgid "Find Compatible Applications in Software"
 msgstr "Пошук відповідних програм у Програмних засобах"
 
-#: src/filechooser.c:388
+#: src/filechooser.c:390
+msgid "_Save"
+msgstr "_Зберегти"
+
+#: src/filechooser.c:392
 msgid "_Open"
 msgstr "_Відкрити"
 
@@ -144,14 +148,14 @@ msgid "Touch screen"
 msgstr "Сенсорна панель"
 
 #: src/remotedesktopdialog.c:303
-#, fuzzy, c-format
+#, c-format
 msgid "Select devices to share with %s"
-msgstr "Виберіть, що слід оприлюднити для %s"
+msgstr "Виберіть пристрої, які слід оприлюднити для %s"
 
 #: src/remotedesktopdialog.c:308
-#, fuzzy
 msgid "Select devices to share with the requesting application"
-msgstr "Виберіть, що слід оприлюднити за допомогою відповідної програми"
+msgstr ""
+"Виберіть пристрої, які слід оприлюднити за допомогою відповідної програми"
 
 #: src/remotedesktopdialog.ui:12
 msgid "Remote desktop"
