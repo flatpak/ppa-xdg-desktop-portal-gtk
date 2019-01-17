@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2018-11-16 15:20-0500\n"
+"POT-Creation-Date: 2019-01-15 23:34-0500\n"
 "PO-Revision-Date: 2017-09-26 09:46+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: Galician\n"
@@ -35,32 +35,32 @@ msgstr "Denegar acceso"
 msgid "Grant Access"
 msgstr "Conceder acceso"
 
-#: src/accountdialog.c:166
+#: src/accountdialog.c:176
 msgid "Select an Image"
 msgstr "Seleccione unha imaxe"
 
-#: src/accountdialog.c:169
+#: src/accountdialog.c:179
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: src/accountdialog.c:170
+#: src/accountdialog.c:180
 msgid "Select"
 msgstr "Seleccionar"
 
-#: src/accountdialog.c:171
+#: src/accountdialog.c:181
 msgid "Clear"
 msgstr "Limpar"
 
-#: src/accountdialog.c:185
+#: src/accountdialog.c:195
 msgid "Images"
 msgstr "Imaxes"
 
-#: src/accountdialog.c:260
+#: src/accountdialog.c:272
 #, c-format
 msgid "Share your personal information with %s?"
 msgstr "Compartir a súa información persoal con %s?"
 
-#: src/accountdialog.c:263
+#: src/accountdialog.c:275
 msgid "Share your personal information with the requesting application?"
 msgstr "Compartir a súa información persoal co aplicativo que o solicita?"
 
@@ -87,7 +87,7 @@ msgstr "Facer cambios antes de compartir a información"
 msgid "Failed to start Software"
 msgstr "Produciuse un fallo ao iniciar o Software"
 
-#: src/appchooserdialog.c:398
+#: src/appchooserdialog.c:408
 #, c-format
 msgid ""
 "Select an application to open “%s”. More applications are available in <a "
@@ -96,7 +96,7 @@ msgstr ""
 "Seleccione un aplicativo para abrir «%s». Hai máis aplicativos dispoñíbeis "
 "en <a href='software'>Software</a>."
 
-#: src/appchooserdialog.c:403
+#: src/appchooserdialog.c:413
 msgid ""
 "Select an application. More applications are available in <a "
 "href='software'>Software.</a>"
@@ -104,12 +104,12 @@ msgstr ""
 "Seleccione un aplicativo. Hai máis aplicativos dispoñíbeis en <a "
 "href='software'>Software</a>."
 
-#: src/appchooserdialog.c:418
+#: src/appchooserdialog.c:428
 #, c-format
 msgid "Unable to find an application that is able to open “%s”."
 msgstr "Non foi posíbel atopar un aplicativo que poida abrir «%s»."
 
-#: src/appchooserdialog.c:423
+#: src/appchooserdialog.c:433
 msgid "Unable to find a suitable application."
 msgstr "Non foi posíbel atopar un aplicativo axeitado."
 
@@ -174,12 +174,12 @@ msgstr ""
 msgid "Select monitor to share with the requesting application"
 msgstr "Compartir esta captura de pantalla co aplicativo que o solicita?"
 
-#: src/screenshotdialog.c:422
+#: src/screenshotdialog.c:434
 #, c-format
 msgid "Share this screenshot with %s?"
 msgstr "Compartir esta captura de pantalla con %s?"
 
-#: src/screenshotdialog.c:426
+#: src/screenshotdialog.c:438
 msgid "Share this screenshot with the requesting application?"
 msgstr "Compartir esta captura de pantalla co aplicativo que o solicita?"
 

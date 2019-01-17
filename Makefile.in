@@ -164,8 +164,9 @@ am__xdg_desktop_portal_gtk_SOURCES_DIST =  \
 	src/remotedesktop.c src/remotedesktop.h \
 	src/remotedesktopdialog.c src/remotedesktopdialog.h \
 	src/displaystatetracker.c src/displaystatetracker.h \
-	src/externalwindow-x11.h src/externalwindow-x11.c \
-	src/externalwindow-wayland.h src/externalwindow-wayland.c
+	src/lockdown.c src/lockdown.h src/externalwindow-x11.h \
+	src/externalwindow-x11.c src/externalwindow-wayland.h \
+	src/externalwindow-wayland.c
 @HAVE_GTK_X11_TRUE@am__objects_1 = src/xdg_desktop_portal_gtk-externalwindow-x11.$(OBJEXT)
 @HAVE_GTK_WAYLAND_TRUE@am__objects_2 = src/xdg_desktop_portal_gtk-externalwindow-wayland.$(OBJEXT)
 am_xdg_desktop_portal_gtk_OBJECTS =  \
@@ -195,7 +196,8 @@ am_xdg_desktop_portal_gtk_OBJECTS =  \
 	src/xdg_desktop_portal_gtk-remotedesktop.$(OBJEXT) \
 	src/xdg_desktop_portal_gtk-remotedesktopdialog.$(OBJEXT) \
 	src/xdg_desktop_portal_gtk-displaystatetracker.$(OBJEXT) \
-	$(am__objects_1) $(am__objects_2)
+	src/xdg_desktop_portal_gtk-lockdown.$(OBJEXT) $(am__objects_1) \
+	$(am__objects_2)
 am__objects_3 =  \
 	src/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.$(OBJEXT)
 am__objects_4 = src/xdg_desktop_portal_gtk-shell-dbus.$(OBJEXT)
@@ -245,6 +247,7 @@ am__depfiles_remade =  \
 	src/$(DEPDIR)/xdg_desktop_portal_gtk-gnomescreencast.Po \
 	src/$(DEPDIR)/xdg_desktop_portal_gtk-gtkbackports.Po \
 	src/$(DEPDIR)/xdg_desktop_portal_gtk-inhibit.Po \
+	src/$(DEPDIR)/xdg_desktop_portal_gtk-lockdown.Po \
 	src/$(DEPDIR)/xdg_desktop_portal_gtk-notification.Po \
 	src/$(DEPDIR)/xdg_desktop_portal_gtk-print.Po \
 	src/$(DEPDIR)/xdg_desktop_portal_gtk-remotedesktop.Po \
@@ -594,8 +597,9 @@ xdg_desktop_portal_gtk_SOURCES = src/xdg-desktop-portal-gtk.c \
 	src/screencastdialog.h src/gnomescreencast.c \
 	src/gnomescreencast.h src/remotedesktop.c src/remotedesktop.h \
 	src/remotedesktopdialog.c src/remotedesktopdialog.h \
-	src/displaystatetracker.c src/displaystatetracker.h $(NULL) \
-	$(am__append_1) $(am__append_2)
+	src/displaystatetracker.c src/displaystatetracker.h \
+	src/lockdown.c src/lockdown.h $(NULL) $(am__append_1) \
+	$(am__append_2)
 nodist_xdg_desktop_portal_gtk_SOURCES = \
 	src/resources.c				\
 	$(dbus_built_sources)			\
@@ -825,6 +829,8 @@ src/xdg_desktop_portal_gtk-remotedesktopdialog.$(OBJEXT):  \
 	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
 src/xdg_desktop_portal_gtk-displaystatetracker.$(OBJEXT):  \
 	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/xdg_desktop_portal_gtk-lockdown.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
 src/xdg_desktop_portal_gtk-externalwindow-x11.$(OBJEXT):  \
 	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
 src/xdg_desktop_portal_gtk-externalwindow-wayland.$(OBJEXT):  \
@@ -866,6 +872,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-gnomescreencast.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-gtkbackports.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-inhibit.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-lockdown.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-notification.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-print.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-remotedesktop.Po@am__quote@ # am--include-marker
@@ -1332,6 +1339,20 @@ src/xdg_desktop_portal_gtk-displaystatetracker.obj: src/displaystatetracker.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/displaystatetracker.c' object='src/xdg_desktop_portal_gtk-displaystatetracker.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-displaystatetracker.obj `if test -f 'src/displaystatetracker.c'; then $(CYGPATH_W) 'src/displaystatetracker.c'; else $(CYGPATH_W) '$(srcdir)/src/displaystatetracker.c'; fi`
+
+src/xdg_desktop_portal_gtk-lockdown.o: src/lockdown.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-lockdown.o -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-lockdown.Tpo -c -o src/xdg_desktop_portal_gtk-lockdown.o `test -f 'src/lockdown.c' || echo '$(srcdir)/'`src/lockdown.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-lockdown.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-lockdown.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lockdown.c' object='src/xdg_desktop_portal_gtk-lockdown.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-lockdown.o `test -f 'src/lockdown.c' || echo '$(srcdir)/'`src/lockdown.c
+
+src/xdg_desktop_portal_gtk-lockdown.obj: src/lockdown.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-lockdown.obj -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-lockdown.Tpo -c -o src/xdg_desktop_portal_gtk-lockdown.obj `if test -f 'src/lockdown.c'; then $(CYGPATH_W) 'src/lockdown.c'; else $(CYGPATH_W) '$(srcdir)/src/lockdown.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-lockdown.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-lockdown.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/lockdown.c' object='src/xdg_desktop_portal_gtk-lockdown.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-lockdown.obj `if test -f 'src/lockdown.c'; then $(CYGPATH_W) 'src/lockdown.c'; else $(CYGPATH_W) '$(srcdir)/src/lockdown.c'; fi`
 
 src/xdg_desktop_portal_gtk-externalwindow-x11.o: src/externalwindow-x11.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-externalwindow-x11.o -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-externalwindow-x11.Tpo -c -o src/xdg_desktop_portal_gtk-externalwindow-x11.o `test -f 'src/externalwindow-x11.c' || echo '$(srcdir)/'`src/externalwindow-x11.c
@@ -1862,6 +1883,7 @@ distclean: distclean-recursive
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-gnomescreencast.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-gtkbackports.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-inhibit.Po
+	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-lockdown.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-notification.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-print.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-remotedesktop.Po
@@ -1945,6 +1967,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-gnomescreencast.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-gtkbackports.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-inhibit.Po
+	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-lockdown.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-notification.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-print.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-remotedesktop.Po
@@ -2029,6 +2052,7 @@ $(dbus_built_sources): src/Makefile.am.inc
 	 $(DESKTOP_PORTAL_INTERFACES_DIR)/org.freedesktop.impl.portal.Email.xml \
 	 $(DESKTOP_PORTAL_INTERFACES_DIR)/org.freedesktop.impl.portal.ScreenCast.xml \
 	 $(DESKTOP_PORTAL_INTERFACES_DIR)/org.freedesktop.impl.portal.RemoteDesktop.xml \
+	 $(DESKTOP_PORTAL_INTERFACES_DIR)/org.freedesktop.impl.portal.Lockdown.xml \
 	$(NULL)
 
 $(shell_built_sources): src/Makefile.am.inc
