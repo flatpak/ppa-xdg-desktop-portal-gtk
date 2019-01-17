@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2018-11-16 15:20-0500\n"
+"POT-Creation-Date: 2019-01-15 23:34-0500\n"
 "PO-Revision-Date: 2017-12-06 14:54+0100\n"
 "Last-Translator: Josef Andersson <l10nl18nsweja@gmail.com>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -37,32 +37,32 @@ msgstr "Neka tillgång"
 msgid "Grant Access"
 msgstr "Bevilja tillgång"
 
-#: src/accountdialog.c:166
+#: src/accountdialog.c:176
 msgid "Select an Image"
 msgstr "Välj en bild"
 
-#: src/accountdialog.c:169
+#: src/accountdialog.c:179
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: src/accountdialog.c:170
+#: src/accountdialog.c:180
 msgid "Select"
 msgstr "Välj"
 
-#: src/accountdialog.c:171
+#: src/accountdialog.c:181
 msgid "Clear"
 msgstr "Rensa"
 
-#: src/accountdialog.c:185
+#: src/accountdialog.c:195
 msgid "Images"
 msgstr "Bilder"
 
-#: src/accountdialog.c:260
+#: src/accountdialog.c:272
 #, c-format
 msgid "Share your personal information with %s?"
 msgstr "Dela din personliga information med %s?"
 
-#: src/accountdialog.c:263
+#: src/accountdialog.c:275
 msgid "Share your personal information with the requesting application?"
 msgstr "Dela din personliga information med programmet som begär den?"
 
@@ -89,7 +89,7 @@ msgstr "Ändra informationen innan den delas"
 msgid "Failed to start Software"
 msgstr "Misslyckades med att starta Programvara"
 
-#: src/appchooserdialog.c:398
+#: src/appchooserdialog.c:408
 #, c-format
 msgid ""
 "Select an application to open “%s”. More applications are available in <a "
@@ -98,7 +98,7 @@ msgstr ""
 "Välj ett program för att öppna ”%s”. Fler program finns tillgängliga i <a "
 "href='software'>Programvara.</a>"
 
-#: src/appchooserdialog.c:403
+#: src/appchooserdialog.c:413
 msgid ""
 "Select an application. More applications are available in <a "
 "href='software'>Software.</a>"
@@ -106,12 +106,12 @@ msgstr ""
 "Välj ett program. Fler program finns tillgängliga i <a "
 "href='software'>Programvara.</a>"
 
-#: src/appchooserdialog.c:418
+#: src/appchooserdialog.c:428
 #, c-format
 msgid "Unable to find an application that is able to open “%s”."
 msgstr "Det går inte att hitta ett program som kan öppna ”%s”."
 
-#: src/appchooserdialog.c:423
+#: src/appchooserdialog.c:433
 msgid "Unable to find a suitable application."
 msgstr "Det går inte att hitta ett passande program."
 
@@ -176,12 +176,12 @@ msgstr ""
 msgid "Select monitor to share with the requesting application"
 msgstr "Dela denna skärmbild med programmet som begär den?"
 
-#: src/screenshotdialog.c:422
+#: src/screenshotdialog.c:434
 #, c-format
 msgid "Share this screenshot with %s?"
 msgstr "Dela denna skärmbild med %s?"
 
-#: src/screenshotdialog.c:426
+#: src/screenshotdialog.c:438
 msgid "Share this screenshot with the requesting application?"
 msgstr "Dela denna skärmbild med programmet som begär den?"
 

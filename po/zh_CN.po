@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2018-11-16 15:20-0500\n"
+"POT-Creation-Date: 2019-01-15 23:34-0500\n"
 "PO-Revision-Date: 2016-10-28 18:05-0400\n"
 "Last-Translator: Mingye Wang (Arthur2e5) <arthur200126@gmail.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
@@ -35,34 +35,34 @@ msgstr "拒绝访问"
 msgid "Grant Access"
 msgstr "允许访问"
 
-#: src/accountdialog.c:166
+#: src/accountdialog.c:176
 msgid "Select an Image"
 msgstr ""
 
-#: src/accountdialog.c:169
+#: src/accountdialog.c:179
 #, fuzzy
 msgid "Cancel"
 msgstr "取消(_C)"
 
-#: src/accountdialog.c:170
+#: src/accountdialog.c:180
 #, fuzzy
 msgid "Select"
 msgstr "选择(_S)"
 
-#: src/accountdialog.c:171
+#: src/accountdialog.c:181
 msgid "Clear"
 msgstr ""
 
-#: src/accountdialog.c:185
+#: src/accountdialog.c:195
 msgid "Images"
 msgstr ""
 
-#: src/accountdialog.c:260
+#: src/accountdialog.c:272
 #, c-format
 msgid "Share your personal information with %s?"
 msgstr ""
 
-#: src/accountdialog.c:263
+#: src/accountdialog.c:275
 #, fuzzy
 msgid "Share your personal information with the requesting application?"
 msgstr "与正发出请求的应用程序共享此截图吗？"
@@ -90,25 +90,25 @@ msgstr ""
 msgid "Failed to start Software"
 msgstr ""
 
-#: src/appchooserdialog.c:398
+#: src/appchooserdialog.c:408
 #, c-format
 msgid ""
 "Select an application to open “%s”. More applications are available in <a "
 "href='software'>Software.</a>"
 msgstr ""
 
-#: src/appchooserdialog.c:403
+#: src/appchooserdialog.c:413
 msgid ""
 "Select an application. More applications are available in <a "
 "href='software'>Software.</a>"
 msgstr ""
 
-#: src/appchooserdialog.c:418
+#: src/appchooserdialog.c:428
 #, c-format
 msgid "Unable to find an application that is able to open “%s”."
 msgstr ""
 
-#: src/appchooserdialog.c:423
+#: src/appchooserdialog.c:433
 msgid "Unable to find a suitable application."
 msgstr ""
 
@@ -174,12 +174,12 @@ msgstr ""
 msgid "Select monitor to share with the requesting application"
 msgstr "与正发出请求的应用程序共享此截图吗？"
 
-#: src/screenshotdialog.c:422
+#: src/screenshotdialog.c:434
 #, c-format
 msgid "Share this screenshot with %s?"
 msgstr "要与 %s 分享截屏吗？"
 
-#: src/screenshotdialog.c:426
+#: src/screenshotdialog.c:438
 msgid "Share this screenshot with the requesting application?"
 msgstr "与正发出请求的应用程序共享此截图吗？"
 
