@@ -23,7 +23,7 @@ Architecture: linux-any
 Multi-arch: foreign
 Depends:
  dbus-user-session | dbus-x11,
- xdg-desktop-portal (>= 0.10),
+ xdg-desktop-portal (>= 1.1.1),
  ${misc:Depends},
  ${shlibs:Depends},
 Suggests:
