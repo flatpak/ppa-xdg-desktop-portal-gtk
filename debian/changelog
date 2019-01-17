@@ -2,6 +2,7 @@ xdg-desktop-portal-gtk (1.1.1-1) UNRELEASED; urgency=medium
 
   * New upstream development release
     - B-D on xdg-desktop-portal 1.1.1 for Lockdown interface
+  * Standards-Version: 4.3.0 (no changes required)
 
  -- Simon McVittie <smcv@debian.org>  Thu, 17 Jan 2019 08:48:41 +0000
 
