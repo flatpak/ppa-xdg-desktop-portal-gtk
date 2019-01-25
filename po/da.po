@@ -5,9 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk\n"
-"Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
-"issues\n"
-"POT-Creation-Date: 2019-01-15 23:34-0500\n"
+"Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-"
+"gtk/issues\n"
+"POT-Creation-Date: 2018-12-05 03:29+0000\n"
 "PO-Revision-Date: 2018-12-06 03:20+0200\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish\n"
@@ -100,8 +100,8 @@ msgid ""
 "Select an application. More applications are available in <a "
 "href='software'>Software.</a>"
 msgstr ""
-"Vælg et program. Der findes flere programmer i <a href='software'>Software.</"
-"a>"
+"Vælg et program. Der findes flere programmer i <a "
+"href='software'>Software.</a>"
 
 #: src/appchooserdialog.c:428
 #, c-format

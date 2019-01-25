@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2019-01-15 23:34-0500\n"
+"POT-Creation-Date: 2018-11-16 15:18-0500\n"
 "PO-Revision-Date: 2018-10-31 00:33+0300\n"
 "Last-Translator: Muhammet Kara <muhammetk@gnome.org>\n"
 "Language-Team: Turkish <gnome-turk@gnome.org>\n"
@@ -36,32 +36,32 @@ msgstr "Erişimi Reddet"
 msgid "Grant Access"
 msgstr "Erişime İzin Ver"
 
-#: src/accountdialog.c:176
+#: src/accountdialog.c:166
 msgid "Select an Image"
 msgstr "Resim Seç"
 
-#: src/accountdialog.c:179
+#: src/accountdialog.c:169
 msgid "Cancel"
 msgstr "İptal"
 
-#: src/accountdialog.c:180
+#: src/accountdialog.c:170
 msgid "Select"
 msgstr "Seç"
 
-#: src/accountdialog.c:181
+#: src/accountdialog.c:171
 msgid "Clear"
 msgstr "Temizle"
 
-#: src/accountdialog.c:195
+#: src/accountdialog.c:185
 msgid "Images"
 msgstr "Resimler"
 
-#: src/accountdialog.c:272
+#: src/accountdialog.c:260
 #, c-format
 msgid "Share your personal information with %s?"
 msgstr "Kişisel bilgileriniz %s ile paylaşılsın mı?"
 
-#: src/accountdialog.c:275
+#: src/accountdialog.c:263
 msgid "Share your personal information with the requesting application?"
 msgstr "Kişisel bilgileriniz, istekte bulunan uygulamayla paylaşılsın mı?"
 
@@ -88,7 +88,7 @@ msgstr "Bilgileri paylaşmadan önce değişiklik yapın"
 msgid "Failed to start Software"
 msgstr "Yazılımlar başlatılamadı"
 
-#: src/appchooserdialog.c:408
+#: src/appchooserdialog.c:398
 #, c-format
 msgid ""
 "Select an application to open “%s”. More applications are available in <a "
@@ -97,7 +97,7 @@ msgstr ""
 "“%s”i açmak için bir uygulama seçin. <a href='software'>Yazılımlar</a>'da "
 "daha fazla uygulama bulabilirsiniz."
 
-#: src/appchooserdialog.c:413
+#: src/appchooserdialog.c:403
 msgid ""
 "Select an application. More applications are available in <a "
 "href='software'>Software.</a>"
@@ -105,12 +105,12 @@ msgstr ""
 "Bir uygulama seçin. <a href='software'>Yazılımlar</a>'da daha fazla uygulama "
 "bulabilirsiniz."
 
-#: src/appchooserdialog.c:428
+#: src/appchooserdialog.c:418
 #, c-format
 msgid "Unable to find an application that is able to open “%s”."
 msgstr "“%s”i açabilen bir uygulama bulunamadı."
 
-#: src/appchooserdialog.c:433
+#: src/appchooserdialog.c:423
 msgid "Unable to find a suitable application."
 msgstr "Uygun bir uygulama bulunamadı."
 
@@ -172,12 +172,12 @@ msgstr "%s ile paylaşılacak monitörü seçin"
 msgid "Select monitor to share with the requesting application"
 msgstr "İstekte bulunan uygulama ile paylaşılacak monitörü seçin"
 
-#: src/screenshotdialog.c:434
+#: src/screenshotdialog.c:422
 #, c-format
 msgid "Share this screenshot with %s?"
 msgstr "Bu ekran görüntüsü %s ile paylaşılsın mı?"
 
-#: src/screenshotdialog.c:438
+#: src/screenshotdialog.c:426
 msgid "Share this screenshot with the requesting application?"
 msgstr "Bu ekran görüntüsü, istekte bulunan uygulama ile paylaşılsın mı?"
 
