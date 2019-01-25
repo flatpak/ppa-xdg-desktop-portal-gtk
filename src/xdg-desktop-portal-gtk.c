@@ -52,6 +52,7 @@
 #include "email.h"
 #include "screencast.h"
 #include "remotedesktop.h"
+#include "lockdown.h"
 
 
 static GMainLoop *loop = NULL;
@@ -59,10 +60,12 @@ static GHashTable *outstanding_handles = NULL;
 
 static gboolean opt_verbose;
 static gboolean opt_replace;
+static gboolean show_version;
 
 static GOptionEntry entries[] = {
   { "verbose", 'v', 0, G_OPTION_ARG_NONE, &opt_verbose, "Print debug information during command processing", NULL },
   { "replace", 'r', 0, G_OPTION_ARG_NONE, &opt_replace, "Replace a running instance", NULL },
+  { "version", 0, 0, G_OPTION_ARG_NONE, &show_version, "Show program version.", NULL},
   { NULL }
 };
 
@@ -74,9 +77,23 @@ message_handler (const gchar *log_domain,
 {
   /* Make this look like normal console output */
   if (log_level & G_LOG_LEVEL_DEBUG)
-    g_printerr ("XDP: %s\n", message);
+    printf ("XDP: %s\n", message);
   else
-    g_printerr ("%s: %s\n", g_get_prgname (), message);
+    printf ("%s: %s\n", g_get_prgname (), message);
+}
+
+static void
+printerr_handler (const gchar *string)
+{
+  int is_tty = isatty (1);
+  const char *prefix = "";
+  const char *suffix = "";
+  if (is_tty)
+    {
+      prefix = "\x1b[31m\x1b[1m"; /* red, bold */
+      suffix = "\x1b[22m\x1b[0m"; /* bold off, color reset */
+    }
+  fprintf (stderr, "%serror: %s%s\n", prefix, suffix, string);
 }
 
 static void
@@ -151,6 +168,12 @@ on_bus_acquired (GDBusConnection *connection,
       g_warning ("error: %s\n", error->message);
       g_clear_error (&error);
     }
+
+  if (!lockdown_init (connection, &error))
+    {
+      g_warning ("error: %s\n", error->message);
+      g_clear_error (&error);
+    }
 }
 
 static void
@@ -201,9 +224,22 @@ main (int argc, char *argv[])
   g_option_context_add_main_entries (context, entries, NULL);
   if (!g_option_context_parse (context, &argc, &argv, &error))
     {
-      g_printerr ("option parsing failed: %s\n", error->message);
+      g_printerr ("%s: %s", g_get_application_name (), error->message);
+      g_printerr ("\n");
+      g_printerr ("Try \"%s --help\" for more information.",
+                  g_get_prgname ());
+      g_printerr ("\n");
+      g_option_context_free (context);
       return 1;
     }
+
+  if (show_version)
+    {
+      g_print (PACKAGE_STRING "\n");
+      return 0;
+    }
+
+  g_set_printerr_handler (printerr_handler);
 
   if (opt_verbose)
     g_log_set_handler (NULL, G_LOG_LEVEL_DEBUG, message_handler, NULL);
