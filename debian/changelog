@@ -4,6 +4,7 @@ xdg-desktop-portal-gtk (1.2.0-1) UNRELEASED; urgency=medium
   * New upstream stable release
     - d/watch: Only watch for even-numbered branches
   * d/gbp.conf: Don't force xz compression
+  * d/gbp.conf, d/control: Use debian/master branch
 
  -- Simon McVittie <smcv@debian.org>  Fri, 18 Jan 2019 10:11:47 +0000
 
