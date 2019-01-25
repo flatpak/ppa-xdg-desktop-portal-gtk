@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2019-01-15 23:34-0500\n"
+"POT-Creation-Date: 2018-11-16 15:18-0500\n"
 "PO-Revision-Date: 2018-03-03 08:15+0100\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
@@ -36,32 +36,32 @@ msgstr "Hozzáférés megtagadása"
 msgid "Grant Access"
 msgstr "Hozzáférés megadása"
 
-#: src/accountdialog.c:176
+#: src/accountdialog.c:166
 msgid "Select an Image"
 msgstr "Válasszon lemezképet"
 
-#: src/accountdialog.c:179
+#: src/accountdialog.c:169
 msgid "Cancel"
 msgstr "Mégse"
 
-#: src/accountdialog.c:180
+#: src/accountdialog.c:170
 msgid "Select"
 msgstr "Kiválasztás"
 
-#: src/accountdialog.c:181
+#: src/accountdialog.c:171
 msgid "Clear"
 msgstr "Törlés"
 
-#: src/accountdialog.c:195
+#: src/accountdialog.c:185
 msgid "Images"
 msgstr "Lemezképek"
 
-#: src/accountdialog.c:272
+#: src/accountdialog.c:260
 #, c-format
 msgid "Share your personal information with %s?"
 msgstr "Megosztja a személyes információit ezzel: %s?"
 
-#: src/accountdialog.c:275
+#: src/accountdialog.c:263
 msgid "Share your personal information with the requesting application?"
 msgstr "Megosztja a személyes információit a kérelmező alkalmazással?"
 
@@ -88,7 +88,7 @@ msgstr "Megváltoztatás az információk megosztása előtt"
 msgid "Failed to start Software"
 msgstr "Nem sikerült elindítani a Szoftvereket"
 
-#: src/appchooserdialog.c:408
+#: src/appchooserdialog.c:398
 #, c-format
 msgid ""
 "Select an application to open “%s”. More applications are available in <a "
@@ -97,7 +97,7 @@ msgstr ""
 "Válasszon egy alkalmazást a(z) „%s” megnyitásához. További alkalmazások "
 "érhetők el a <a href='software'>Szoftverekben.</a>"
 
-#: src/appchooserdialog.c:413
+#: src/appchooserdialog.c:403
 msgid ""
 "Select an application. More applications are available in <a "
 "href='software'>Software.</a>"
@@ -105,13 +105,13 @@ msgstr ""
 "Válasszon egy alkalmazást. További alkalmazások érhetők el a <a "
 "href='software'>Szoftverekben.</a>"
 
-#: src/appchooserdialog.c:428
+#: src/appchooserdialog.c:418
 #, c-format
 msgid "Unable to find an application that is able to open “%s”."
 msgstr ""
 "Nem sikerült olyan alkalmazást találni, amely képes a(z) „%s” megnyitására."
 
-#: src/appchooserdialog.c:433
+#: src/appchooserdialog.c:423
 msgid "Unable to find a suitable application."
 msgstr "Nem sikerült megfelelő alkalmazást találni."
 
@@ -174,12 +174,12 @@ msgstr "Válasszon monitort az ezzel történő megosztáshoz: %s"
 msgid "Select monitor to share with the requesting application"
 msgstr "Válasszon monitort a kérő alkalmazással történő megosztáshoz"
 
-#: src/screenshotdialog.c:434
+#: src/screenshotdialog.c:422
 #, c-format
 msgid "Share this screenshot with %s?"
 msgstr "Megosztja ezt a képernyőképet ezzel: %s?"
 
-#: src/screenshotdialog.c:438
+#: src/screenshotdialog.c:426
 msgid "Share this screenshot with the requesting application?"
 msgstr "Megosztja ezt a képernyőképet a kérő alkalmazással?"
 
