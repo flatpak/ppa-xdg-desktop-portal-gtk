@@ -1,12 +1,16 @@
 xdg-desktop-portal-gtk (1.2.0-1) UNRELEASED; urgency=medium
 
+  [ Simon McVittie ]
   * d/upstream/metadata: Add DEP-12 metadata
   * New upstream stable release
     - d/watch: Only watch for even-numbered branches
   * d/gbp.conf: Don't force xz compression
   * d/gbp.conf, d/control: Use debian/master branch
 
- -- Simon McVittie <smcv@debian.org>  Fri, 18 Jan 2019 10:11:47 +0000
+  [ Jeremy Bicha ]
+  * Use dh_missing instead of dh_install
+
+ -- Simon McVittie <smcv@debian.org>  Fri, 25 Jan 2019 23:13:34 +0000
 
 xdg-desktop-portal-gtk (1.1.1-1) experimental; urgency=medium
 
