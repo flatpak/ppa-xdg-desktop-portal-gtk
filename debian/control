@@ -30,7 +30,7 @@ Suggests:
  accountsservice,
  evince,
 Provides:
- xdg-desktop-portal-backend,
+ xdg-desktop-portal-backend (= 1.4),
 Description: GTK+/GNOME portal backend for xdg-desktop-portal
  xdg-desktop-portal-gtk provides a GTK+/GNOME implementation for the
  desktop-agnostic xdg-desktop-portal service. This allows sandboxed

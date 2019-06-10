@@ -3,6 +3,7 @@ xdg-desktop-portal-gtk (1.4.0-1) UNRELEASED; urgency=medium
   * New upstream release
     - d/copyright: Update
   * Build-depend on the corresponding xdg-desktop-portal 1.4
+  * Make xdg-desktop-portal-backend a versioned Provides
 
  -- Simon McVittie <smcv@debian.org>  Mon, 10 Jun 2019 09:09:58 +0100
 
