@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2018-12-01 03:29+0000\n"
+"POT-Creation-Date: 2019-05-28 15:17+0000\n"
 "PO-Revision-Date: 2019-01-17 14:10+0100\n"
 "Last-Translator: Josef Andersson <l10nl18nsweja@gmail.com>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -70,7 +70,7 @@ msgstr "Dela din personliga information med programmet som begär den?"
 msgid "Share Details"
 msgstr "Dela detaljer"
 
-#: src/accountdialog.ui:14 src/appchooserdialog.ui:17 src/filechooser.c:395
+#: src/accountdialog.ui:14 src/appchooserdialog.ui:17 src/filechooser.c:397
 #: src/remotedesktopdialog.ui:16 src/screencastdialog.ui:16
 #: src/screenshotdialog.ui:14
 msgid "_Cancel"
@@ -127,32 +127,57 @@ msgstr "Inga program funna"
 msgid "Find Compatible Applications in Software"
 msgstr "Sök efter kompatibla program i Programvara"
 
-#: src/filechooser.c:390
+#: src/background.c:255
+msgid "Background activity"
+msgstr ""
+
+#: src/background.c:257
+#, c-format
+msgid "%s is running in the background."
+msgstr ""
+
+#: src/background.c:262
+msgid "Allow"
+msgstr ""
+
+#: src/background.c:269
+msgid "Forbid"
+msgstr ""
+
+#: src/background.c:276
+msgid "Ignore"
+msgstr ""
+
+#: src/filechooser.c:392
 msgid "_Save"
 msgstr "_Spara"
 
-#: src/filechooser.c:392
+#: src/filechooser.c:394
 msgid "_Open"
 msgstr "_Öppna"
 
-#: src/remotedesktopdialog.c:190
+#: src/filechooser.c:552
+msgid "Open files read-only"
+msgstr ""
+
+#: src/remotedesktopdialog.c:188
 msgid "Pointer"
 msgstr "Pekare"
 
-#: src/remotedesktopdialog.c:193
+#: src/remotedesktopdialog.c:191
 msgid "Keyboard"
 msgstr "Tangentbord"
 
-#: src/remotedesktopdialog.c:196
+#: src/remotedesktopdialog.c:194
 msgid "Touch screen"
 msgstr "Pekskärm"
 
-#: src/remotedesktopdialog.c:303
+#: src/remotedesktopdialog.c:307
 #, c-format
 msgid "Select devices to share with %s"
 msgstr "Välj enheter att dela med %s"
 
-#: src/remotedesktopdialog.c:308
+#: src/remotedesktopdialog.c:312
 msgid "Select devices to share with the requesting application"
 msgstr "Välj enheter att dela med programmet"
 
