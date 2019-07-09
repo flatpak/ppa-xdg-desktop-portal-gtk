@@ -6,7 +6,7 @@ Uploaders:
  Simon McVittie <smcv@debian.org>,
 Build-Depends:
  dbus,
- debhelper (>= 10),
+ debhelper-compat (= 12),
  libdbus-1-dev,
  libglib2.0-dev (>= 2.44),
  libgtk-3-dev (>= 3.14),

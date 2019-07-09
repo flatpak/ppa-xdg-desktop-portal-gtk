@@ -2,6 +2,7 @@ xdg-desktop-portal-gtk (1.4.0-2) UNRELEASED; urgency=medium
 
   * d/salsa-ci.yml: Request standard CI on salsa.debian.org
   * Standards-Version: 4.4.0 (no changes required)
+  * Use debhelper-compat 12
 
  -- Simon McVittie <smcv@debian.org>  Sun, 23 Jun 2019 20:12:57 +0100
 
