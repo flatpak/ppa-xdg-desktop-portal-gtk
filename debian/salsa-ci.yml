@@ -1,18 +1,3 @@
 include:
   - https://salsa.debian.org/salsa-ci-team/pipeline/raw/master/salsa-ci.yml
   - https://salsa.debian.org/salsa-ci-team/pipeline/raw/master/pipeline-jobs.yml
-
-piuparts:
-  # https://salsa.debian.org/salsa-ci-team/pipeline/issues/58
-  only:
-    variables:
-      - $RELEASE == "unstable"
-
-reprotest:
-  # https://salsa.debian.org/salsa-ci-team/pipeline/issues/57
-  only:
-    variables:
-      - $RELEASE == "unstable"
-
-variables:
-  RELEASE: experimental
