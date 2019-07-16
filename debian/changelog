@@ -1,12 +1,13 @@
-xdg-desktop-portal-gtk (1.4.0-2) UNRELEASED; urgency=medium
+xdg-desktop-portal-gtk (1.4.0-2) unstable; urgency=medium
 
+  * Upload to unstable
   * d/salsa-ci.yml: Request standard CI on salsa.debian.org
   * Standards-Version: 4.4.0 (no changes required)
   * Use debhelper-compat 12
     - Remove --libexecdir=/usr/libexec, which is the default at this
       compat level
 
- -- Simon McVittie <smcv@debian.org>  Sun, 23 Jun 2019 20:12:57 +0100
+ -- Simon McVittie <smcv@debian.org>  Tue, 16 Jul 2019 09:41:56 +0100
 
 xdg-desktop-portal-gtk (1.4.0-1) experimental; urgency=medium
 
