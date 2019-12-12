@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2019-05-28 15:17+0000\n"
+"POT-Creation-Date: 2019-10-04 11:11-0400\n"
 "PO-Revision-Date: 2018-10-10 12:22+0800\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <chinese-l10n@googlegroups.com>\n"
@@ -115,11 +115,11 @@ msgstr "找不到適合的應用程式。"
 msgid "Open With"
 msgstr "開啟方式"
 
-#: src/appchooserdialog.ui:166
+#: src/appchooserdialog.ui:167
 msgid "No Applications Found"
 msgstr "找不到應用程式"
 
-#: src/appchooserdialog.ui:182
+#: src/appchooserdialog.ui:183
 msgid "Find Compatible Applications in Software"
 msgstr "在《軟體》中尋找相容的應用程式"
 
@@ -182,17 +182,36 @@ msgid "Remote desktop"
 msgstr "遠端桌面"
 
 #: src/screencastdialog.ui:12
-msgid "Screen casting"
-msgstr "螢幕投放"
+#, fuzzy
+msgid "Screen Share"
+msgstr "畫面快照"
 
-#: src/screencastwidget.c:243
+#: src/screencastwidget.c:483
 #, c-format
 msgid "Select monitor to share with %s"
 msgstr "選取您想要和 %s 分享的螢幕"
 
-#: src/screencastwidget.c:248
+#: src/screencastwidget.c:485
+#, fuzzy, c-format
+msgid "Select window to share with %s"
+msgstr "選取您想和 %s 分享的項目"
+
+#: src/screencastwidget.c:490
 msgid "Select monitor to share with the requesting application"
 msgstr "選取您想和請求程式分享的螢幕"
+
+#: src/screencastwidget.c:491
+#, fuzzy
+msgid "Select window to share with the requesting application"
+msgstr "選取您想和請求程式分享的項目"
+
+#: src/screencastwidget.ui:100
+msgid "Single Window"
+msgstr ""
+
+#: src/screencastwidget.ui:176
+msgid "Entire Screen"
+msgstr ""
 
 #: src/screenshotdialog.c:434
 #, c-format
@@ -251,8 +270,9 @@ msgstr "包含指標(_P)"
 msgid "Include the window _border"
 msgstr "包含視窗邊框(_B)"
 
-#~ msgid "Select what to share with %s"
-#~ msgstr "選取您想和 %s 分享的項目"
+#: src/settings.c:185
+msgid "Requested setting not found"
+msgstr ""
 
-#~ msgid "Select what to share with the requesting application"
-#~ msgstr "選取您想和請求程式分享的項目"
+#~ msgid "Screen casting"
+#~ msgstr "螢幕投放"

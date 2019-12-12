@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2019-05-28 15:17+0000\n"
+"POT-Creation-Date: 2019-10-04 11:11-0400\n"
 "PO-Revision-Date: 2019-02-12 21:07+0100\n"
 "Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
@@ -119,11 +119,11 @@ msgstr "Nem sikerült megfelelő alkalmazást találni."
 msgid "Open With"
 msgstr "Megnyitás ezzel"
 
-#: src/appchooserdialog.ui:166
+#: src/appchooserdialog.ui:167
 msgid "No Applications Found"
 msgstr "Nem találhatók alkalmazások"
 
-#: src/appchooserdialog.ui:182
+#: src/appchooserdialog.ui:183
 msgid "Find Compatible Applications in Software"
 msgstr "Kompatibilis alkalmazások keresése a Szoftverekben"
 
@@ -186,17 +186,36 @@ msgid "Remote desktop"
 msgstr "Távoli asztal"
 
 #: src/screencastdialog.ui:12
-msgid "Screen casting"
-msgstr "Képernyőfelvétel"
+#, fuzzy
+msgid "Screen Share"
+msgstr "Képernyőkép"
 
-#: src/screencastwidget.c:243
+#: src/screencastwidget.c:483
 #, c-format
 msgid "Select monitor to share with %s"
 msgstr "Válasszon monitort az ezzel történő megosztáshoz: %s"
 
-#: src/screencastwidget.c:248
+#: src/screencastwidget.c:485
+#, fuzzy, c-format
+msgid "Select window to share with %s"
+msgstr "Válasszon monitort az ezzel történő megosztáshoz: %s"
+
+#: src/screencastwidget.c:490
 msgid "Select monitor to share with the requesting application"
 msgstr "Válasszon monitort a kérő alkalmazással történő megosztáshoz"
+
+#: src/screencastwidget.c:491
+#, fuzzy
+msgid "Select window to share with the requesting application"
+msgstr "Válasszon monitort a kérő alkalmazással történő megosztáshoz"
+
+#: src/screencastwidget.ui:100
+msgid "Single Window"
+msgstr ""
+
+#: src/screencastwidget.ui:176
+msgid "Entire Screen"
+msgstr ""
 
 #: src/screenshotdialog.c:434
 #, c-format
@@ -254,3 +273,10 @@ msgstr "_Mutató felvétele"
 #: src/screenshotdialog.ui:201
 msgid "Include the window _border"
 msgstr "Az ablak _szegélyét is tartalmazza"
+
+#: src/settings.c:185
+msgid "Requested setting not found"
+msgstr ""
+
+#~ msgid "Screen casting"
+#~ msgstr "Képernyőfelvétel"

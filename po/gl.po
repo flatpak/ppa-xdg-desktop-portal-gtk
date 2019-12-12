@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2019-05-28 15:17+0000\n"
+"POT-Creation-Date: 2019-10-04 11:11-0400\n"
 "PO-Revision-Date: 2019-02-20 01:47+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: Galician\n"
@@ -117,11 +117,11 @@ msgstr "Non foi posíbel atopar un aplicativo axeitado."
 msgid "Open With"
 msgstr "Abrir con"
 
-#: src/appchooserdialog.ui:166
+#: src/appchooserdialog.ui:167
 msgid "No Applications Found"
 msgstr "Non se atoparon aplicativos"
 
-#: src/appchooserdialog.ui:182
+#: src/appchooserdialog.ui:183
 msgid "Find Compatible Applications in Software"
 msgstr "Bucar aplicativos compatíbeis en Software"
 
@@ -185,17 +185,35 @@ msgstr ""
 
 #: src/screencastdialog.ui:12
 #, fuzzy
-msgid "Screen casting"
+msgid "Screen Share"
 msgstr "Captura de pantalla"
 
-#: src/screencastwidget.c:243
+#: src/screencastwidget.c:483
 #, c-format
 msgid "Select monitor to share with %s"
 msgstr "Seleccione o monitor a compartir con %s"
 
-#: src/screencastwidget.c:248
+#: src/screencastwidget.c:485
+#, fuzzy, c-format
+msgid "Select window to share with %s"
+msgstr "Seleccione o monitor a compartir con %s"
+
+#: src/screencastwidget.c:490
 msgid "Select monitor to share with the requesting application"
 msgstr "Compartir o monitor para compartir co aplicativo que o solicita"
+
+#: src/screencastwidget.c:491
+#, fuzzy
+msgid "Select window to share with the requesting application"
+msgstr "Compartir o monitor para compartir co aplicativo que o solicita"
+
+#: src/screencastwidget.ui:100
+msgid "Single Window"
+msgstr ""
+
+#: src/screencastwidget.ui:176
+msgid "Entire Screen"
+msgstr ""
 
 #: src/screenshotdialog.c:434
 #, c-format
@@ -255,3 +273,11 @@ msgstr ""
 #: src/screenshotdialog.ui:201
 msgid "Include the window _border"
 msgstr ""
+
+#: src/settings.c:185
+msgid "Requested setting not found"
+msgstr ""
+
+#, fuzzy
+#~ msgid "Screen casting"
+#~ msgstr "Captura de pantalla"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2019-05-28 15:17+0000\n"
+"POT-Creation-Date: 2019-10-04 11:11-0400\n"
 "PO-Revision-Date: 2016-09-14 12:56+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: српски <gnome-sr@googlegroups.org>\n"
@@ -117,12 +117,12 @@ msgstr ""
 msgid "Open With"
 msgstr "Отвори програмом"
 
-#: src/appchooserdialog.ui:166
+#: src/appchooserdialog.ui:167
 #, fuzzy
 msgid "No Applications Found"
 msgstr "Изаберите програм"
 
-#: src/appchooserdialog.ui:182
+#: src/appchooserdialog.ui:183
 msgid "Find Compatible Applications in Software"
 msgstr ""
 
@@ -187,18 +187,36 @@ msgstr ""
 
 #: src/screencastdialog.ui:12
 #, fuzzy
-msgid "Screen casting"
+msgid "Screen Share"
 msgstr "Снимак екрана"
 
-#: src/screencastwidget.c:243
+#: src/screencastwidget.c:483
 #, c-format
 msgid "Select monitor to share with %s"
 msgstr ""
 
-#: src/screencastwidget.c:248
+#: src/screencastwidget.c:485
+#, c-format
+msgid "Select window to share with %s"
+msgstr ""
+
+#: src/screencastwidget.c:490
 #, fuzzy
 msgid "Select monitor to share with the requesting application"
 msgstr "Да поделим овај снимак екрана са програмом који то захтева?"
+
+#: src/screencastwidget.c:491
+#, fuzzy
+msgid "Select window to share with the requesting application"
+msgstr "Да поделим овај снимак екрана са програмом који то захтева?"
+
+#: src/screencastwidget.ui:100
+msgid "Single Window"
+msgstr ""
+
+#: src/screencastwidget.ui:176
+msgid "Entire Screen"
+msgstr ""
 
 #: src/screenshotdialog.c:434
 #, c-format
@@ -258,6 +276,14 @@ msgstr ""
 #: src/screenshotdialog.ui:201
 msgid "Include the window _border"
 msgstr ""
+
+#: src/settings.c:185
+msgid "Requested setting not found"
+msgstr ""
+
+#, fuzzy
+#~ msgid "Screen casting"
+#~ msgstr "Снимак екрана"
 
 #~ msgid "_Select"
 #~ msgstr "_Изабери"

@@ -164,10 +164,13 @@ am__xdg_desktop_portal_gtk_SOURCES_DIST =  \
 	src/gnomescreencast.h src/remotedesktop.c src/remotedesktop.h \
 	src/remotedesktopdialog.c src/remotedesktopdialog.h \
 	src/displaystatetracker.c src/displaystatetracker.h \
-	src/lockdown.c src/lockdown.h src/background.c \
-	src/background.h src/externalwindow-x11.h \
-	src/externalwindow-x11.c src/externalwindow-wayland.h \
-	src/externalwindow-wayland.c
+	src/shellintrospect.c src/shellintrospect.h src/lockdown.c \
+	src/lockdown.h src/background.c src/background.h \
+	src/fc-monitor.c src/fc-monitor.h \
+	src/gsd-remote-display-manager.c \
+	src/gsd-remote-display-manager.h src/settings.c src/settings.h \
+	src/externalwindow-x11.h src/externalwindow-x11.c \
+	src/externalwindow-wayland.h src/externalwindow-wayland.c
 @HAVE_GTK_X11_TRUE@am__objects_1 = src/xdg_desktop_portal_gtk-externalwindow-x11.$(OBJEXT)
 @HAVE_GTK_WAYLAND_TRUE@am__objects_2 = src/xdg_desktop_portal_gtk-externalwindow-wayland.$(OBJEXT)
 am_xdg_desktop_portal_gtk_OBJECTS =  \
@@ -198,9 +201,13 @@ am_xdg_desktop_portal_gtk_OBJECTS =  \
 	src/xdg_desktop_portal_gtk-remotedesktop.$(OBJEXT) \
 	src/xdg_desktop_portal_gtk-remotedesktopdialog.$(OBJEXT) \
 	src/xdg_desktop_portal_gtk-displaystatetracker.$(OBJEXT) \
+	src/xdg_desktop_portal_gtk-shellintrospect.$(OBJEXT) \
 	src/xdg_desktop_portal_gtk-lockdown.$(OBJEXT) \
 	src/xdg_desktop_portal_gtk-background.$(OBJEXT) \
-	$(am__objects_1) $(am__objects_2)
+	src/xdg_desktop_portal_gtk-fc-monitor.$(OBJEXT) \
+	src/xdg_desktop_portal_gtk-gsd-remote-display-manager.$(OBJEXT) \
+	src/xdg_desktop_portal_gtk-settings.$(OBJEXT) $(am__objects_1) \
+	$(am__objects_2)
 am__objects_3 =  \
 	src/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.$(OBJEXT)
 am__objects_4 = src/xdg_desktop_portal_gtk-shell-dbus.$(OBJEXT)
@@ -247,9 +254,11 @@ am__depfiles_remade =  \
 	src/$(DEPDIR)/xdg_desktop_portal_gtk-externalwindow-wayland.Po \
 	src/$(DEPDIR)/xdg_desktop_portal_gtk-externalwindow-x11.Po \
 	src/$(DEPDIR)/xdg_desktop_portal_gtk-externalwindow.Po \
+	src/$(DEPDIR)/xdg_desktop_portal_gtk-fc-monitor.Po \
 	src/$(DEPDIR)/xdg_desktop_portal_gtk-fdonotification.Po \
 	src/$(DEPDIR)/xdg_desktop_portal_gtk-filechooser.Po \
 	src/$(DEPDIR)/xdg_desktop_portal_gtk-gnomescreencast.Po \
+	src/$(DEPDIR)/xdg_desktop_portal_gtk-gsd-remote-display-manager.Po \
 	src/$(DEPDIR)/xdg_desktop_portal_gtk-gtkbackports.Po \
 	src/$(DEPDIR)/xdg_desktop_portal_gtk-inhibit.Po \
 	src/$(DEPDIR)/xdg_desktop_portal_gtk-lockdown.Po \
@@ -265,7 +274,9 @@ am__depfiles_remade =  \
 	src/$(DEPDIR)/xdg_desktop_portal_gtk-screenshot.Po \
 	src/$(DEPDIR)/xdg_desktop_portal_gtk-screenshotdialog.Po \
 	src/$(DEPDIR)/xdg_desktop_portal_gtk-session.Po \
+	src/$(DEPDIR)/xdg_desktop_portal_gtk-settings.Po \
 	src/$(DEPDIR)/xdg_desktop_portal_gtk-shell-dbus.Po \
+	src/$(DEPDIR)/xdg_desktop_portal_gtk-shellintrospect.Po \
 	src/$(DEPDIR)/xdg_desktop_portal_gtk-utils.Po \
 	src/$(DEPDIR)/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.Po \
 	src/$(DEPDIR)/xdg_desktop_portal_gtk-xdg-desktop-portal-gtk.Po
@@ -605,8 +616,12 @@ xdg_desktop_portal_gtk_SOURCES = src/xdg-desktop-portal-gtk.c \
 	src/remotedesktop.c src/remotedesktop.h \
 	src/remotedesktopdialog.c src/remotedesktopdialog.h \
 	src/displaystatetracker.c src/displaystatetracker.h \
-	src/lockdown.c src/lockdown.h src/background.c \
-	src/background.h $(NULL) $(am__append_1) $(am__append_2)
+	src/shellintrospect.c src/shellintrospect.h src/lockdown.c \
+	src/lockdown.h src/background.c src/background.h \
+	src/fc-monitor.c src/fc-monitor.h \
+	src/gsd-remote-display-manager.c \
+	src/gsd-remote-display-manager.h src/settings.c src/settings.h \
+	$(NULL) $(am__append_1) $(am__append_2)
 nodist_xdg_desktop_portal_gtk_SOURCES = \
 	src/resources.c				\
 	$(dbus_built_sources)			\
@@ -838,9 +853,17 @@ src/xdg_desktop_portal_gtk-remotedesktopdialog.$(OBJEXT):  \
 	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
 src/xdg_desktop_portal_gtk-displaystatetracker.$(OBJEXT):  \
 	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/xdg_desktop_portal_gtk-shellintrospect.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
 src/xdg_desktop_portal_gtk-lockdown.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
 src/xdg_desktop_portal_gtk-background.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
+src/xdg_desktop_portal_gtk-fc-monitor.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
+src/xdg_desktop_portal_gtk-gsd-remote-display-manager.$(OBJEXT):  \
+	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/xdg_desktop_portal_gtk-settings.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
 src/xdg_desktop_portal_gtk-externalwindow-x11.$(OBJEXT):  \
 	src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
@@ -880,9 +903,11 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-externalwindow-wayland.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-externalwindow-x11.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-externalwindow.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-fc-monitor.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-fdonotification.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-filechooser.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-gnomescreencast.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-gsd-remote-display-manager.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-gtkbackports.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-inhibit.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-lockdown.Po@am__quote@ # am--include-marker
@@ -898,7 +923,9 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-screenshot.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-screenshotdialog.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-session.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-settings.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-shell-dbus.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-shellintrospect.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-utils.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/xdg_desktop_portal_gtk-xdg-desktop-portal-gtk.Po@am__quote@ # am--include-marker
@@ -1367,6 +1394,20 @@ src/xdg_desktop_portal_gtk-displaystatetracker.obj: src/displaystatetracker.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-displaystatetracker.obj `if test -f 'src/displaystatetracker.c'; then $(CYGPATH_W) 'src/displaystatetracker.c'; else $(CYGPATH_W) '$(srcdir)/src/displaystatetracker.c'; fi`
 
+src/xdg_desktop_portal_gtk-shellintrospect.o: src/shellintrospect.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-shellintrospect.o -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-shellintrospect.Tpo -c -o src/xdg_desktop_portal_gtk-shellintrospect.o `test -f 'src/shellintrospect.c' || echo '$(srcdir)/'`src/shellintrospect.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-shellintrospect.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-shellintrospect.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/shellintrospect.c' object='src/xdg_desktop_portal_gtk-shellintrospect.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-shellintrospect.o `test -f 'src/shellintrospect.c' || echo '$(srcdir)/'`src/shellintrospect.c
+
+src/xdg_desktop_portal_gtk-shellintrospect.obj: src/shellintrospect.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-shellintrospect.obj -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-shellintrospect.Tpo -c -o src/xdg_desktop_portal_gtk-shellintrospect.obj `if test -f 'src/shellintrospect.c'; then $(CYGPATH_W) 'src/shellintrospect.c'; else $(CYGPATH_W) '$(srcdir)/src/shellintrospect.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-shellintrospect.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-shellintrospect.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/shellintrospect.c' object='src/xdg_desktop_portal_gtk-shellintrospect.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-shellintrospect.obj `if test -f 'src/shellintrospect.c'; then $(CYGPATH_W) 'src/shellintrospect.c'; else $(CYGPATH_W) '$(srcdir)/src/shellintrospect.c'; fi`
+
 src/xdg_desktop_portal_gtk-lockdown.o: src/lockdown.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-lockdown.o -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-lockdown.Tpo -c -o src/xdg_desktop_portal_gtk-lockdown.o `test -f 'src/lockdown.c' || echo '$(srcdir)/'`src/lockdown.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-lockdown.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-lockdown.Po
@@ -1394,6 +1435,48 @@ src/xdg_desktop_portal_gtk-background.obj: src/background.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/background.c' object='src/xdg_desktop_portal_gtk-background.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-background.obj `if test -f 'src/background.c'; then $(CYGPATH_W) 'src/background.c'; else $(CYGPATH_W) '$(srcdir)/src/background.c'; fi`
+
+src/xdg_desktop_portal_gtk-fc-monitor.o: src/fc-monitor.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-fc-monitor.o -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-fc-monitor.Tpo -c -o src/xdg_desktop_portal_gtk-fc-monitor.o `test -f 'src/fc-monitor.c' || echo '$(srcdir)/'`src/fc-monitor.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-fc-monitor.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-fc-monitor.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/fc-monitor.c' object='src/xdg_desktop_portal_gtk-fc-monitor.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-fc-monitor.o `test -f 'src/fc-monitor.c' || echo '$(srcdir)/'`src/fc-monitor.c
+
+src/xdg_desktop_portal_gtk-fc-monitor.obj: src/fc-monitor.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-fc-monitor.obj -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-fc-monitor.Tpo -c -o src/xdg_desktop_portal_gtk-fc-monitor.obj `if test -f 'src/fc-monitor.c'; then $(CYGPATH_W) 'src/fc-monitor.c'; else $(CYGPATH_W) '$(srcdir)/src/fc-monitor.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-fc-monitor.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-fc-monitor.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/fc-monitor.c' object='src/xdg_desktop_portal_gtk-fc-monitor.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-fc-monitor.obj `if test -f 'src/fc-monitor.c'; then $(CYGPATH_W) 'src/fc-monitor.c'; else $(CYGPATH_W) '$(srcdir)/src/fc-monitor.c'; fi`
+
+src/xdg_desktop_portal_gtk-gsd-remote-display-manager.o: src/gsd-remote-display-manager.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-gsd-remote-display-manager.o -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-gsd-remote-display-manager.Tpo -c -o src/xdg_desktop_portal_gtk-gsd-remote-display-manager.o `test -f 'src/gsd-remote-display-manager.c' || echo '$(srcdir)/'`src/gsd-remote-display-manager.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-gsd-remote-display-manager.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-gsd-remote-display-manager.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/gsd-remote-display-manager.c' object='src/xdg_desktop_portal_gtk-gsd-remote-display-manager.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-gsd-remote-display-manager.o `test -f 'src/gsd-remote-display-manager.c' || echo '$(srcdir)/'`src/gsd-remote-display-manager.c
+
+src/xdg_desktop_portal_gtk-gsd-remote-display-manager.obj: src/gsd-remote-display-manager.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-gsd-remote-display-manager.obj -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-gsd-remote-display-manager.Tpo -c -o src/xdg_desktop_portal_gtk-gsd-remote-display-manager.obj `if test -f 'src/gsd-remote-display-manager.c'; then $(CYGPATH_W) 'src/gsd-remote-display-manager.c'; else $(CYGPATH_W) '$(srcdir)/src/gsd-remote-display-manager.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-gsd-remote-display-manager.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-gsd-remote-display-manager.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/gsd-remote-display-manager.c' object='src/xdg_desktop_portal_gtk-gsd-remote-display-manager.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-gsd-remote-display-manager.obj `if test -f 'src/gsd-remote-display-manager.c'; then $(CYGPATH_W) 'src/gsd-remote-display-manager.c'; else $(CYGPATH_W) '$(srcdir)/src/gsd-remote-display-manager.c'; fi`
+
+src/xdg_desktop_portal_gtk-settings.o: src/settings.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-settings.o -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-settings.Tpo -c -o src/xdg_desktop_portal_gtk-settings.o `test -f 'src/settings.c' || echo '$(srcdir)/'`src/settings.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-settings.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-settings.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/settings.c' object='src/xdg_desktop_portal_gtk-settings.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-settings.o `test -f 'src/settings.c' || echo '$(srcdir)/'`src/settings.c
+
+src/xdg_desktop_portal_gtk-settings.obj: src/settings.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-settings.obj -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-settings.Tpo -c -o src/xdg_desktop_portal_gtk-settings.obj `if test -f 'src/settings.c'; then $(CYGPATH_W) 'src/settings.c'; else $(CYGPATH_W) '$(srcdir)/src/settings.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/xdg_desktop_portal_gtk-settings.Tpo src/$(DEPDIR)/xdg_desktop_portal_gtk-settings.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/settings.c' object='src/xdg_desktop_portal_gtk-settings.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -c -o src/xdg_desktop_portal_gtk-settings.obj `if test -f 'src/settings.c'; then $(CYGPATH_W) 'src/settings.c'; else $(CYGPATH_W) '$(srcdir)/src/settings.c'; fi`
 
 src/xdg_desktop_portal_gtk-externalwindow-x11.o: src/externalwindow-x11.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xdg_desktop_portal_gtk_CPPFLAGS) $(CPPFLAGS) $(xdg_desktop_portal_gtk_CFLAGS) $(CFLAGS) -MT src/xdg_desktop_portal_gtk-externalwindow-x11.o -MD -MP -MF src/$(DEPDIR)/xdg_desktop_portal_gtk-externalwindow-x11.Tpo -c -o src/xdg_desktop_portal_gtk-externalwindow-x11.o `test -f 'src/externalwindow-x11.c' || echo '$(srcdir)/'`src/externalwindow-x11.c
@@ -1921,9 +2004,11 @@ distclean: distclean-recursive
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-externalwindow-wayland.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-externalwindow-x11.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-externalwindow.Po
+	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-fc-monitor.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-fdonotification.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-filechooser.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-gnomescreencast.Po
+	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-gsd-remote-display-manager.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-gtkbackports.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-inhibit.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-lockdown.Po
@@ -1939,7 +2024,9 @@ distclean: distclean-recursive
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-screenshot.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-screenshotdialog.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-session.Po
+	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-settings.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-shell-dbus.Po
+	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-shellintrospect.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-utils.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-xdg-desktop-portal-gtk.Po
@@ -2007,9 +2094,11 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-externalwindow-wayland.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-externalwindow-x11.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-externalwindow.Po
+	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-fc-monitor.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-fdonotification.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-filechooser.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-gnomescreencast.Po
+	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-gsd-remote-display-manager.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-gtkbackports.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-inhibit.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-lockdown.Po
@@ -2025,7 +2114,9 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-screenshot.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-screenshotdialog.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-session.Po
+	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-settings.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-shell-dbus.Po
+	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-shellintrospect.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-utils.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-xdg-desktop-portal-dbus.Po
 	-rm -f src/$(DEPDIR)/xdg_desktop_portal_gtk-xdg-desktop-portal-gtk.Po
@@ -2099,6 +2190,7 @@ $(dbus_built_sources): src/Makefile.am.inc
 	 $(DESKTOP_PORTAL_INTERFACES_DIR)/org.freedesktop.impl.portal.RemoteDesktop.xml \
 	 $(DESKTOP_PORTAL_INTERFACES_DIR)/org.freedesktop.impl.portal.Lockdown.xml \
 	 $(DESKTOP_PORTAL_INTERFACES_DIR)/org.freedesktop.impl.portal.Background.xml \
+	 $(DESKTOP_PORTAL_INTERFACES_DIR)/org.freedesktop.impl.portal.Settings.xml \
 	$(NULL)
 
 $(shell_built_sources): src/Makefile.am.inc
