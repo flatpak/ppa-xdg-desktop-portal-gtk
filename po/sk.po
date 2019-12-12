@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2019-10-04 11:11-0400\n"
+"POT-Creation-Date: 2019-11-27 15:21-0500\n"
 "PO-Revision-Date: 2017-09-16 09:28+0200\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
@@ -41,7 +41,7 @@ msgstr "Udeliť prístup"
 msgid "Select an Image"
 msgstr "Výber obrázku"
 
-#: src/accountdialog.c:179
+#: src/accountdialog.c:179 src/wallpaperdialog.ui:18
 msgid "Cancel"
 msgstr "Zrušiť"
 
@@ -70,7 +70,7 @@ msgstr "Sprístupniť vaše osobné informácie požadovanej aplikácii?"
 msgid "Share Details"
 msgstr "Podrobnosti o sprístupnení"
 
-#: src/accountdialog.ui:14 src/appchooserdialog.ui:17 src/filechooser.c:397
+#: src/accountdialog.ui:14 src/appchooserdialog.ui:17 src/filechooser.c:447
 #: src/remotedesktopdialog.ui:16 src/screencastdialog.ui:16
 #: src/screenshotdialog.ui:14
 msgid "_Cancel"
@@ -150,15 +150,15 @@ msgstr ""
 msgid "Ignore"
 msgstr ""
 
-#: src/filechooser.c:392
-msgid "_Save"
-msgstr ""
-
-#: src/filechooser.c:394
+#: src/filechooser.c:442
 msgid "_Open"
 msgstr "_Otvoriť"
 
-#: src/filechooser.c:552
+#: src/filechooser.c:444
+msgid "_Save"
+msgstr ""
+
+#: src/filechooser.c:620
 msgid "Open files read-only"
 msgstr ""
 
@@ -280,8 +280,33 @@ msgstr ""
 msgid "Include the window _border"
 msgstr ""
 
-#: src/settings.c:185
+#: src/settings.c:184
 msgid "Requested setting not found"
+msgstr ""
+
+#: src/wallpaperdialog.c:121 src/wallpaperdialog.ui:13
+msgid "Set Background"
+msgstr ""
+
+#: src/wallpaperdialog.c:131
+msgid "Set Lock Screen"
+msgstr ""
+
+#: src/wallpaperdialog.c:162
+msgid "Set Background & Lock Screen"
+msgstr ""
+
+#: src/wallpaperdialog.ui:26
+#, fuzzy
+msgid "Set"
+msgstr "Vybrať"
+
+#: src/wallpaperdialog.ui:62
+msgid "Failed to load image file"
+msgstr ""
+
+#: src/wallpaperpreview.ui:47
+msgid "Activities"
 msgstr ""
 
 #, fuzzy
