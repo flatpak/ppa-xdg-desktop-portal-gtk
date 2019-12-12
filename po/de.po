@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2019-05-28 15:17+0000\n"
+"POT-Creation-Date: 2019-10-04 11:11-0400\n"
 "PO-Revision-Date: 2018-08-25 10:06+0200\n"
 "Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
@@ -123,11 +123,11 @@ msgstr "Es kann keine passende Anwendung gefunden werden."
 msgid "Open With"
 msgstr "Öffnen mit"
 
-#: src/appchooserdialog.ui:166
+#: src/appchooserdialog.ui:167
 msgid "No Applications Found"
 msgstr "Keine Anwendungen gefunden"
 
-#: src/appchooserdialog.ui:182
+#: src/appchooserdialog.ui:183
 msgid "Find Compatible Applications in Software"
 msgstr "Kompatible Anwendungen in Software suchen"
 
@@ -190,18 +190,38 @@ msgid "Remote desktop"
 msgstr "Entfernter Bildschirm"
 
 #: src/screencastdialog.ui:12
-msgid "Screen casting"
-msgstr "Bildschirmaufzeichnung"
+#, fuzzy
+msgid "Screen Share"
+msgstr "Bildschirmfoto"
 
-#: src/screencastwidget.c:243
+#: src/screencastwidget.c:483
 #, c-format
 msgid "Select monitor to share with %s"
 msgstr "Bildschirm wählen, der mit %s geteilt werden soll"
 
-#: src/screencastwidget.c:248
+#: src/screencastwidget.c:485
+#, fuzzy, c-format
+msgid "Select window to share with %s"
+msgstr "Bildschirm wählen, der mit %s geteilt werden soll"
+
+#: src/screencastwidget.c:490
 msgid "Select monitor to share with the requesting application"
 msgstr ""
 "Bildschirm wählen, der mit der anfragenden Anwendung geteilt werden soll"
+
+#: src/screencastwidget.c:491
+#, fuzzy
+msgid "Select window to share with the requesting application"
+msgstr ""
+"Bildschirm wählen, der mit der anfragenden Anwendung geteilt werden soll"
+
+#: src/screencastwidget.ui:100
+msgid "Single Window"
+msgstr ""
+
+#: src/screencastwidget.ui:176
+msgid "Entire Screen"
+msgstr ""
 
 #: src/screenshotdialog.c:434
 #, c-format
@@ -260,6 +280,13 @@ msgstr "_Zeiger einbeziehen"
 #: src/screenshotdialog.ui:201
 msgid "Include the window _border"
 msgstr "Fenster_rahmen mit aufnehmen"
+
+#: src/settings.c:185
+msgid "Requested setting not found"
+msgstr ""
+
+#~ msgid "Screen casting"
+#~ msgstr "Bildschirmaufzeichnung"
 
 #~ msgid "_Select"
 #~ msgstr "A_uswählen"

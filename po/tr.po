@@ -1,23 +1,25 @@
 # Turkish translation for xdg-desktop-portal-gtk.
-# Copyright (C) 2017 xdg-desktop-portal-gtk's COPYRIGHT HOLDER
+# Copyright (C) 2017-2019 xdg-desktop-portal-gtk's COPYRIGHT HOLDER
 # This file is distributed under the same license as the xdg-desktop-portal-gtk package.
+#
 # Muhammet Kara <muhammetk@gnome.org>, 2017, 2018.
+# Sabri Ünal <libreajans@gmail.com>, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2019-05-28 15:17+0000\n"
-"PO-Revision-Date: 2018-10-31 00:33+0300\n"
-"Last-Translator: Muhammet Kara <muhammetk@gnome.org>\n"
+"POT-Creation-Date: 2019-10-04 11:11-0400\n"
+"PO-Revision-Date: 2019-09-07 21:52+0300\n"
+"Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <gnome-turk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #: data/xdg-desktop-portal-gtk.desktop.in.in:4
 msgid "Portal"
@@ -118,34 +120,34 @@ msgstr "Uygun bir uygulama bulunamadı."
 msgid "Open With"
 msgstr "Birlikte Aç"
 
-#: src/appchooserdialog.ui:166
+#: src/appchooserdialog.ui:167
 msgid "No Applications Found"
 msgstr "Hiçbir Uygulama Bulunamadı"
 
-#: src/appchooserdialog.ui:182
+#: src/appchooserdialog.ui:183
 msgid "Find Compatible Applications in Software"
 msgstr "Uyumlu Uygulamaları Yazılımlar'da Bul"
 
 #: src/background.c:255
 msgid "Background activity"
-msgstr ""
+msgstr "Arkaplan etkinliği"
 
 #: src/background.c:257
 #, c-format
 msgid "%s is running in the background."
-msgstr ""
+msgstr "%s arkaplanda çalışıyor"
 
 #: src/background.c:262
 msgid "Allow"
-msgstr ""
+msgstr "İzin ver"
 
 #: src/background.c:269
 msgid "Forbid"
-msgstr ""
+msgstr "Yasakla"
 
 #: src/background.c:276
 msgid "Ignore"
-msgstr ""
+msgstr "Yoksay"
 
 #: src/filechooser.c:392
 msgid "_Save"
@@ -157,7 +159,7 @@ msgstr "_Aç"
 
 #: src/filechooser.c:552
 msgid "Open files read-only"
-msgstr ""
+msgstr "Dosyaları salt okunur aç"
 
 #: src/remotedesktopdialog.c:188
 msgid "Pointer"
@@ -185,17 +187,36 @@ msgid "Remote desktop"
 msgstr "Uzak masaüstü"
 
 #: src/screencastdialog.ui:12
-msgid "Screen casting"
-msgstr "Ekran yayını"
+#, fuzzy
+msgid "Screen Share"
+msgstr "Ekran Görüntüsü"
 
-#: src/screencastwidget.c:243
+#: src/screencastwidget.c:483
 #, c-format
 msgid "Select monitor to share with %s"
 msgstr "%s ile paylaşılacak monitörü seçin"
 
-#: src/screencastwidget.c:248
+#: src/screencastwidget.c:485
+#, fuzzy, c-format
+msgid "Select window to share with %s"
+msgstr "%s ile paylaşılacak monitörü seçin"
+
+#: src/screencastwidget.c:490
 msgid "Select monitor to share with the requesting application"
 msgstr "İstekte bulunan uygulama ile paylaşılacak monitörü seçin"
+
+#: src/screencastwidget.c:491
+#, fuzzy
+msgid "Select window to share with the requesting application"
+msgstr "İstekte bulunan uygulama ile paylaşılacak monitörü seçin"
+
+#: src/screencastwidget.ui:100
+msgid "Single Window"
+msgstr ""
+
+#: src/screencastwidget.ui:176
+msgid "Entire Screen"
+msgstr ""
 
 #: src/screenshotdialog.c:434
 #, c-format
@@ -253,3 +274,10 @@ msgstr "_Belirteçi dahil et"
 #: src/screenshotdialog.ui:201
 msgid "Include the window _border"
 msgstr "Pencere _kenarlığını dahil et"
+
+#: src/settings.c:185
+msgid "Requested setting not found"
+msgstr ""
+
+#~ msgid "Screen casting"
+#~ msgstr "Ekran yayını"

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2019-05-28 15:17+0000\n"
+"POT-Creation-Date: 2019-10-04 11:11-0400\n"
 "PO-Revision-Date: 2019-05-03 01:13+0800\n"
 "Last-Translator: 王滋涵 Zephyr Waitzman <i@wi24rd.ml>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
@@ -114,11 +114,11 @@ msgstr "找不到适合的应用。"
 msgid "Open With"
 msgstr "打开方式"
 
-#: src/appchooserdialog.ui:166
+#: src/appchooserdialog.ui:167
 msgid "No Applications Found"
 msgstr "非找到应用"
 
-#: src/appchooserdialog.ui:182
+#: src/appchooserdialog.ui:183
 msgid "Find Compatible Applications in Software"
 msgstr "在软件中查找兼容的应用程序"
 
@@ -181,17 +181,36 @@ msgid "Remote desktop"
 msgstr "远程桌面"
 
 #: src/screencastdialog.ui:12
-msgid "Screen casting"
-msgstr "录屏"
+#, fuzzy
+msgid "Screen Share"
+msgstr "截屏"
 
-#: src/screencastwidget.c:243
+#: src/screencastwidget.c:483
 #, c-format
 msgid "Select monitor to share with %s"
 msgstr "选择与 %s 共享的监视器"
 
-#: src/screencastwidget.c:248
+#: src/screencastwidget.c:485
+#, fuzzy, c-format
+msgid "Select window to share with %s"
+msgstr "选择与 %s 共享的监视器"
+
+#: src/screencastwidget.c:490
 msgid "Select monitor to share with the requesting application"
 msgstr "选择与请求应用共享的监视器"
+
+#: src/screencastwidget.c:491
+#, fuzzy
+msgid "Select window to share with the requesting application"
+msgstr "选择与请求应用共享的监视器"
+
+#: src/screencastwidget.ui:100
+msgid "Single Window"
+msgstr ""
+
+#: src/screencastwidget.ui:176
+msgid "Entire Screen"
+msgstr ""
 
 #: src/screenshotdialog.c:434
 #, c-format
@@ -249,6 +268,13 @@ msgstr "包含指针(_P)"
 #: src/screenshotdialog.ui:201
 msgid "Include the window _border"
 msgstr "包含窗口边框(_B)"
+
+#: src/settings.c:185
+msgid "Requested setting not found"
+msgstr ""
+
+#~ msgid "Screen casting"
+#~ msgstr "录屏"
 
 #~ msgid "_Select"
 #~ msgstr "选择(_S)"

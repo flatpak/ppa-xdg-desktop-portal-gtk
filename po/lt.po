@@ -1,15 +1,15 @@
 # Lithuanian translation for xdg-desktop-portal-gtk.
 # Copyright (C) 2018 xdg-desktop-portal-gtk's COPYRIGHT HOLDER
 # This file is distributed under the same license as the xdg-desktop-portal-gtk package.
-# Moo, 2018.
+# Moo, 2018, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2019-05-28 15:17+0000\n"
-"PO-Revision-Date: 2019-02-14 00:32+0200\n"
+"POT-Creation-Date: 2019-10-04 11:11-0400\n"
+"PO-Revision-Date: 2019-06-07 00:27+0300\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -119,34 +119,34 @@ msgstr "Nepavyko rasti tinkamos programos."
 msgid "Open With"
 msgstr "Atverti naudojant"
 
-#: src/appchooserdialog.ui:166
+#: src/appchooserdialog.ui:167
 msgid "No Applications Found"
 msgstr "Nerasta jokių programų"
 
-#: src/appchooserdialog.ui:182
+#: src/appchooserdialog.ui:183
 msgid "Find Compatible Applications in Software"
 msgstr "Rasti suderinamas programas Programinėje įrangoje"
 
 #: src/background.c:255
 msgid "Background activity"
-msgstr ""
+msgstr "Foninė veikla"
 
 #: src/background.c:257
 #, c-format
 msgid "%s is running in the background."
-msgstr ""
+msgstr "%s yra vykdoma fone."
 
 #: src/background.c:262
 msgid "Allow"
-msgstr ""
+msgstr "Leisti"
 
 #: src/background.c:269
 msgid "Forbid"
-msgstr ""
+msgstr "Drausti"
 
 #: src/background.c:276
 msgid "Ignore"
-msgstr ""
+msgstr "Nepaisyti"
 
 #: src/filechooser.c:392
 msgid "_Save"
@@ -186,17 +186,36 @@ msgid "Remote desktop"
 msgstr "Nuotolinis darbalaukis"
 
 #: src/screencastdialog.ui:12
-msgid "Screen casting"
-msgstr "Ekrano įrašymas"
+#, fuzzy
+msgid "Screen Share"
+msgstr "Ekrano kopija"
 
-#: src/screencastwidget.c:243
+#: src/screencastwidget.c:483
 #, c-format
 msgid "Select monitor to share with %s"
 msgstr "Pasirinkti vaizduoklį, kurį bendrinti su %s"
 
-#: src/screencastwidget.c:248
+#: src/screencastwidget.c:485
+#, fuzzy, c-format
+msgid "Select window to share with %s"
+msgstr "Pasirinkti vaizduoklį, kurį bendrinti su %s"
+
+#: src/screencastwidget.c:490
 msgid "Select monitor to share with the requesting application"
 msgstr "Pasirinkti vaizduoklį, kurį bendrinti su prašančia programa"
+
+#: src/screencastwidget.c:491
+#, fuzzy
+msgid "Select window to share with the requesting application"
+msgstr "Pasirinkti vaizduoklį, kurį bendrinti su prašančia programa"
+
+#: src/screencastwidget.ui:100
+msgid "Single Window"
+msgstr ""
+
+#: src/screencastwidget.ui:176
+msgid "Entire Screen"
+msgstr ""
 
 #: src/screenshotdialog.c:434
 #, c-format
@@ -254,3 +273,10 @@ msgstr "Įtraukti _rodyklę"
 #: src/screenshotdialog.ui:201
 msgid "Include the window _border"
 msgstr "Įtraukti lango rė_melį"
+
+#: src/settings.c:185
+msgid "Requested setting not found"
+msgstr ""
+
+#~ msgid "Screen casting"
+#~ msgstr "Ekrano įrašymas"
