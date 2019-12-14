@@ -582,12 +582,12 @@ CLEANFILES = $(dbus_built_sources) $(shell_built_sources) \
 	src/resources.c $(dbus_service_DATA) $(systemduserunit_DATA) \
 	$(desktop_in_files) $(desktop_DATA) $(NULL)
 EXTRA_DIST = src/xdg-desktop-portal-gtk.gresource.xml \
-	src/appchooserdialog.ui src/appchooserdialog.css \
-	src/appchooserrow.ui src/screenshotdialog.ui \
-	src/screenshotdialog.css src/accountdialog.ui \
-	src/screencastwidget.ui src/screencastdialog.ui \
-	src/remotedesktopdialog.ui src/wallpaperdialog.ui \
-	src/wallpaperpreview.ui $(NULL) $(dbus_service_in_files) \
+	src/appchooserdialog.ui src/appchooserrow.ui \
+	src/screenshotdialog.ui src/screenshotdialog.css \
+	src/accountdialog.ui src/screencastwidget.ui \
+	src/screencastdialog.ui src/remotedesktopdialog.ui \
+	src/wallpaperdialog.ui src/wallpaperpreview.ui \
+	src/wallpaperpreview.css $(NULL) $(dbus_service_in_files) \
 	$(systemduserunit_in_files) $(desktop_in_in_files) \
 	data/org.gtk.Notifications.xml \
 	data/org.gnome.Mutter.DisplayConfig.xml \
