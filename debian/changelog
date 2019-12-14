@@ -1,4 +1,4 @@
-xdg-desktop-portal-gtk (1.5.2-1) UNRELEASED; urgency=medium
+xdg-desktop-portal-gtk (1.5.2-1) experimental; urgency=medium
 
   * Standards-Version: 4.4.1 (no changes required)
   * Branch for experimental
@@ -6,7 +6,7 @@ xdg-desktop-portal-gtk (1.5.2-1) UNRELEASED; urgency=medium
     - d/control: Update build-dependencies
     - d/copyright: Update
 
- -- Simon McVittie <smcv@debian.org>  Tue, 01 Oct 2019 10:37:42 +0100
+ -- Simon McVittie <smcv@debian.org>  Sat, 14 Dec 2019 10:45:10 +0000
 
 xdg-desktop-portal-gtk (1.4.0-2) unstable; urgency=medium
 
