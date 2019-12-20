@@ -1,3 +1,11 @@
+xdg-desktop-portal-gtk (1.6.0-1) UNRELEASED; urgency=medium
+
+  * New upstream stable release
+    - d/watch: Only watch for stable branches
+    - d/gbp.conf: Use debian/master, upstream/1.6.x branches
+
+ -- Simon McVittie <smcv@debian.org>  Fri, 20 Dec 2019 15:01:23 +0000
+
 xdg-desktop-portal-gtk (1.5.2-1) experimental; urgency=medium
 
   * Standards-Version: 4.4.1 (no changes required)
