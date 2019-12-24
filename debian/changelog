@@ -1,4 +1,4 @@
-xdg-desktop-portal-gtk (1.6.0-1) UNRELEASED; urgency=medium
+xdg-desktop-portal-gtk (1.6.0-1) unstable; urgency=medium
 
   * New upstream stable release
     - d/watch: Only watch for stable branches
@@ -6,7 +6,7 @@ xdg-desktop-portal-gtk (1.6.0-1) UNRELEASED; urgency=medium
     - Bump xdg-desktop-portal dependency to 1.6.0.
       They should be tested and backported together.
 
- -- Simon McVittie <smcv@debian.org>  Fri, 20 Dec 2019 15:01:23 +0000
+ -- Simon McVittie <smcv@debian.org>  Tue, 24 Dec 2019 14:17:17 +0000
 
 xdg-desktop-portal-gtk (1.5.2-1) experimental; urgency=medium
 
