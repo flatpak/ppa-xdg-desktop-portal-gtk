@@ -16,7 +16,7 @@ Build-Depends:
  xmlto,
 Rules-Requires-Root: no
 Standards-Version: 4.4.1
-Homepage: http://flatpak.org/
+Homepage: https://flatpak.org/
 Vcs-Git: https://salsa.debian.org/debian/xdg-desktop-portal-gtk.git
 Vcs-Browser: https://salsa.debian.org/debian/xdg-desktop-portal-gtk
 
