@@ -1,4 +1,4 @@
-xdg-desktop-portal-gtk (1.7.0-1) UNRELEASED; urgency=medium
+xdg-desktop-portal-gtk (1.7.0-1) experimental; urgency=medium
 
   * Switch to experimental branch
     - d/watch: Watch for development releases
@@ -12,7 +12,7 @@ xdg-desktop-portal-gtk (1.7.0-1) UNRELEASED; urgency=medium
   * Standards-Version: 4.5.0 (no changes required)
   * Bump xdg-desktop-portal dependencies to 1.7.0
 
- -- Simon McVittie <smcv@debian.org>  Fri, 10 Jan 2020 11:33:45 +0000
+ -- Simon McVittie <smcv@debian.org>  Wed, 25 Mar 2020 17:04:36 +0000
 
 xdg-desktop-portal-gtk (1.6.0-1) unstable; urgency=medium
 
