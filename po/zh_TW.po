@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2019-12-20 08:51-0500\n"
+"POT-Creation-Date: 2020-03-13 09:24-0400\n"
 "PO-Revision-Date: 2018-10-10 12:22+0800\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <chinese-l10n@googlegroups.com>\n"
@@ -135,7 +135,7 @@ msgid ""
 "This might be for a legitimate reason, but the application has not provided "
 "one.\n"
 "\n"
-"Note that forcing an application to quite might cause data loss."
+"Note that forcing an application to quit might cause data loss."
 msgstr ""
 
 #: src/background.c:220
@@ -281,7 +281,7 @@ msgstr "包含指標(_P)"
 msgid "Include the window _border"
 msgstr "包含視窗邊框(_B)"
 
-#: src/settings.c:184
+#: src/settings.c:186
 msgid "Requested setting not found"
 msgstr ""
 
