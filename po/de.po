@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2019-12-20 08:51-0500\n"
+"POT-Creation-Date: 2020-03-13 09:24-0400\n"
 "PO-Revision-Date: 2018-08-25 10:06+0200\n"
 "Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
@@ -142,7 +142,7 @@ msgid ""
 "This might be for a legitimate reason, but the application has not provided "
 "one.\n"
 "\n"
-"Note that forcing an application to quite might cause data loss."
+"Note that forcing an application to quit might cause data loss."
 msgstr ""
 
 #: src/background.c:220
@@ -291,7 +291,7 @@ msgstr "_Zeiger einbeziehen"
 msgid "Include the window _border"
 msgstr "Fenster_rahmen mit aufnehmen"
 
-#: src/settings.c:184
+#: src/settings.c:186
 msgid "Requested setting not found"
 msgstr ""
 

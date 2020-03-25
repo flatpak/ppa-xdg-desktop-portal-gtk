@@ -6,10 +6,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: xdg-desktop-portal-gtk 1.6.0\n"
+"Project-Id-Version: xdg-desktop-portal-gtk 1.7.0\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2019-12-20 08:51-0500\n"
+"POT-Creation-Date: 2020-03-13 09:24-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -133,7 +133,7 @@ msgid ""
 "This might be for a legitimate reason, but the application has not provided "
 "one.\n"
 "\n"
-"Note that forcing an application to quite might cause data loss."
+"Note that forcing an application to quit might cause data loss."
 msgstr ""
 
 #: src/background.c:220
@@ -277,7 +277,7 @@ msgstr ""
 msgid "Include the window _border"
 msgstr ""
 
-#: src/settings.c:184
+#: src/settings.c:186
 msgid "Requested setting not found"
 msgstr ""
 
