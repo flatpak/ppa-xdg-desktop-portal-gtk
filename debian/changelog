@@ -10,6 +10,7 @@ xdg-desktop-portal-gtk (1.7.0-1) UNRELEASED; urgency=medium
   * Remove obsolete field Name from debian/upstream/metadata (already
     present in machine-readable debian/copyright).
   * Standards-Version: 4.5.0 (no changes required)
+  * Bump xdg-desktop-portal dependencies to 1.7.0
 
  -- Simon McVittie <smcv@debian.org>  Fri, 10 Jan 2020 11:33:45 +0000
 

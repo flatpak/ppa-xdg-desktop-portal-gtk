@@ -12,7 +12,7 @@ Build-Depends:
  libglib2.0-dev (>= 2.44),
  libgnome-desktop-3-dev,
  libgtk-3-dev (>= 3.14),
- xdg-desktop-portal-dev (>= 1.6.0),
+ xdg-desktop-portal-dev (>= 1.7.0),
  xmlto,
 Rules-Requires-Root: no
 Standards-Version: 4.5.0
@@ -25,14 +25,14 @@ Architecture: linux-any
 Multi-arch: foreign
 Depends:
  dbus-user-session | dbus-x11,
- xdg-desktop-portal (>= 1.6.0),
+ xdg-desktop-portal (>= 1.7.0),
  ${misc:Depends},
  ${shlibs:Depends},
 Suggests:
  accountsservice,
  evince,
 Provides:
- xdg-desktop-portal-backend (= 1.6),
+ xdg-desktop-portal-backend (= 1.7),
 Description: GTK+/GNOME portal backend for xdg-desktop-portal
  xdg-desktop-portal-gtk provides a GTK+/GNOME implementation for the
  desktop-agnostic xdg-desktop-portal service. This allows sandboxed
