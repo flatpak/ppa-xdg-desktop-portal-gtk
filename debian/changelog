@@ -1,9 +1,9 @@
-xdg-desktop-portal-gtk (1.7.1-1) UNRELEASED; urgency=medium
+xdg-desktop-portal-gtk (1.7.1-1) experimental; urgency=medium
 
   * New upstream development release
     - Depend on a matching x-d-p, for the directory chooser API
 
- -- Simon McVittie <smcv@debian.org>  Mon, 30 Mar 2020 10:05:44 +0100
+ -- Simon McVittie <smcv@debian.org>  Mon, 30 Mar 2020 10:19:46 +0100
 
 xdg-desktop-portal-gtk (1.7.0-1) experimental; urgency=medium
 
