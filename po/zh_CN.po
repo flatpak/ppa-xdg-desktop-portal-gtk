@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2020-03-13 09:24-0400\n"
+"POT-Creation-Date: 2020-03-27 08:52-0400\n"
 "PO-Revision-Date: 2019-05-03 01:13+0800\n"
 "Last-Translator: 王滋涵 Zephyr Waitzman <i@wi24rd.ml>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
@@ -69,7 +69,7 @@ msgstr "与请求应用申请共享您的个人信息？"
 msgid "Share Details"
 msgstr "分享详情"
 
-#: src/accountdialog.ui:14 src/appchooserdialog.ui:14 src/filechooser.c:447
+#: src/accountdialog.ui:14 src/appchooserdialog.ui:14 src/filechooser.c:457
 #: src/remotedesktopdialog.ui:16 src/screencastdialog.ui:16
 #: src/screenshotdialog.ui:14
 msgid "_Cancel"
@@ -114,7 +114,7 @@ msgstr ""
 msgid "Open With…"
 msgstr "打开方式"
 
-#: src/appchooserdialog.ui:23 src/filechooser.c:442
+#: src/appchooserdialog.ui:23 src/filechooser.c:452
 msgid "_Open"
 msgstr "打开(_O)"
 
@@ -161,11 +161,15 @@ msgstr ""
 msgid "Find out more"
 msgstr ""
 
-#: src/filechooser.c:444
+#: src/filechooser.c:452
+msgid "_Select"
+msgstr "选择(_S)"
+
+#: src/filechooser.c:454
 msgid "_Save"
 msgstr "保存(_S)"
 
-#: src/filechooser.c:620
+#: src/filechooser.c:631
 msgid "Open files read-only"
 msgstr ""
 
@@ -335,6 +339,3 @@ msgstr ""
 
 #~ msgid "Screen casting"
 #~ msgstr "录屏"
-
-#~ msgid "_Select"
-#~ msgstr "选择(_S)"

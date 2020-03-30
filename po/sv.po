@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2020-03-13 09:24-0400\n"
+"POT-Creation-Date: 2020-03-27 08:52-0400\n"
 "PO-Revision-Date: 2019-01-17 14:10+0100\n"
 "Last-Translator: Josef Andersson <l10nl18nsweja@gmail.com>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -70,7 +70,7 @@ msgstr "Dela din personliga information med programmet som begär den?"
 msgid "Share Details"
 msgstr "Dela detaljer"
 
-#: src/accountdialog.ui:14 src/appchooserdialog.ui:14 src/filechooser.c:447
+#: src/accountdialog.ui:14 src/appchooserdialog.ui:14 src/filechooser.c:457
 #: src/remotedesktopdialog.ui:16 src/screencastdialog.ui:16
 #: src/screenshotdialog.ui:14
 msgid "_Cancel"
@@ -115,7 +115,7 @@ msgstr ""
 msgid "Open With…"
 msgstr "Öppna med"
 
-#: src/appchooserdialog.ui:23 src/filechooser.c:442
+#: src/appchooserdialog.ui:23 src/filechooser.c:452
 msgid "_Open"
 msgstr "_Öppna"
 
@@ -162,11 +162,15 @@ msgstr ""
 msgid "Find out more"
 msgstr ""
 
-#: src/filechooser.c:444
+#: src/filechooser.c:452
+msgid "_Select"
+msgstr "_Välj"
+
+#: src/filechooser.c:454
 msgid "_Save"
 msgstr "_Spara"
 
-#: src/filechooser.c:620
+#: src/filechooser.c:631
 msgid "Open files read-only"
 msgstr ""
 
@@ -339,9 +343,6 @@ msgstr ""
 
 #~ msgid "Screen casting"
 #~ msgstr "Skärminspelning"
-
-#~ msgid "_Select"
-#~ msgstr "_Välj"
 
 #, fuzzy
 #~ msgid "No applications found"
