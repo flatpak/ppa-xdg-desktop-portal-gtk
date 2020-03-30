@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2020-03-13 09:24-0400\n"
+"POT-Creation-Date: 2020-03-27 08:52-0400\n"
 "PO-Revision-Date: 2020-01-24 08:53-0300\n"
 "Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
@@ -69,7 +69,7 @@ msgstr "Compartilhar suas informações pessoais com o aplicativo requisitante?"
 msgid "Share Details"
 msgstr "Compartilhar detalhes"
 
-#: src/accountdialog.ui:14 src/appchooserdialog.ui:14 src/filechooser.c:447
+#: src/accountdialog.ui:14 src/appchooserdialog.ui:14 src/filechooser.c:457
 #: src/remotedesktopdialog.ui:16 src/screencastdialog.ui:16
 #: src/screenshotdialog.ui:14
 msgid "_Cancel"
@@ -116,7 +116,7 @@ msgstr ""
 msgid "Open With…"
 msgstr "Abrir com…"
 
-#: src/appchooserdialog.ui:23 src/filechooser.c:442
+#: src/appchooserdialog.ui:23 src/filechooser.c:452
 msgid "_Open"
 msgstr "_Abrir"
 
@@ -166,11 +166,15 @@ msgstr "%s está em execução em segundo plano."
 msgid "Find out more"
 msgstr "Encontrar mais"
 
-#: src/filechooser.c:444
+#: src/filechooser.c:452
+msgid "_Select"
+msgstr "_Selecionar"
+
+#: src/filechooser.c:454
 msgid "_Save"
 msgstr "_Salvar"
 
-#: src/filechooser.c:620
+#: src/filechooser.c:631
 msgid "Open files read-only"
 msgstr "Abrir arquivos em somente leitura"
 
@@ -346,6 +350,3 @@ msgstr "Atividades"
 
 #~ msgid "Screen casting"
 #~ msgstr "Compartilhamento de tela"
-
-#~ msgid "_Select"
-#~ msgstr "_Selecionar"
