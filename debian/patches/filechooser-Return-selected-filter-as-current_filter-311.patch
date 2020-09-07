@@ -1,0 +1,64 @@
+From: Michael Weghorn <m.weghorn@posteo.de>
+Date: Fri, 29 May 2020 00:41:08 +0200
+Subject: filechooser: Return selected filter as 'current_filter' (#311)
+
+Return the selected filter as 'current_filter', which
+is added to the FileChooser portal spec in pull request [1].
+
+This will allow making Gtk's
+'gtk_file_chooser_get_filter' work for the
+portal native file chooser.
+
+[1] https://github.com/flatpak/xdg-desktop-portal/pull/493
+
+Bug: https://gitlab.gnome.org/GNOME/gtk/-/issues/1820
+Origin: upstream, 1.7.2, commit:6f765b2a45f62b5ee5dee55b21a2858f8070c015
+---
+ src/filechooser.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+diff --git a/src/filechooser.c b/src/filechooser.c
+index a4336bf..2b6231a 100644
+--- a/src/filechooser.c
++++ b/src/filechooser.c
+@@ -57,6 +57,8 @@ typedef struct {
+ 
+   GSList *files;
+ 
++  GtkFileFilter *filter;
++
+   int response;
+   GSList *uris;
+ 
+@@ -179,6 +181,11 @@ send_response (FileDialogHandle *handle)
+       g_variant_builder_add (&uri_builder, "s", l->data);
+     }
+ 
++  if (handle->filter) {
++    GVariant *current_filter_variant = gtk_file_filter_to_gvariant (handle->filter);
++    g_variant_builder_add (&opt_builder, "{sv}", "current_filter", current_filter_variant);
++  }
++
+   g_variant_builder_add (&opt_builder, "{sv}", "uris", g_variant_builder_end (&uri_builder));
+   g_variant_builder_add (&opt_builder, "{sv}", "writable", g_variant_new_boolean (handle->allow_write));
+ 
+@@ -222,16 +229,19 @@ file_chooser_response (GtkWidget *widget,
+       /* Fall through */
+     case GTK_RESPONSE_DELETE_EVENT:
+       handle->response = 2;
++      handle->filter = NULL;
+       handle->uris = NULL;
+       break;
+ 
+     case GTK_RESPONSE_CANCEL:
+       handle->response = 1;
++      handle->filter = NULL;
+       handle->uris = NULL;
+       break;
+ 
+     case GTK_RESPONSE_OK:
+       handle->response = 0;
++      handle->filter = gtk_file_chooser_get_filter (GTK_FILE_CHOOSER(widget));
+       handle->uris = gtk_file_chooser_get_uris (GTK_FILE_CHOOSER (widget));
+       break;
+     }

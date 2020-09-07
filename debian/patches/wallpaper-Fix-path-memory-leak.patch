@@ -1,0 +1,28 @@
+From: Bastien Nocera <hadess@hadess.net>
+Date: Fri, 3 Apr 2020 16:43:56 +0200
+Subject: wallpaper: Fix path memory leak
+
+Origin: upstream, 1.7.2, commit:e9b3a0adc70cbd169b94fd0b56ce3d5a88e4f999
+---
+ src/wallpaperpreview.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/src/wallpaperpreview.c b/src/wallpaperpreview.c
+index 32b23c4..7bb68e6 100644
+--- a/src/wallpaperpreview.c
++++ b/src/wallpaperpreview.c
+@@ -218,8 +218,12 @@ wallpaper_preview_set_image (WallpaperPreview *self,
+                              const gchar *image_uri,
+                              gboolean is_lockscreen)
+ {
+-  g_autoptr(GFile) image_file = g_file_new_for_uri (image_uri);
+-  gnome_bg_set_filename (self->bg, g_file_get_path (image_file));
++  g_autofree char *path = NULL;
++  g_autoptr(GFile) image_file = NULL;
++
++  image_file = g_file_new_for_uri (image_uri);
++  path = g_file_get_path (image_file);
++  gnome_bg_set_filename (self->bg, path);
+ 
+   gtk_widget_set_visible (self->animated_background_icon,
+                           gnome_bg_changes_with_time (self->bg));

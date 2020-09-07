@@ -1,0 +1,17 @@
+wallpaper-Use-Zoom-placement-for-preview-as-done-when-set.patch
+wallpaper-Set-the-picture-style-when-setting-the-URI.patch
+wallpaper-Fix-path-memory-leak.patch
+appchooserdialog-avoid-crash-when-there-are-few-app-optio.patch
+appchooserdialog-improve-handling-of-INITIAL_LIST_SIZE.patch
+appchooserdialog-add-g_return-to-show_more.patch
+appchooserdialog-improve-safety-of-ensure_default-functio.patch
+screenshot-Fix-handling-of-cancellation-312.patch
+filechooser-Return-selected-filter-as-current_filter-311.patch
+Screencast-add-information-about-source-type-to-the-respo.patch
+background-use-the-same-message-string-307.patch
+wallpaper-Drop-lockscreen-option-305.patch
+Use-the-application-name-in-the-print-notification-304.patch
+Fix-build-after-414adcac25458db38fb887d082cc52ab06ebf670.patch
+Screencast-use-correct-variant-type.patch
+Add-some-print-capabilities-to-the-print-dialog.-320.patch
+screencast-Drop-all-or-nothing-API-version-checks-323.patch

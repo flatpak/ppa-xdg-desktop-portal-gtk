@@ -1,0 +1,22 @@
+From: Jan Grulich <jgrulich@redhat.com>
+Date: Mon, 1 Jun 2020 08:22:33 +0200
+Subject: Screencast: use correct variant type
+
+Origin: upstream, 1.7.2, commit:0cdfcdec21f88f9f458ca13ebd217a5e900666c7
+---
+ src/gnomescreencast.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/gnomescreencast.c b/src/gnomescreencast.c
+index e5e5930..79dc876 100644
+--- a/src/gnomescreencast.c
++++ b/src/gnomescreencast.c
+@@ -238,7 +238,7 @@ gnome_screen_cast_session_add_stream_properties (GnomeScreenCastSession *gnome_s
+ 
+       g_variant_builder_add (&stream_properties_builder, "{sv}",
+                              "source_type",
+-                             g_variant_new ("(u)", stream->source_type));
++                             g_variant_new ("u", stream->source_type));
+ 
+       if (gnome_screen_cast_stream_get_position (stream, &x, &y))
+         g_variant_builder_add (&stream_properties_builder, "{sv}",

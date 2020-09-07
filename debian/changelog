@@ -1,3 +1,11 @@
+xdg-desktop-portal-gtk (1.7.1-2) UNRELEASED; urgency=medium
+
+  * d/patches: Import bugfixes from upstream git, up to commit
+    1.7.1-26-g6eba95f
+    - In particular this fixes compatibility with GNOME Shell 3.37.x
+
+ -- Simon McVittie <smcv@debian.org>  Mon, 07 Sep 2020 20:40:35 +0100
+
 xdg-desktop-portal-gtk (1.7.1-1) experimental; urgency=medium
 
   * New upstream development release
