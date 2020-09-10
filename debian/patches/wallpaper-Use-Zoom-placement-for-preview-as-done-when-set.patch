@@ -1,0 +1,26 @@
+From: Bastien Nocera <hadess@hadess.net>
+Date: Fri, 3 Apr 2020 16:37:26 +0200
+Subject: wallpaper: Use Zoom placement for preview as done when set
+
+The zoom placement is what will be used when setting the picture, so
+also use it to preview.
+
+Closes: #264
+Origin: upstream, 1.7.2, commit:9b487e84300a480e471669e29cca012969646560
+---
+ src/wallpaperpreview.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/wallpaperpreview.c b/src/wallpaperpreview.c
+index d70d749..32b23c4 100644
+--- a/src/wallpaperpreview.c
++++ b/src/wallpaperpreview.c
+@@ -167,7 +167,7 @@ wallpaper_preview_init (WallpaperPreview *self)
+   self->clock_time_timeout_id = g_timeout_add_seconds (1, update_clock_cb, self);
+ 
+   self->bg = gnome_bg_new ();
+-  gnome_bg_set_placement (self->bg, G_DESKTOP_BACKGROUND_STYLE_STRETCHED);
++  gnome_bg_set_placement (self->bg, G_DESKTOP_BACKGROUND_STYLE_ZOOM);
+   self->thumbs = gnome_desktop_thumbnail_factory_new (GNOME_DESKTOP_THUMBNAIL_SIZE_LARGE);
+ }
+ 

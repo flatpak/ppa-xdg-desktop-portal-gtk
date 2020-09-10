@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xdg-desktop-portal-gtk master\n"
 "Report-Msgid-Bugs-To: https://github.com/flatpak/xdg-desktop-portal-gtk/"
 "issues\n"
-"POT-Creation-Date: 2019-12-20 08:51-0500\n"
+"POT-Creation-Date: 2020-03-27 08:52-0400\n"
 "PO-Revision-Date: 2017-03-02 11:43+0100\n"
 "Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: French <gnomefr@traduc.org>\n"
@@ -69,7 +69,7 @@ msgstr ""
 msgid "Share Details"
 msgstr "Partager les détails"
 
-#: src/accountdialog.ui:14 src/appchooserdialog.ui:14 src/filechooser.c:447
+#: src/accountdialog.ui:14 src/appchooserdialog.ui:14 src/filechooser.c:457
 #: src/remotedesktopdialog.ui:16 src/screencastdialog.ui:16
 #: src/screenshotdialog.ui:14
 msgid "_Cancel"
@@ -114,7 +114,7 @@ msgstr ""
 msgid "Open With…"
 msgstr "Ouvrir avec"
 
-#: src/appchooserdialog.ui:23 src/filechooser.c:442
+#: src/appchooserdialog.ui:23 src/filechooser.c:452
 msgid "_Open"
 msgstr "_Ouvrir"
 
@@ -136,7 +136,7 @@ msgid ""
 "This might be for a legitimate reason, but the application has not provided "
 "one.\n"
 "\n"
-"Note that forcing an application to quite might cause data loss."
+"Note that forcing an application to quit might cause data loss."
 msgstr ""
 
 #: src/background.c:220
@@ -160,11 +160,15 @@ msgstr ""
 msgid "Find out more"
 msgstr ""
 
-#: src/filechooser.c:444
+#: src/filechooser.c:452
+msgid "_Select"
+msgstr "_Choisir"
+
+#: src/filechooser.c:454
 msgid "_Save"
 msgstr ""
 
-#: src/filechooser.c:620
+#: src/filechooser.c:631
 msgid "Open files read-only"
 msgstr ""
 
@@ -286,7 +290,7 @@ msgstr ""
 msgid "Include the window _border"
 msgstr ""
 
-#: src/settings.c:184
+#: src/settings.c:186
 msgid "Requested setting not found"
 msgstr ""
 
@@ -322,6 +326,3 @@ msgstr ""
 #, fuzzy
 #~ msgid "Screen casting"
 #~ msgstr "Capture d'écran"
-
-#~ msgid "_Select"
-#~ msgstr "_Choisir"
