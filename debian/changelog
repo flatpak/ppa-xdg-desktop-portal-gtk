@@ -1,3 +1,11 @@
+xdg-desktop-portal-gtk (1.7.1-3) unstable; urgency=medium
+
+  * d/rules: Don't explicitly use --as-needed linker option.
+    It's the default with bullseye toolchains.
+  * Release to unstable for the pipewire 0.3 transition
+
+ -- Simon McVittie <smcv@debian.org>  Thu, 10 Sep 2020 12:48:30 +0100
+
 xdg-desktop-portal-gtk (1.7.1-2) experimental; urgency=medium
 
   * d/patches: Import bugfixes from upstream git, up to commit
