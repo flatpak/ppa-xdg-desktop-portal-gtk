@@ -1,9 +1,9 @@
-xdg-desktop-portal-gtk (1.8.0-1) UNRELEASED; urgency=medium
+xdg-desktop-portal-gtk (1.8.0-1) unstable; urgency=medium
 
   * New upstream release
     - Drop all patches, applied upstream
 
- -- Simon McVittie <smcv@debian.org>  Wed, 16 Sep 2020 00:56:57 +0100
+ -- Simon McVittie <smcv@debian.org>  Wed, 16 Sep 2020 10:31:20 +0100
 
 xdg-desktop-portal-gtk (1.7.1-3) unstable; urgency=medium
 
