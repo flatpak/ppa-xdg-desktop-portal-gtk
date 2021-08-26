@@ -1,3 +1,9 @@
+xdg-desktop-portal-gtk (1.8.0-1~flatpak1~20.04) focal; urgency=medium
+
+  * Rebuild for Ubuntu 20.04 'focal'
+
+ -- Simon McVittie <smcv@debian.org>  Thu, 26 Aug 2021 13:25:57 +0100
+
 xdg-desktop-portal-gtk (1.8.0-1) unstable; urgency=medium
 
   * New upstream release
